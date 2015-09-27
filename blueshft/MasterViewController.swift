@@ -31,16 +31,19 @@ class MasterViewController: UITableViewController {
     func loadSchools() {
         let query = PFQuery(className: "School")
         query.orderByDescending("createdAt")
+        
         do {
             let objects = try query.findObjects()
-                for school in objects {
-                    var locationString = school["city"] as! String
-                    locationString += ", "
-                    locationString += school["state"] as! String
-                    locationString += " "
-                    locationString += school["zip"] as! String
-                    self.schools.append(School(name: school["name"] as! String, enrollment: school["students"] as! String, location: locationString))
-                }
+            
+            if objects.count == 0 {
+                query.cachePolicy = PFCachePolicy.CacheThenNetwork
+            }
+            for school in objects {
+                var locationString = school["city"] as! String
+                locationString += ", "
+                locationString += school["state"] as! String
+                self.schools.append(School(name: school["name"] as! String, enrollment: school["students"] as! String, location: locationString))
+            }
         } catch {
             print(error)
         }
