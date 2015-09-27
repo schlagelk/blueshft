@@ -8,28 +8,46 @@
 
 import Foundation
 
-class School {
+class School: PFObject {
     
-    let name: String
-    let enrollment: String
-    let location: String
+    @NSManaged var name: String
+    @NSManaged var enrollment: String
+    @NSManaged var location: String
+    @NSManaged var image: PFFile
     
-    init(name: String, enrollment: String, location: String) {
+    init(name: String, enrollment: String, city: String, state: String, image: PFFile) {
+        super.init()
+        
+        var locationString = city
+        locationString += ", "
+        locationString += state
+        
         self.name = name
         self.enrollment = enrollment
-        self.location = location
+        self.location = locationString
+        self.image = image
+    }
+    
+    override init() {
+        super.init()
+    }
+    
+    override class func query() -> PFQuery? {
+        let query = PFQuery(className: self.parseClassName())
+        query.orderByDescending("createdAt")
+        return query
     }
 }
 
-//extension School: PFSubclassing {
-//    class func parseClassName() -> String {
-//        return "School"
-//    }
-//    
-//    override class func initialize() {
-//        var onceToken: dispatch_once_t = 0
-//        dispatch_once(&onceToken) {
-//            self.registerSubclass()
-//        }
-//    }
-//}
+extension School: PFSubclassing {
+    class func parseClassName() -> String {
+        return "School"
+    }
+    
+    override class func initialize() {
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
+    }
+}

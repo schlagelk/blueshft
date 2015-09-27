@@ -9,10 +9,9 @@
 import UIKit
 import CoreData
 
-class MasterViewController: UITableViewController {
+class MasterViewController: PFQueryTableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var schools = [School]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,40 +24,41 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        loadSchools()
-    }
-    
-    func loadSchools() {
-        let query = PFQuery(className: "School")
-        query.orderByDescending("createdAt")
-        
-        do {
-            let objects = try query.findObjects()
-            
-            if objects.count == 0 {
-                query.cachePolicy = PFCachePolicy.CacheThenNetwork
-            }
-            for school in objects {
-                var locationString = school["city"] as! String
-                locationString += ", "
-                locationString += school["state"] as! String
-                self.schools.append(School(name: school["name"] as! String, enrollment: school["students"] as! String, location: locationString))
-            }
-        } catch {
-            print(error)
-        }
+
     }
 
     override func viewWillAppear(animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
+        loadObjects()
     }
 
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("SchoolCell", forIndexPath: indexPath) as! SchoolCell
+        let school = object as! School
+
+        cell.schoolImage.file = school.image
+        cell.schoolImage.loadInBackground(nil) { percent in
+            cell.progressView.progress = Float(percent) * 0.01
+            print(percent)
+        }
+        cell.nameLabel.text = school.name
+        cell.locationLabel.text = school.location
+        cell.enrollmentLabel.text = school.enrollment
+        
+        return cell
+    }
+    
+    override func queryForTable() -> PFQuery {
+        let query = School.query()
+        return query!
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func insertNewObject(sender: AnyObject) {
         let alert = UIAlertController(title: "Not Implemented", message:
             "Can't create new schools yet maybe ever, will implement later",
@@ -67,43 +67,61 @@ class MasterViewController: UITableViewController {
             handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
-
+    
     // MARK: - Segues
-
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "showDetail" {
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//            let school = schools[indexPath.row]
-//                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-//                controller.detailItem = school
-//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-//                controller.navigationItem.leftItemsSupplementBackButton = true
-//            }
-//        }
-//    }
-
+    
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //        if segue.identifier == "showDetail" {
+    //            if let indexPath = self.tableView.indexPathForSelectedRow {
+    //            let school = schools[indexPath.row]
+    //                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+    //                controller.detailItem = school
+    //                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+    //                controller.navigationItem.leftItemsSupplementBackButton = true
+    //            }
+    //        }
+    //    }
+    
     // MARK: - Table View
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.schools.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let school = self.schools[indexPath.row]
-        cell.textLabel?.text = school.name
-        cell.detailTextLabel?.text = school.location
-        return cell
-    }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return false
-    }
+    
+    //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    //        return 1
+    //    }
+    //
+    //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        return self.schools.count
+    //    }
+    //    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    //        // Return false if you do not want the specified item to be editable.
+    //        return false
+    //    }
+    
+    //    var schools = [School]()
+    
+    //    func loadSchools() {
+    //        let query = School.query()!
+    //        do {
+    //            let objects = try query.findObjects()
+    //
+    //            if objects.count == 0 {
+    //                query.cachePolicy = PFCachePolicy.CacheThenNetwork
+    //            }
+    //
+    //            if let objects = objects as? [School] {
+    //                loadHomeWall(objects)
+    //            }
+    //        } catch {
+    //            print(error)
+    //        }
+    //    }
+    
+    //    func loadHomeWall(objects: [School]) {
+    //        for school in objects {
+    //            var locationString = school["city"] as! String
+    //            locationString += ", "
+    //            locationString += school["state"] as! String
+    //            self.schools.append(School(name: school["name"] as! String, enrollment: school["students"] as! String, location: locationString, image: school["students"] as! PFFile))
+    //        }
+    //    }
 
 }
-
