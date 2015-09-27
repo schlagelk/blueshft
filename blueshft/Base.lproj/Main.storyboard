@@ -75,7 +75,7 @@
         <scene sceneID="smW-Zh-WAh">
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="blueshft" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="280" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,12 +121,14 @@
                                         <constraint firstItem="FwQ-yL-mCN" firstAttribute="centerX" secondItem="37f-cq-3Eg" secondAttribute="centerX" id="CfU-7b-o1e"/>
                                         <constraint firstItem="3vM-ng-fer" firstAttribute="centerX" secondItem="37f-cq-3Eg" secondAttribute="centerX" id="JxZ-72-LAE"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="jFg-bc-2QM" secondAttribute="trailing" id="Kou-sy-BI0"/>
+                                        <constraint firstAttribute="bottom" secondItem="jFg-bc-2QM" secondAttribute="bottom" id="MKc-jf-OjC"/>
                                         <constraint firstItem="zSh-3w-RpL" firstAttribute="top" secondItem="FwQ-yL-mCN" secondAttribute="bottom" constant="23" id="Nty-Z4-DNJ"/>
                                         <constraint firstItem="zSh-3w-RpL" firstAttribute="top" secondItem="FwQ-yL-mCN" secondAttribute="bottom" constant="23" id="VM7-18-Y9a"/>
                                         <constraint firstItem="LHY-Gv-ssy" firstAttribute="centerY" secondItem="37f-cq-3Eg" secondAttribute="centerY" id="YeF-q0-lyG"/>
                                         <constraint firstItem="jFg-bc-2QM" firstAttribute="centerX" secondItem="37f-cq-3Eg" secondAttribute="centerX" id="emj-5U-3b0"/>
                                         <constraint firstItem="3vM-ng-fer" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="8" id="jSd-y8-Ea6"/>
                                         <constraint firstItem="LHY-Gv-ssy" firstAttribute="centerX" secondItem="37f-cq-3Eg" secondAttribute="centerX" id="l4X-o9-QOD"/>
+                                        <constraint firstItem="jFg-bc-2QM" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="pXq-Vu-Br2"/>
                                         <constraint firstItem="jFg-bc-2QM" firstAttribute="centerY" secondItem="37f-cq-3Eg" secondAttribute="centerY" id="tjd-Sc-jt5"/>
                                         <constraint firstItem="jFg-bc-2QM" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" id="uKL-xE-MSg"/>
                                     </constraints>

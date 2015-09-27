@@ -11,20 +11,18 @@ import Foundation
 class School: PFObject {
     
     @NSManaged var name: String
-    @NSManaged var enrollment: String
-    @NSManaged var location: String
+    @NSManaged var students: String
+    @NSManaged var city: String
+    @NSManaged var state: String
     @NSManaged var image: PFFile
     
-    init(name: String, enrollment: String, city: String, state: String, image: PFFile) {
+    init(name: String, students: String, city: String, state: String, image: PFFile) {
         super.init()
         
-        var locationString = city
-        locationString += ", "
-        locationString += state
-        
         self.name = name
-        self.enrollment = enrollment
-        self.location = locationString
+        self.students = students
+        self.city = city
+        self.state = state
         self.image = image
     }
     

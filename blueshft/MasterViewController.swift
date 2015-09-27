@@ -43,8 +43,8 @@ class MasterViewController: PFQueryTableViewController {
             print(percent)
         }
         cell.nameLabel.text = school.name
-        cell.locationLabel.text = school.location
-        cell.enrollmentLabel.text = school.enrollment
+        cell.locationLabel.text = "\(school.city), \(school.state)"
+        cell.enrollmentLabel.text = school.students
         
         return cell
     }
