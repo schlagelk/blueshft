@@ -14,6 +14,7 @@ class MasterViewController: PFQueryTableViewController {
     var detailViewController: DetailViewController? = nil
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
@@ -24,7 +25,6 @@ class MasterViewController: PFQueryTableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -44,12 +44,12 @@ class MasterViewController: PFQueryTableViewController {
         if let school = object as? School {
             cell!.schoolImage.file = school.image
             cell!.schoolImage.loadInBackground(nil) { percent in
-            cell!.progressView.progress = Float(percent) * 0.01
+                cell!.progressView.progress = Float(percent) * 0.01
                 print(percent)
             }
             cell!.nameLabel.text = school.name
             cell!.locationLabel.text = "\(school.city), \(school.state)"
-            cell!.enrollmentLabel.text = school.students
+            cell!.enrollmentLabel.text = "\(school.students) students"
         } else {
             // we didnt get anything back
         
