@@ -32,7 +32,6 @@ class School: PFObject {
     
     override class func query() -> PFQuery? {
         let query = PFQuery(className: self.parseClassName())
-        query.orderByDescending("createdAt")
         return query
     }
 }

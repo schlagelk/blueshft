@@ -34,23 +34,37 @@ class MasterViewController: PFQueryTableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SchoolCell", forIndexPath: indexPath) as! SchoolCell
-        let school = object as! School
-
-        cell.schoolImage.file = school.image
-        cell.schoolImage.loadInBackground(nil) { percent in
-            cell.progressView.progress = Float(percent) * 0.01
-            print(percent)
-        }
-        cell.nameLabel.text = school.name
-        cell.locationLabel.text = "\(school.city), \(school.state)"
-        cell.enrollmentLabel.text = school.students
+        let cellIdentifier = "SchoolCell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? SchoolCell
         
+        if cell == nil {
+            cell = PFTableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier) as! SchoolCell
+        }
+        
+        if let school = object as? School {
+            cell!.schoolImage.file = school.image
+            cell!.schoolImage.loadInBackground(nil) { percent in
+            cell!.progressView.progress = Float(percent) * 0.01
+                print(percent)
+            }
+            cell!.nameLabel.text = school.name
+            cell!.locationLabel.text = "\(school.city), \(school.state)"
+            cell!.enrollmentLabel.text = school.students
+        } else {
+            // we didnt get anything back
+        
+        }
         return cell
     }
     
     override func queryForTable() -> PFQuery {
         let query = School.query()
+        
+        if self.objects!.count == 0 {
+            query?.cachePolicy = .CacheThenNetwork
+        }
+        query?.orderByDescending("createdAt")
+        self.paginationEnabled = true
         return query!
     }
     
