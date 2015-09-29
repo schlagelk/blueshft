@@ -95,47 +95,11 @@ class MasterViewController: PFQueryTableViewController {
     //            }
     //        }
     //    }
+        override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+            // Return false if you do not want the specified item to be editable.
+            return false
+        }
     
-    // MARK: - Table View
-    
-    //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    //        return 1
-    //    }
-    //
-    //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        return self.schools.count
-    //    }
-    //    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    //        // Return false if you do not want the specified item to be editable.
-    //        return false
-    //    }
-    
-    //    var schools = [School]()
-    
-    //    func loadSchools() {
-    //        let query = School.query()!
-    //        do {
-    //            let objects = try query.findObjects()
-    //
-    //            if objects.count == 0 {
-    //                query.cachePolicy = PFCachePolicy.CacheThenNetwork
-    //            }
-    //
-    //            if let objects = objects as? [School] {
-    //                loadHomeWall(objects)
-    //            }
-    //        } catch {
-    //            print(error)
-    //        }
-    //    }
-    
-    //    func loadHomeWall(objects: [School]) {
-    //        for school in objects {
-    //            var locationString = school["city"] as! String
-    //            locationString += ", "
-    //            locationString += school["state"] as! String
-    //            self.schools.append(School(name: school["name"] as! String, enrollment: school["students"] as! String, location: locationString, image: school["students"] as! PFFile))
-    //        }
-    //    }
+
 
 }
