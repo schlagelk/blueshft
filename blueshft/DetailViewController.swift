@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let regionRadius: CLLocationDistance = 1000
     
-    var detailItem: AnyObject? {
+    var detailItem: School? {
         didSet {
             // Update the view.
             self.configureView()

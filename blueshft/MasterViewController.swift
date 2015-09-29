@@ -51,7 +51,7 @@ class MasterViewController: PFQueryTableViewController {
             cell?.nameLabel.text = school.name
             cell?.locationLabel.text = "\(school.city), \(school.state)"
             cell?.enrollmentLabel.text = "\(school.students) students"
-            self.schools.append(School(name: school.name, students: school.students, city: school.city, state: school.state, image: school.image))
+            self.schools.append(school)
         } else {
             // we didnt get anything back
         

@@ -15,8 +15,9 @@ class School: PFObject {
     @NSManaged var city: String
     @NSManaged var state: String
     @NSManaged var image: PFFile
+    @NSManaged var geoPoint: PFGeoPoint
     
-    init(name: String, students: String, city: String, state: String, image: PFFile) {
+    init(name: String, students: String, city: String, state: String, image: PFFile, geoPoint: PFGeoPoint) {
         super.init()
         
         self.name = name
@@ -24,6 +25,7 @@ class School: PFObject {
         self.city = city
         self.state = state
         self.image = image
+        self.geoPoint = geoPoint
     }
     
     override init() {
