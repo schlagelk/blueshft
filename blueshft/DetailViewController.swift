@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 1500
     
     var detailItem: School? {
         didSet {
@@ -34,8 +34,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-        centerMapOnLocation(initialLocation)
+        setLocationAndCenterOnMap()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +46,13 @@ class DetailViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
             regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func setLocationAndCenterOnMap() {
+        let lat = detailItem?.headquarters.latitude
+        let long = detailItem?.headquarters.longitude
+        let initialLocation = CLLocation(latitude: lat!, longitude: long!)
+        centerMapOnLocation(initialLocation)
     }
 }
 
