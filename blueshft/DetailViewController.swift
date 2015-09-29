@@ -51,8 +51,11 @@ class DetailViewController: UIViewController {
     func setLocationAndCenterOnMap() {
         let lat = detailItem?.headquarters.latitude
         let long = detailItem?.headquarters.longitude
-        let initialLocation = CLLocation(latitude: lat!, longitude: long!)
-        centerMapOnLocation(initialLocation)
+        // improve the hell out of this
+        if long != nil {
+            let initialLocation = CLLocation(latitude: lat!, longitude: long!)
+            centerMapOnLocation(initialLocation)
+        }
     }
 }
 
