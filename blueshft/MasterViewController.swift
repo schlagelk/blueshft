@@ -12,6 +12,7 @@ import CoreData
 class MasterViewController: PFQueryTableViewController {
 
     var detailViewController: DetailViewController? = nil
+    var schools = [School]()
 
     override func viewDidLoad() {
 
@@ -38,7 +39,7 @@ class MasterViewController: PFQueryTableViewController {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? SchoolCell
         
         if cell == nil {
-            cell = PFTableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier) as! SchoolCell
+            cell = PFTableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier) as? SchoolCell
         }
         
         if let school = object as? School {
@@ -50,6 +51,7 @@ class MasterViewController: PFQueryTableViewController {
             cell?.nameLabel.text = school.name
             cell?.locationLabel.text = "\(school.city), \(school.state)"
             cell?.enrollmentLabel.text = "\(school.students) students"
+            self.schools.append(School(name: school.name, students: school.students, city: school.city, state: school.state, image: school.image))
         } else {
             // we didnt get anything back
         
@@ -84,17 +86,18 @@ class MasterViewController: PFQueryTableViewController {
     
     // MARK: - Segues
     
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "showDetail" {
-    //            if let indexPath = self.tableView.indexPathForSelectedRow {
-    //            let school = schools[indexPath.row]
-    //                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-    //                controller.detailItem = school
-    //                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-    //                controller.navigationItem.leftItemsSupplementBackButton = true
-    //            }
-    //        }
-    //    }
+        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if segue.identifier == "showDetail" {
+                if let indexPath = self.tableView.indexPathForSelectedRow {
+                let school = schools[indexPath.row]
+                    let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+                    controller.detailItem = school
+                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                    controller.navigationItem.leftItemsSupplementBackButton = true
+                }
+            }
+        }
+    
         override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
             // Return false if you do not want the specified item to be editable.
             return false
