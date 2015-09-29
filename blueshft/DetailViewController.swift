@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
 
 
     var detailItem: AnyObject? {
@@ -39,7 +41,8 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
-
+extension DetailViewController: MKMapViewDelegate {
 }
 
