@@ -105,6 +105,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		84DEACC11BBA19C600F271A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				845F51481BB7768E0050A80E /* School.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		84DEACC21BBA19CC00F271A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84E942FF1BB87D770092ABAD /* SchoolCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		84DEACC31BBA19D100F271A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84FFC5061BB77169008F2745 /* MasterViewController.swift */,
+				84FFC5081BB77169008F2745 /* DetailViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		84FFC4F51BB77169008F2745 = {
 			isa = PBXGroup;
 			children = (
@@ -132,15 +157,14 @@
 			isa = PBXGroup;
 			children = (
 				84FFC5011BB77169008F2745 /* AppDelegate.swift */,
-				84FFC5061BB77169008F2745 /* MasterViewController.swift */,
-				84FFC5081BB77169008F2745 /* DetailViewController.swift */,
-				84FFC50A1BB77169008F2745 /* Main.storyboard */,
 				84FFC50D1BB77169008F2745 /* Assets.xcassets */,
-				84FFC50F1BB77169008F2745 /* LaunchScreen.storyboard */,
-				84FFC5121BB77169008F2745 /* Info.plist */,
 				84FFC5031BB77169008F2745 /* blueshft.xcdatamodeld */,
-				845F51481BB7768E0050A80E /* School.swift */,
-				84E942FF1BB87D770092ABAD /* SchoolCell.swift */,
+				84DEACC31BBA19D100F271A3 /* Controller */,
+				84FFC5121BB77169008F2745 /* Info.plist */,
+				84FFC50F1BB77169008F2745 /* LaunchScreen.storyboard */,
+				84FFC50A1BB77169008F2745 /* Main.storyboard */,
+				84DEACC11BBA19C600F271A3 /* Model */,
+				84DEACC21BBA19CC00F271A3 /* View */,
 			);
 			path = blueshft;
 			sourceTree = "<group>";
