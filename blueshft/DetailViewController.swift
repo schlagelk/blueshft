@@ -14,9 +14,10 @@ import MapKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
-    
     @IBOutlet weak var mapView: MKMapView!
+    
     let regionRadius: CLLocationDistance = 1500
+    var tours = [Tour]()
     
     var detailItem: School? {
         didSet {
@@ -27,7 +28,6 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-            print(detailItem)
     }
 
     override func viewDidLoad() {
@@ -35,6 +35,7 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         setLocationAndCenterOnMap()
+        getToursForMap()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,10 +52,32 @@ class DetailViewController: UIViewController {
     func setLocationAndCenterOnMap() {
         let lat = detailItem?.headquarters.latitude
         let long = detailItem?.headquarters.longitude
-        // improve the hell out of this
-        if long != nil {
+
+        if long != nil && lat != nil {
             let initialLocation = CLLocation(latitude: lat!, longitude: long!)
             centerMapOnLocation(initialLocation)
+        }
+    }
+    
+    func getToursForMap() {
+        if self.detailItem?.objectId != nil {
+            let query = Tour.query()
+            let parentId: String = self.detailItem!.objectId!
+            query!.whereKey("parentId", equalTo: parentId)
+            
+            query!.findObjectsInBackgroundWithBlock { (objects, error) in
+                if error == nil {
+                    if objects != nil {
+                        for object in objects! {
+                            var newTour = Tour(parentId: object["parentId"] as! String, tourPath: object["tourPath"] as! String)
+                            self.tours.append(newTour)
+                            print("total tours: \(self.tours)")
+                        }
+                    }
+                } else {
+                    print("error: \(error)")
+                }
+            }
         }
     }
 }

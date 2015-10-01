@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B9617882E868787C51F24D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1B536A295FCF87E3822C13 /* libPods.a */; };
 		845F51491BB7768E0050A80E /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F51481BB7768E0050A80E /* School.swift */; settings = {ASSET_TAGS = (); }; };
+		848468C51BBCBE6A0066F141 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848468C41BBCBE6A0066F141 /* Tour.swift */; settings = {ASSET_TAGS = (); }; };
 		84E943001BB87D770092ABAD /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E942FF1BB87D770092ABAD /* SchoolCell.swift */; settings = {ASSET_TAGS = (); }; };
 		84FFC5021BB77169008F2745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC5011BB77169008F2745 /* AppDelegate.swift */; };
 		84FFC5051BB77169008F2745 /* blueshft.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC5031BB77169008F2745 /* blueshft.xcdatamodeld */; };
@@ -42,6 +43,7 @@
 		1E1B536A295FCF87E3822C13 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		845F51431BB7729E0050A80E /* blueshft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "blueshft-Bridging-Header.h"; sourceTree = "<group>"; };
 		845F51481BB7768E0050A80E /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		848468C41BBCBE6A0066F141 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		84E942FF1BB87D770092ABAD /* SchoolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
 		84FFC4FE1BB77169008F2745 /* blueshft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blueshft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FFC5011BB77169008F2745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				845F51481BB7768E0050A80E /* School.swift */,
+				848468C41BBCBE6A0066F141 /* Tour.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848468C51BBCBE6A0066F141 /* Tour.swift in Sources */,
 				84FFC5051BB77169008F2745 /* blueshft.xcdatamodeld in Sources */,
 				84FFC5021BB77169008F2745 /* AppDelegate.swift in Sources */,
 				84FFC5071BB77169008F2745 /* MasterViewController.swift in Sources */,

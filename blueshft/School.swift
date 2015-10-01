@@ -19,7 +19,7 @@ class School: PFObject {
     
     init(name: String, students: String, city: String, state: String, image: PFFile, headquarters: PFGeoPoint) {
         super.init()
-        
+ 
         self.name = name
         self.students = students
         self.city = city
