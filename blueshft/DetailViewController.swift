@@ -17,12 +17,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     let regionRadius: CLLocationDistance = 1500
-    var tours = [Tour]()
+    
+    var tours = [Tour]() {
+        didSet {
+            // after we set a tour on our background thread we should call a method to display tour data on the map w animation
+            print("total tours: \(self.tours)")
+        }
+    }
     
     var detailItem: School? {
         didSet {
             // Update the view.
-            self.configureView()
+//            self.configureView()
         }
     }
 
@@ -67,11 +73,11 @@ class DetailViewController: UIViewController {
             
             query!.findObjectsInBackgroundWithBlock { (objects, error) in
                 if error == nil {
-                    if objects != nil {
-                        for object in objects! {
-                            var newTour = Tour(parentId: object["parentId"] as! String, tourPath: object["tourPath"] as! String)
-                            self.tours.append(newTour)
-                            print("total tours: \(self.tours)")
+                    if objects as? [Tour] != nil {
+                        for tour in objects! {
+                            if let castedTour = tour as? Tour {
+                                self.tours.append(castedTour)
+                            }
                         }
                     }
                 } else {
