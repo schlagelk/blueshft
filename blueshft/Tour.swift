@@ -11,14 +11,14 @@ import Foundation
 class Tour: PFObject {
     
     @NSManaged var parentId: String
-    @NSManaged var tourPath: String
+    @NSManaged var tourName: String
 
     
-    init(parentId: String, tourPath: String) {
+    init(parentId: String, tourName: String) {
         super.init()
         
         self.parentId = parentId
-        self.tourPath = tourPath
+        self.tourName = tourName
 
     }
     

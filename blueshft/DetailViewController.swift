@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
-    let regionRadius: CLLocationDistance = 1500
+    let regionRadius: CLLocationDistance = 1000
     
     var tours = [Tour]() {
         didSet {
