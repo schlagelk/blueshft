@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
         }
     }
     
+    var tourNames = [String]()
     var detailItem: School? {
         didSet {
             // Update the view.
@@ -77,13 +78,45 @@ class DetailViewController: UIViewController {
                         for tour in objects! {
                             if let castedTour = tour as? Tour {
                                 self.tours.append(castedTour)
+                                self.tourNames.append(castedTour.tourName)
                             }
                         }
+                        self.setTourNames()
                     }
                 } else {
                     print("error: \(error)")
                 }
             }
+        }
+    }
+    
+    func setTourNames() {
+        let items = tourNames
+        if items.count > 1 {
+            let segControl = UISegmentedControl(items: items)
+            segControl.selectedSegmentIndex = 0
+            let frame = UIScreen.mainScreen().bounds
+            segControl.frame = CGRectMake(frame.minX + 10, frame.minY + 50, frame.width - 20, frame.height*0.1)
+            segControl.addTarget(self, action: "changeTour:", forControlEvents: .ValueChanged)
+            self.view.addSubview(segControl)
+        } else {
+            // load ze pins for 1 tour only
+        }
+    }
+    
+    func changeTour(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            // load ze pins
+            print(sender.selectedSegmentIndex)
+        case 1:
+            // load ze pins
+            print(sender.selectedSegmentIndex)
+        case 2:
+            // load ze pins
+            print(sender.selectedSegmentIndex)
+        default:
+            print("noting mayn")
         }
     }
 }
