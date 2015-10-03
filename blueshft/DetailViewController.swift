@@ -11,12 +11,12 @@ import MapKit
 
 
 
-class DetailViewController: UIViewController  {
+class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 1500
     
     var tours = [Tour]() {
         didSet {
@@ -38,7 +38,6 @@ class DetailViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mapView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         setLocationAndCenterOnMap()
@@ -63,7 +62,6 @@ class DetailViewController: UIViewController  {
         if long != nil && lat != nil {
             let initialLocation = CLLocation(latitude: lat!, longitude: long!)
             centerMapOnLocation(initialLocation)
-            self.getTourPath()
         }
     }
     
@@ -88,36 +86,7 @@ class DetailViewController: UIViewController  {
             }
         }
     }
-    
-    func getTourPath() {
-        var pointsToUse: [CLLocationCoordinate2D] = []
-        
-        pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(39.743480), CLLocationDegrees(-105.011304))]
-        pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(39.744181), CLLocationDegrees(-105.008107))]
-        pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(39.742787), CLLocationDegrees(-105.006337))]
-        pointsToUse += [CLLocationCoordinate2DMake(CLLocationDegrees(39.742078), CLLocationDegrees(-105.004202))]
-
-        var pointsCount = 4
-        
-        let myPolyline = MKPolyline(coordinates: &pointsToUse, count: pointsCount)
-        
-        mapView.addOverlay(myPolyline)
-
-    }
-    
-
 }
+
 extension DetailViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        
-        if overlay is MKPolyline {
-            var polylineRenderer = MKPolylineRenderer(overlay: overlay)
-            polylineRenderer.strokeColor = UIColor.grayColor()
-            polylineRenderer.alpha = 0.7
-            polylineRenderer.lineWidth = 4
-            
-            return polylineRenderer
-        }
-        return nil
-    }
 }
