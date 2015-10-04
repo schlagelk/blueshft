@@ -25,7 +25,13 @@ class DetailViewController: UIViewController {
         }
     }
     
-    var tourNames = [String]()
+    var toursOnView = [String: String]()
+    
+    var idOfMapOnView: String? {
+        didSet {
+            addPointsToMap(self.idOfMapOnView!)
+        }
+    }
     var detailItem: School? {
         didSet {
             // Update the view.
@@ -78,7 +84,7 @@ class DetailViewController: UIViewController {
                         for tour in objects! {
                             if let castedTour = tour as? Tour {
                                 self.tours.append(castedTour)
-                                self.tourNames.append(castedTour.tourName)
+                                self.toursOnView[castedTour.tourName] = castedTour.objectId!
                             }
                         }
                         self.setTourNames()
@@ -91,7 +97,12 @@ class DetailViewController: UIViewController {
     }
     
     func setTourNames() {
-        let items = tourNames
+        var items: [String] = []
+        var tourIds: [String] = []
+        for (tourName, tourId) in toursOnView {
+            items.append(tourName)
+            tourIds.append(tourId)
+        }
         if items.count > 1 {
             let segControl = UISegmentedControl(items: items)
             segControl.selectedSegmentIndex = 0
@@ -99,24 +110,41 @@ class DetailViewController: UIViewController {
             segControl.frame = CGRectMake(frame.minX + 10, frame.minY + 50, frame.width - 20, frame.height*0.1)
             segControl.addTarget(self, action: "changeTour:", forControlEvents: .ValueChanged)
             self.view.addSubview(segControl)
-        } else {
-            // load ze pins for 1 tour only
         }
+        idOfMapOnView = tourIds.first
     }
     
     func changeTour(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            // load ze pins
-            print(sender.selectedSegmentIndex)
-        case 1:
-            // load ze pins
-            print(sender.selectedSegmentIndex)
-        case 2:
-            // load ze pins
-            print(sender.selectedSegmentIndex)
-        default:
-            print("noting mayn")
+        // reset the idofCurrentMap var
+        let index = sender.selectedSegmentIndex
+        let tourId = toursOnView[sender.titleForSegmentAtIndex(index)!] as! String!
+        idOfMapOnView = tourId
+
+    }
+    
+    func addPointsToMap(tourId: String) {
+        //clear current annotations xcept for user position
+        let annotationsToRemove = mapView.annotations.filter { $0 !== mapView.userLocation }
+        mapView.removeAnnotations(annotationsToRemove)
+        // fetch the points associated with this tour
+        let query = Point.query()
+        let parentId: String = tourId
+        query!.whereKey("parentId", equalTo: parentId)
+        
+        query!.findObjectsInBackgroundWithBlock { (objects, error) in
+            if error == nil {
+                if objects as? [Point] != nil {
+                    for point in objects! {
+                        if let castedPoint = point as? Point {
+                            let annotation = MKPointAnnotation()
+                            annotation.coordinate = CLLocationCoordinate2DMake(castedPoint.coordinates.latitude, castedPoint.coordinates.longitude)
+                            self.mapView.addAnnotation(annotation)
+                        }
+                    }
+                }
+            } else {
+                print("error: \(error)")
+            }
         }
     }
 }
