@@ -138,6 +138,7 @@ class DetailViewController: UIViewController {
                         if let castedPoint = point as? Point {
                             let annotation = MKPointAnnotation()
                             annotation.coordinate = CLLocationCoordinate2DMake(castedPoint.coordinates.latitude, castedPoint.coordinates.longitude)
+                            annotation.title = castedPoint.name
                             self.mapView.addAnnotation(annotation)
                         }
                     }
@@ -146,6 +147,10 @@ class DetailViewController: UIViewController {
                 print("error: \(error)")
             }
         }
+    }
+    
+    func getDirectionsToPoint(toLat: Double, toLong: Double) {
+        
     }
 }
 
