@@ -35,22 +35,16 @@ class DetailViewController: UIViewController {
     }
     var detailItem: School? {
         didSet {
-            // Update the view.
-//            self.configureView()
+            getToursForMap()
         }
-    }
-
-    func configureView() {
-        // Update the user interface for the detail item.
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
         segControl.removeAllSegments()
         setLocationAndCenterOnMap()
-        getToursForMap()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,8 +53,7 @@ class DetailViewController: UIViewController {
     }
     
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-            regionRadius * 2.0, regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -79,7 +72,7 @@ class DetailViewController: UIViewController {
             let query = Tour.query()
             let parentId: String = self.detailItem!.objectId!
             query!.whereKey("parentId", equalTo: parentId)
-            
+
             query!.findObjectsInBackgroundWithBlock { (objects, error) in
                 if error == nil {
                     if objects as? [Tour] != nil {
@@ -109,7 +102,11 @@ class DetailViewController: UIViewController {
         if items.count > 1 {
             var x = 0
             for segmentItem in items {
-                segControl.insertSegmentWithTitle(segmentItem, atIndex: ++x, animated: true)
+                if segmentItem == "Standard" {
+                    segControl.insertSegmentWithTitle(segmentItem, atIndex: 0, animated: true)
+                } else {
+                    segControl.insertSegmentWithTitle(segmentItem, atIndex: ++x, animated: true)
+                }
             }
             segControl.selectedSegmentIndex = 0
             segControl.addTarget(self, action: "changeTour:", forControlEvents: .ValueChanged)
@@ -120,7 +117,7 @@ class DetailViewController: UIViewController {
     func changeTour(sender: UISegmentedControl) {
         // reset the idofCurrentMap var
         let index = sender.selectedSegmentIndex
-        let tourId = toursOnView[sender.titleForSegmentAtIndex(index)!] as! String!
+        let tourId = toursOnView[sender.titleForSegmentAtIndex(index)!]
         idOfMapOnView = tourId
 
     }
