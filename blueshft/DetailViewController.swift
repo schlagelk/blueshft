@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var segControl: UISegmentedControl!
     
     let regionRadius: CLLocationDistance = 1000
     
@@ -47,6 +48,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        segControl.removeAllSegments()
         setLocationAndCenterOnMap()
         getToursForMap()
     }
@@ -103,13 +105,14 @@ class DetailViewController: UIViewController {
             items.append(tourName)
             tourIds.append(tourId)
         }
+        segControl.removeAllSegments()
         if items.count > 1 {
-            let segControl = UISegmentedControl(items: items)
+            var x = 0
+            for segmentItem in items {
+                segControl.insertSegmentWithTitle(segmentItem, atIndex: ++x, animated: true)
+            }
             segControl.selectedSegmentIndex = 0
-            let frame = UIScreen.mainScreen().bounds
-            segControl.frame = CGRectMake(frame.minX + 10, frame.minY + 50, frame.width - 20, frame.height*0.1)
             segControl.addTarget(self, action: "changeTour:", forControlEvents: .ValueChanged)
-            self.view.addSubview(segControl)
         }
         idOfMapOnView = tourIds.first
     }

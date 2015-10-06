@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -40,14 +39,25 @@
                                     <outlet property="delegate" destination="JEX-9P-axG" id="IGj-am-svo"/>
                                 </connections>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-45-G9P">
+                                <rect key="frame" x="0.0" y="64" width="600" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lkJ-f2-sip" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="9ZS-g1-FfJ"/>
                             <constraint firstItem="lkJ-f2-sip" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="FHk-8U-Wgs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lkJ-f2-sip" secondAttribute="trailing" constant="-20" id="SH5-yU-baX"/>
+                            <constraint firstItem="WiK-45-G9P" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="ac1-4M-JeM"/>
                             <constraint firstItem="lkJ-f2-sip" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="fF6-Ll-HFi"/>
+                            <constraint firstItem="WiK-45-G9P" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="i7L-4L-Td2"/>
                             <constraint firstItem="lkJ-f2-sip" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jxU-DT-atG"/>
+                            <constraint firstItem="WiK-45-G9P" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="mCX-bS-B7O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WiK-45-G9P" secondAttribute="trailing" id="sII-bn-kui"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="lkJ-f2-sip" secondAttribute="bottom" id="zsN-y3-qpx"/>
                         </constraints>
                     </view>
@@ -55,6 +65,7 @@
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="mapView" destination="lkJ-f2-sip" id="Ygk-3R-JCm"/>
+                        <outlet property="segControl" destination="WiK-45-G9P" id="Ydq-98-9n5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
