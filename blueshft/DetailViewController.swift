@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var segControl: UISegmentedControl!
     
+    var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 1000
     
     var tours = [Tour]() {
@@ -46,7 +47,19 @@ class DetailViewController: UIViewController {
         setLocationAndCenterOnMap()
 
     }
-
+    
+    func checkLocationAuthorizationStatus() {
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            mapView.showsUserLocation = true
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        checkLocationAuthorizationStatus()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
