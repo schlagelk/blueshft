@@ -8,10 +8,10 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
-
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -43,6 +43,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        locationManager.delegate = self
         segControl.removeAllSegments()
         setLocationAndCenterOnMap()
 
@@ -165,7 +166,4 @@ class DetailViewController: UIViewController {
     func getDirectionsToPoint(toLat: Double, toLong: Double) {
         
     }
-}
-
-extension DetailViewController: MKMapViewDelegate {
 }
