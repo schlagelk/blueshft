@@ -108,6 +108,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     func setTourNames() {
         var items: [String] = []
         var tourIds: [String] = []
+
         for (tourName, tourId) in toursOnView {
             items.append(tourName)
             tourIds.append(tourId)
@@ -116,11 +117,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         if items.count > 1 {
             var x = 0
             for segmentItem in items {
-                if segmentItem == "Standard" {
-                    segControl.insertSegmentWithTitle(segmentItem, atIndex: 0, animated: true)
-                } else {
-                    segControl.insertSegmentWithTitle(segmentItem, atIndex: ++x, animated: true)
-                }
+                segControl.insertSegmentWithTitle(segmentItem, atIndex: ++x, animated: true)
             }
             segControl.selectedSegmentIndex = 0
             segControl.addTarget(self, action: "changeTour:", forControlEvents: .ValueChanged)

@@ -12,7 +12,6 @@ import CoreData
 class MasterViewController: PFQueryTableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var schools = [School]()
 
     override func viewDidLoad() {
 
@@ -27,7 +26,6 @@ class MasterViewController: PFQueryTableViewController {
     override func viewWillAppear(animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
-        loadObjects()
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell? {
@@ -47,7 +45,6 @@ class MasterViewController: PFQueryTableViewController {
             cell?.nameLabel.text = school.name
             cell?.locationLabel.text = "\(school.city), \(school.state)"
             cell?.enrollmentLabel.text = "\(school.students) students"
-            self.schools.append(school)
         } else {
             // we didnt get anything back
         
@@ -71,21 +68,11 @@ class MasterViewController: PFQueryTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func insertNewObject(sender: AnyObject) {
-        let alert = UIAlertController(title: "Not Implemented", message:
-            "Can't create new schools yet maybe ever, will implement later",
-            preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,
-            handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
     // MARK: - Segues
-    
         override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "showDetail" {
                 if let indexPath = self.tableView.indexPathForSelectedRow {
-                let school = schools[indexPath.row]
+                let school = objectAtIndexPath(indexPath) as! School
                     let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                     controller.detailItem = school
                     controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
