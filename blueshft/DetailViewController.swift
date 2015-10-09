@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 
-class DetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class DetailViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -155,7 +155,9 @@ class DetailViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             }
         }
     }
-    
+}
+
+extension DetailViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         guard annotation is MKUserLocation else {
             let identifier = "pin"
