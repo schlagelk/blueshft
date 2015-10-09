@@ -177,4 +177,9 @@ extension DetailViewController: MKMapViewDelegate {
         }
         return nil
     }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let point = view.annotation as! Point
+        print(point)
+    }
 }
