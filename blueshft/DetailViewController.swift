@@ -146,10 +146,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 if objects as? [Point] != nil {
                     for point in objects! {
                         if let castedPoint = point as? Point {
-                            let annotation = MKPointAnnotation()
-                            annotation.coordinate = CLLocationCoordinate2DMake(castedPoint.coordinates.latitude, castedPoint.coordinates.longitude)
-                            annotation.title = castedPoint.name
-                            self.mapView.addAnnotation(annotation)
+                            self.mapView.addAnnotation(castedPoint)
                         }
                     }
                 }

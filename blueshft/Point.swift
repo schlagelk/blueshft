@@ -46,3 +46,13 @@ extension Point: PFSubclassing {
         }
     }
 }
+
+extension Point: MKAnnotation {
+    var title: String! {
+        return name
+    }
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2DMake(coordinates.latitude, coordinates.longitude)
+    }
+}
