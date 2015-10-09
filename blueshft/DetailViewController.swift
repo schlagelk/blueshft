@@ -22,7 +22,6 @@ class DetailViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     var tours = [Tour]() {
         didSet {
-            // after we set a tour on our background thread we should call a method to display tour data on the map w animation
             print("total tours: \(self.tours)")
         }
     }
@@ -160,7 +159,23 @@ class DetailViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         }
     }
     
-    func getDirectionsToPoint(toLat: Double, toLong: Double) {
-        
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        guard annotation is MKUserLocation else {
+            let identifier = "pin"
+            var view: MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
+                dequeuedView.annotation = annotation
+                view = dequeuedView
+            } else {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+                view.animatesDrop = true
+                view.pinColor = MKPinAnnotationColor.Purple
+            }
+            return view
+        }
+        return nil
     }
 }
