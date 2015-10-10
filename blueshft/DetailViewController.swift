@@ -20,6 +20,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 1000
     
+    let simpleTransitionDelegate = SimpleTransitionDelegate()
+    
     var tours = [Tour]() {
         didSet {
             print("total tours: \(self.tours)")
@@ -155,6 +157,14 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+    
+    func showSimpleOverlayForPoint(point: Point) {
+        transitioningDelegate = simpleTransitionDelegate
+        var overlay = OverlayViewController(point: point)
+        overlay.transitioningDelegate = simpleTransitionDelegate
+        presentViewController(overlay, animated: true, completion: nil)
+        
+    }
 }
 
 extension DetailViewController: MKMapViewDelegate {
@@ -180,6 +190,6 @@ extension DetailViewController: MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let point = view.annotation as! Point
-        print(point)
+        showSimpleOverlayForPoint(point)
     }
 }
