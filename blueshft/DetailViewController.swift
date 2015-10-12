@@ -160,8 +160,10 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     
     func showSimpleOverlayForPoint(point: Point) {
         transitioningDelegate = simpleTransitionDelegate
-        var overlay = OverlayViewController(point: point)
+        var overlay = self.storyboard?.instantiateViewControllerWithIdentifier("OverlayVC") as! OverlayViewController
+        overlay.point = point
         overlay.transitioningDelegate = simpleTransitionDelegate
+        overlay.modalPresentationStyle = UIModalPresentationStyle.Custom
         presentViewController(overlay, animated: true, completion: nil)
         
     }

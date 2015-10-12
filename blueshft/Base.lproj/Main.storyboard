@@ -72,6 +72,55 @@
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
+        <!--Overlay View Controller-->
+        <scene sceneID="4QA-7W-srd">
+            <objects>
+                <viewController storyboardIdentifier="OverlayVC" modalPresentationStyle="overFullScreen" id="BPi-h2-9xb" customClass="OverlayViewController" customModule="blueshft" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Ih-Eh-akt"/>
+                        <viewControllerLayoutGuide type="bottom" id="gn3-Ya-iev"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CSP-tU-EMq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xT-4Z-qiU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He6-Kv-KH9">
+                                <rect key="frame" x="279" y="71" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.85158104830000003" blue="0.04893185831" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMC-vw-CDQ">
+                                <rect key="frame" x="281" y="132" width="39" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="BPi-h2-9xb" eventType="touchUpInside" id="CCH-3n-zN9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.6979561237373737" green="0.6979561237373737" blue="0.6979561237373737" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="1xT-4Z-qiU" firstAttribute="centerX" secondItem="CSP-tU-EMq" secondAttribute="centerX" id="7ZZ-fY-k6M"/>
+                            <constraint firstItem="He6-Kv-KH9" firstAttribute="top" secondItem="6Ih-Eh-akt" secondAttribute="bottom" constant="51" id="g6D-WN-lcC"/>
+                            <constraint firstItem="1xT-4Z-qiU" firstAttribute="centerY" secondItem="CSP-tU-EMq" secondAttribute="centerY" id="sKe-lg-vHa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="MMC-vw-CDQ" id="oKg-YW-oQb"/>
+                        <outlet property="contentContainerView" destination="1xT-4Z-qiU" id="oLJ-Rf-0Cx"/>
+                        <outlet property="pointNameLabel" destination="He6-Kv-KH9" id="DaM-UW-WLJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lua-16-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486" y="115"/>
+        </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
