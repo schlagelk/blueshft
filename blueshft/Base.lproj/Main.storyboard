@@ -84,12 +84,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xT-4Z-qiU">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xT-4Z-qiU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2y-Bb-Xfg">
+                                        <rect key="frame" x="159" y="102" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="j2y-Bb-Xfg" firstAttribute="leading" secondItem="1xT-4Z-qiU" secondAttribute="leading" constant="159" id="0mf-cM-GiH"/>
+                                    <constraint firstItem="j2y-Bb-Xfg" firstAttribute="centerX" secondItem="1xT-4Z-qiU" secondAttribute="centerX" id="D9w-MG-tgo"/>
+                                    <constraint firstItem="j2y-Bb-Xfg" firstAttribute="top" secondItem="1xT-4Z-qiU" secondAttribute="top" constant="102" id="SAV-JG-gdh"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He6-Kv-KH9">
-                                <rect key="frame" x="279" y="71" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He6-Kv-KH9">
+                                <rect key="frame" x="179" y="71" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.85158104830000003" blue="0.04893185831" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -107,6 +120,7 @@
                         <color key="backgroundColor" red="0.6979561237373737" green="0.6979561237373737" blue="0.6979561237373737" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1xT-4Z-qiU" firstAttribute="centerX" secondItem="CSP-tU-EMq" secondAttribute="centerX" id="7ZZ-fY-k6M"/>
+                            <constraint firstItem="He6-Kv-KH9" firstAttribute="leading" secondItem="CSP-tU-EMq" secondAttribute="leadingMargin" constant="159" id="Feh-rx-Wtb"/>
                             <constraint firstItem="He6-Kv-KH9" firstAttribute="top" secondItem="6Ih-Eh-akt" secondAttribute="bottom" constant="51" id="g6D-WN-lcC"/>
                             <constraint firstItem="1xT-4Z-qiU" firstAttribute="centerY" secondItem="CSP-tU-EMq" secondAttribute="centerY" id="sKe-lg-vHa"/>
                             <constraint firstItem="1xT-4Z-qiU" firstAttribute="top" secondItem="CSP-tU-EMq" secondAttribute="topMargin" constant="20" id="zcK-Hx-x2l"/>
@@ -115,6 +129,7 @@
                     <connections>
                         <outlet property="closeButton" destination="MMC-vw-CDQ" id="oKg-YW-oQb"/>
                         <outlet property="contentContainerView" destination="1xT-4Z-qiU" id="oLJ-Rf-0Cx"/>
+                        <outlet property="detailsText" destination="j2y-Bb-Xfg" id="L6P-Ov-tuG"/>
                         <outlet property="pointNameLabel" destination="He6-Kv-KH9" id="DaM-UW-WLJ"/>
                     </connections>
                 </viewController>

@@ -29,6 +29,7 @@ class OverlayViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var pointNameLabel: UILabel!
     
+    @IBOutlet weak var detailsText: UILabel!
     @IBAction func closeButtonPressed(sender: AnyObject) {
         presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -49,7 +50,7 @@ class OverlayViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         pointNameLabel.text = "Name: " + point!.name
-        print("text should be \(pointNameLabel.text)")
+        detailsText.text = point!.details
         configureUIElements()
     }
     func configureUIElements() {

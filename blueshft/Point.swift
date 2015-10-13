@@ -13,14 +13,16 @@ class Point: PFObject {
     @NSManaged var parentId: String
     @NSManaged var name: String
     @NSManaged var coordinates: PFGeoPoint
+    @NSManaged var details: String
     
     
-    init(parentId: String, name: String, coordinates: PFGeoPoint) {
+    init(parentId: String, name: String, coordinates: PFGeoPoint, details: String) {
         super.init()
 
         self.parentId = parentId
         self.name = name
         self.coordinates = coordinates
+        self.details = details
 
     }
     
