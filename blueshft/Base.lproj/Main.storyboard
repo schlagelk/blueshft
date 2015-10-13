@@ -109,6 +109,7 @@
                             <constraint firstItem="1xT-4Z-qiU" firstAttribute="centerX" secondItem="CSP-tU-EMq" secondAttribute="centerX" id="7ZZ-fY-k6M"/>
                             <constraint firstItem="He6-Kv-KH9" firstAttribute="top" secondItem="6Ih-Eh-akt" secondAttribute="bottom" constant="51" id="g6D-WN-lcC"/>
                             <constraint firstItem="1xT-4Z-qiU" firstAttribute="centerY" secondItem="CSP-tU-EMq" secondAttribute="centerY" id="sKe-lg-vHa"/>
+                            <constraint firstItem="1xT-4Z-qiU" firstAttribute="top" secondItem="CSP-tU-EMq" secondAttribute="topMargin" constant="20" id="zcK-Hx-x2l"/>
                         </constraints>
                     </view>
                     <connections>

@@ -162,6 +162,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         transitioningDelegate = simpleTransitionDelegate
         var overlay = self.storyboard?.instantiateViewControllerWithIdentifier("OverlayVC") as! OverlayViewController
         overlay.point = point
+        overlay.view.backgroundColor = UIColor(white:1, alpha: 0.5)
         overlay.transitioningDelegate = simpleTransitionDelegate
         overlay.modalPresentationStyle = UIModalPresentationStyle.Custom
         presentViewController(overlay, animated: true, completion: nil)
