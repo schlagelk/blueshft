@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import AddressBook
 
 class Point: PFObject {
     @NSManaged var parentId: String
@@ -56,5 +57,15 @@ extension Point: MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2DMake(coordinates.latitude, coordinates.longitude)
+    }
+    
+    func mapItem() -> MKMapItem {
+        let addressDictionary = [String(kABPersonAddressStreetKey): name]
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
+        
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = title
+        
+        return mapItem
     }
 }

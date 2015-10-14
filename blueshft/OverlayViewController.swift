@@ -33,6 +33,11 @@ class OverlayViewController: UIViewController {
     @IBAction func closeButtonPressed(sender: AnyObject) {
         presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func getDirections(sender: AnyObject) {
+        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     var point: Point?
     
     override func viewDidLoad() {
@@ -40,7 +45,6 @@ class OverlayViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,6 +57,15 @@ class OverlayViewController: UIViewController {
         detailsText.text = point!.details
         configureUIElements()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDirections" {
+            if let destinationVC = segue.destinationViewController as? DetailViewController {
+                destinationVC.getDirectionsToPoint(point!)
+            }
+        }
+    }
+    
     func configureUIElements() {
         contentContainerView.translatesAutoresizingMaskIntoConstraints = false
         contentContainerView.layer.cornerRadius = 5.0;

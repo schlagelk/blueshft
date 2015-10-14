@@ -116,6 +116,14 @@
                                     <action selector="closeButtonPressed:" destination="BPi-h2-9xb" eventType="touchUpInside" id="CCH-3n-zN9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4F-Qk-T6d">
+                                <rect key="frame" x="265" y="198" width="70" height="30"/>
+                                <state key="normal" title="Directions"/>
+                                <connections>
+                                    <action selector="getDirections:" destination="BPi-h2-9xb" eventType="touchUpInside" id="iMp-Nj-3w0"/>
+                                    <segue destination="JEX-9P-axG" kind="show" identifier="showDirections" id="UBn-Op-iWD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.6979561237373737" green="0.6979561237373737" blue="0.6979561237373737" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -255,6 +263,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="UBn-Op-iWD"/>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>

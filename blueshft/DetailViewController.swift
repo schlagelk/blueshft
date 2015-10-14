@@ -168,6 +168,12 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         presentViewController(overlay, animated: true, completion: nil)
         
     }
+    
+    func getDirectionsToPoint(point: Point) {
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        point.mapItem().openInMapsWithLaunchOptions(launchOptions)
+
+    }
 }
 
 extension DetailViewController: MKMapViewDelegate {
