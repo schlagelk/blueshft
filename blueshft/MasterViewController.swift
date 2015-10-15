@@ -59,7 +59,7 @@ class MasterViewController: PFQueryTableViewController {
         let query = School.query()
         
         if searchBar.text != "" {
-            query?.whereKey("name", containsString: searchBar.text)
+            query?.whereKey("name", containsString: searchBar.text?.toProper)
         }
         
         if self.objects!.count == 0 {
@@ -110,4 +110,13 @@ extension MasterViewController: UISearchBarDelegate {
         searchBar.text = ""
         searchBar.resignFirstResponder()
         self.loadObjects()    }
+}
+
+extension String {
+    
+    var toProper:String {
+        var result = lowercaseString
+        result.replaceRange(startIndex...startIndex, with: String(self[startIndex]).capitalizedString)
+        return result
+    }
 }
