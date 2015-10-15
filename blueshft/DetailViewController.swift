@@ -170,7 +170,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getDirectionsToPoint(point: Point) {
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
         point.mapItem().openInMapsWithLaunchOptions(launchOptions)
 
     }
