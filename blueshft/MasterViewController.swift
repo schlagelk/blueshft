@@ -13,6 +13,7 @@ class MasterViewController: PFQueryTableViewController {
 
     var detailViewController: DetailViewController? = nil
 
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class MasterViewController: PFQueryTableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        tableView.reloadData()
+        searchBar.delegate = self
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -55,11 +58,16 @@ class MasterViewController: PFQueryTableViewController {
     override func queryForTable() -> PFQuery {
         let query = School.query()
         
+        if searchBar.text != "" {
+            query?.whereKey("name", containsString: searchBar.text)
+        }
+        
         if self.objects!.count == 0 {
             query?.cachePolicy = .CacheThenNetwork
         }
         query?.orderByDescending("createdAt")
         self.paginationEnabled = true
+        print("text; \(searchBar.text)")
         return query!
     }
     
@@ -69,23 +77,37 @@ class MasterViewController: PFQueryTableViewController {
     }
     
     // MARK: - Segues
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "showDetail" {
-                if let indexPath = self.tableView.indexPathForSelectedRow {
-                let school = objectAtIndexPath(indexPath) as! School
-                    let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                    controller.detailItem = school
-                    controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                    controller.navigationItem.leftItemsSupplementBackButton = true
-                }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+            let school = objectAtIndexPath(indexPath) as! School
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+                controller.detailItem = school
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
-    
-        override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-            // Return false if you do not want the specified item to be editable.
-            return false
-        }
-    
+    }
 
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return false
+    }
+}
 
+extension MasterViewController: UISearchBarDelegate {
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        self.loadObjects()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        self.loadObjects()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        self.loadObjects()    }
 }
