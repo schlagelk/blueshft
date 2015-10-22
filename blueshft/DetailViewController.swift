@@ -18,7 +18,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var segControl: UISegmentedControl!
     
     var locationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 500
     
     let simpleTransitionDelegate = SimpleTransitionDelegate()
     
@@ -46,6 +46,9 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.delegate = self
         segControl.removeAllSegments()
+        mapView.showsCompass = true
+        mapView.showsBuildings = true
+        mapView.mapType = .HybridFlyover
         setLocationAndCenterOnMap()
 
     }
@@ -160,7 +163,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     
     func showSimpleOverlayForPoint(point: Point) {
         transitioningDelegate = simpleTransitionDelegate
-        var overlay = self.storyboard?.instantiateViewControllerWithIdentifier("OverlayVC") as! OverlayViewController
+        let overlay = self.storyboard?.instantiateViewControllerWithIdentifier("OverlayVC") as! OverlayViewController
         overlay.point = point
         overlay.view.backgroundColor = UIColor(white:1, alpha: 0.5)
         overlay.transitioningDelegate = simpleTransitionDelegate
@@ -190,7 +193,7 @@ extension DetailViewController: MKMapViewDelegate {
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
                 view.animatesDrop = true
-                view.pinColor = MKPinAnnotationColor.Purple
+                view.pinTintColor = UIColor.magentaColor()
             }
             return view
         }
