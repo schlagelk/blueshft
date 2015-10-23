@@ -28,6 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         Parse.setApplicationId("jIvWXnpUWC5bwI55jUgRFDgCe7tPMSK18hGFjnop", clientKey: "x2c8ctUDihX4PL6imFUTM5oXdha4P6qAD0TjcDuP")
         // set table view stuff here sure
+        UINavigationBar.appearance().barStyle = .BlackTranslucent
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        if let font = UIFont(name: "HelveticaNeue-Light", size: 20) {
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font]
+        }
 
         return true
     }

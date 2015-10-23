@@ -18,7 +18,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var segControl: UISegmentedControl!
     
     var locationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 500
+    let regionRadius: CLLocationDistance = 350
     
     let simpleTransitionDelegate = SimpleTransitionDelegate()
     
@@ -38,6 +38,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     var detailItem: School? {
         didSet {
             getToursForMap()
+            self.navigationItem.title = detailItem?.name
         }
     }
 
@@ -125,6 +126,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             }
             segControl.selectedSegmentIndex = 0
             segControl.addTarget(self, action: "changeTour:", forControlEvents: .ValueChanged)
+            segControl.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
+            segControl.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Selected)
         }
         idOfMapOnView = tourIds.first
     }
@@ -193,7 +196,7 @@ extension DetailViewController: MKMapViewDelegate {
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
                 view.animatesDrop = true
-                view.pinTintColor = UIColor.magentaColor()
+                view.pinTintColor = UIColor.cyanColor()
             }
             return view
         }
