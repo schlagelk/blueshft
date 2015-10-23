@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // set table view stuff here sure
         UINavigationBar.appearance().barStyle = .BlackTranslucent
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        if let font = UIFont(name: "HelveticaNeue-Light", size: 20) {
+        if let font = UIFont(name: "HelveticaNeue-Light", size: 22) {
             UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font]
         }
 
