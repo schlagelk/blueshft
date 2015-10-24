@@ -8,12 +8,13 @@
 
 import UIKit
 import CoreData
+import QuartzCore
 
 class MasterViewController: PFQueryTableViewController {
 
     var detailViewController: DetailViewController? = nil
-
     @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -93,8 +94,41 @@ class MasterViewController: PFQueryTableViewController {
         // Return false if you do not want the specified item to be editable.
         return false
     }
+    
+    // MARK: Table Cell Animation
+    var preventAnimation = Set<NSIndexPath>()
+    
+    let TipInCellAnimatorStartTransform:CATransform3D = {
+        let rotationDegrees: CGFloat = -15.0
+        let rotationRadians: CGFloat = rotationDegrees * (CGFloat(M_PI)/180.0)
+        let offset = CGPointMake(-20, -20)
+        var startTransform = CATransform3DIdentity
+        startTransform = CATransform3DRotate(CATransform3DIdentity, rotationRadians, 0.0, 0.0, 1.0)
+        startTransform = CATransform3DTranslate(startTransform, offset.x, offset.y, 0.0)
+        
+        return startTransform
+    }()
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if !preventAnimation.contains(indexPath) {
+            preventAnimation.insert(indexPath)
+            self.animate(cell)
+        }
+    }
+    
+    func animate(cell: UITableViewCell) {
+        let view = cell.contentView
+        view.layer.transform = TipInCellAnimatorStartTransform
+        view.layer.opacity = 0.8
+        
+        UIView.animateWithDuration(0.4) {
+            view.layer.transform = CATransform3DIdentity
+            view.layer.opacity = 1
+        }
+    }
 }
 
+//MARK: Search Bar Delegate
 extension MasterViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
