@@ -53,7 +53,7 @@ class OverlayViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        pointNameLabel.text = "Name: " + point!.name
+        pointNameLabel.text = point!.name
         detailsText.text = point!.details
         configureUIElements()
     }
@@ -71,6 +71,5 @@ class OverlayViewController: UIViewController {
         contentContainerView.layer.cornerRadius = 5.0;
         
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.tintColor = UIColor.whiteColor()
     }
 }
