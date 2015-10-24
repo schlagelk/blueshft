@@ -109,7 +109,11 @@ extension MasterViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
-        self.loadObjects()    }
+        self.loadObjects()
+    }
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        self.loadObjects()
+    }
 }
 
 extension String {
