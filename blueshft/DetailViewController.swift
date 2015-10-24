@@ -35,6 +35,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             addPointsToMap(self.idOfMapOnView!)
         }
     }
+    
     var detailItem: School? {
         didSet {
             getToursForMap()
@@ -66,11 +67,13 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidAppear(animated)
         checkLocationAuthorizationStatus()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Map Stuff
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
@@ -183,11 +186,11 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
 }
 
 extension DetailViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView?, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         guard annotation is MKUserLocation else {
             let identifier = "pin"
             var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
+            if let dequeuedView = mapView!.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             } else {
