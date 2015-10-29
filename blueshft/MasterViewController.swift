@@ -84,8 +84,6 @@ class MasterViewController: PFQueryTableViewController {
             let school = objectAtIndexPath(indexPath) as! School
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = school
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }

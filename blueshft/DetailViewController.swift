@@ -52,7 +52,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         mapView.showsBuildings = true
         mapView.mapType = .HybridFlyover
         setLocationAndCenterOnMap()
-
     }
     
     func checkLocationAuthorizationStatus() {
