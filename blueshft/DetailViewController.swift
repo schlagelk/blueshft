@@ -13,11 +13,10 @@ import CoreLocation
 
 class DetailViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var segControl: UISegmentedControl!
     
-    var locationManager = CLLocationManager()
+    lazy var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 550
     
     let simpleTransitionDelegate = SimpleTransitionDelegate()
@@ -188,27 +187,35 @@ extension DetailViewController: MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        guard annotation is MKUserLocation else {
-            let identifier = "pin"
-            var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
-                dequeuedView.annotation = annotation
-                view = dequeuedView
-            } else {
-                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                view.canShowCallout = true
-                view.calloutOffset = CGPoint(x: -5, y: 5)
-                view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
-                view.animatesDrop = true
-                view.pinTintColor = UIColor.cyanColor()
-            }
-            return view
+        guard let annotation = annotation as? Point else { return nil }
+        
+        let identifier = "PointPin"
+        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
         }
-        return nil
+        
+        annotationView!.annotation = annotation
+        annotationView!.animatesDrop = true
+        
+        annotationView!.pinTintColor = UIColor.cyanColor()
+        
+        let detailView = UIView.loadFromNibNamed(identifier) as! PointPin
+        detailView.pointDesc.text = annotation.details
+        annotationView!.detailCalloutAccessoryView = detailView
+        return annotationView
     }
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let point = view.annotation as! Point
-        showSimpleOverlayForPoint(point)
+//    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+////        let point = view.annotation as! Point
+////        showSimpleOverlayForPoint(point)
+//    }
+}
+
+extension UIView {
+    class func loadFromNibNamed(nibNamed: String, bundle: NSBundle? = nil) -> UIView? {
+        return UINib(nibName: nibNamed, bundle: bundle).instantiateWithOwner(nil, options: nil).first as? UIView
     }
 }
