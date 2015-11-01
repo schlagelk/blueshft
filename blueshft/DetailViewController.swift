@@ -48,9 +48,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.delegate = self
         segControl.removeAllSegments()
-        mapView.showsCompass = true
-        mapView.showsBuildings = true
-        mapView.mapType = .HybridFlyover
+        setupMap()
         setLocationAndCenterOnMap()
     }
     
@@ -71,17 +69,24 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //MARK: Map Stuff
+}
+
+extension DetailViewController: MKMapViewDelegate {
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    func setupMap() {
+        mapView.showsCompass = true
+        mapView.showsBuildings = true
+        mapView.mapType = .HybridFlyover
+    }
+    
     func setLocationAndCenterOnMap() {
         let lat = detailItem?.headquarters.latitude
         let long = detailItem?.headquarters.longitude
-
+        
         if long != nil && lat != nil {
             let initialLocation = CLLocation(latitude: lat!, longitude: long!)
             centerMapOnLocation(initialLocation)
@@ -93,7 +98,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             let query = Tour.query()
             let parentId: String = self.detailItem!.objectId!
             query!.whereKey("parentId", equalTo: parentId)
-
+            
             query!.findObjectsInBackgroundWithBlock { (objects, error) in
                 if error == nil {
                     if objects as? [Tour] != nil {
@@ -115,7 +120,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     func setTourNames() {
         var items: [String] = []
         var tourIds: [String] = []
-
+        
         for (tourName, tourId) in toursOnView {
             items.append(tourName)
             tourIds.append(tourId)
@@ -139,7 +144,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         let index = sender.selectedSegmentIndex
         let tourId = toursOnView[sender.titleForSegmentAtIndex(index)!]
         idOfMapOnView = tourId
-
     }
     
     func addPointsToMap(tourId: String) {
@@ -180,16 +184,14 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     func getDirectionsToPoint(point: Point) {
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
         point.mapItem().openInMapsWithLaunchOptions(launchOptions)
-
+        
     }
-}
-
-extension DetailViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView?, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKUserLocation else {
             let identifier = "pin"
             var view: MKPinAnnotationView
-            if let dequeuedView = mapView!.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
+            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             } else {
