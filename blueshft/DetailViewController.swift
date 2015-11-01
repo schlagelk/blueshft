@@ -200,6 +200,7 @@ extension DetailViewController: MKMapViewDelegate {
         annotationView!.annotation = annotation
         annotationView!.animatesDrop = true
         
+        // if type of pin is recreational, academic, general purpose set here
         annotationView!.pinTintColor = UIColor.cyanColor()
         
         let detailView = UIView.loadFromNibNamed(identifier) as! PointPin

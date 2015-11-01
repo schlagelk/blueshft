@@ -6,29 +6,54 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PointPin" customModule="blueshft" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+        <view contentMode="scaleToFill" id="uH7-e3-t5d" customClass="PointPin" customModule="blueshft" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="196"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grc-sk-pHB">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="19"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="1Jh-7j-92u">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="196"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="gkp-xl-qZX">
+                            <rect key="frame" x="0.0" y="0.0" width="110" height="154"/>
+                            <animations/>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2ph-pb-10v">
+                            <rect key="frame" x="0.0" y="167" width="240" height="29"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a building where you can do really cool things." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeT-iA-4Vm">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="29"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                    <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <animations/>
+                        </stackView>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                    <color key="textColor" red="0.18980823863636365" green="0.18980823863636365" blue="0.18980823863636365" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <constraints>
+                        <constraint firstItem="2ph-pb-10v" firstAttribute="leading" secondItem="1Jh-7j-92u" secondAttribute="leading" id="MeO-Af-C1S"/>
+                        <constraint firstAttribute="width" constant="240" id="P7a-qW-2i4"/>
+                        <constraint firstAttribute="trailing" secondItem="2ph-pb-10v" secondAttribute="trailing" id="SXP-Jd-h7N"/>
+                        <constraint firstAttribute="height" constant="196" id="hNh-9z-yhF"/>
+                        <constraint firstAttribute="bottom" secondItem="2ph-pb-10v" secondAttribute="bottom" id="wOB-Vk-BWU"/>
+                    </constraints>
+                </stackView>
             </subviews>
             <animations/>
             <constraints>
-                <constraint firstItem="grc-sk-pHB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BVt-GJ-j8x"/>
-                <constraint firstAttribute="trailing" secondItem="grc-sk-pHB" secondAttribute="trailing" id="HiK-7Q-sRc"/>
-                <constraint firstItem="grc-sk-pHB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PbK-cv-XUb"/>
+                <constraint firstItem="1Jh-7j-92u" firstAttribute="top" secondItem="uH7-e3-t5d" secondAttribute="top" id="FKJ-Hb-fMq"/>
+                <constraint firstItem="1Jh-7j-92u" firstAttribute="leading" secondItem="uH7-e3-t5d" secondAttribute="leading" id="JMA-Zy-OK4"/>
+                <constraint firstAttribute="bottom" secondItem="1Jh-7j-92u" secondAttribute="bottom" id="n7Z-zv-ep2"/>
+                <constraint firstAttribute="trailing" secondItem="1Jh-7j-92u" secondAttribute="trailing" id="pmN-8L-b0K"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="pointDesc" destination="grc-sk-pHB" id="oEi-8a-NK0"/>
+                <outlet property="pointDesc" destination="oeT-iA-4Vm" id="jUR-A0-X7j"/>
             </connections>
+            <point key="canvasLocation" x="296" y="564"/>
         </view>
     </objects>
 </document>
