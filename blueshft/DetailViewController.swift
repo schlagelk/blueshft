@@ -216,7 +216,7 @@ extension DetailViewController: MKMapViewDelegate {
             let color = UIColor.blackColor()
             annotationView!.pinTintColor = color
             detailView.typeDesc.backgroundColor = color
-        case "arts & entertainment":
+        case "arts and entertainment":
             let color = UIColor.orangeColor()
             annotationView!.pinTintColor = color
             detailView.typeDesc.backgroundColor = color
