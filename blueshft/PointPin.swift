@@ -12,5 +12,6 @@ import MapKit
 class PointPin: UIView {
 
     @IBOutlet weak var pointDesc: UILabel!
+    @IBOutlet weak var typeDesc: UILabel!
 
 }

@@ -8,22 +8,24 @@
 
 import Foundation
 import MapKit
-import AddressBook
+import Contacts
 
 class Point: PFObject {
     @NSManaged var parentId: String
     @NSManaged var name: String
     @NSManaged var coordinates: PFGeoPoint
     @NSManaged var details: String
+    @NSManaged var type: String
     
     
-    init(parentId: String, name: String, coordinates: PFGeoPoint, details: String) {
+    init(parentId: String, name: String, coordinates: PFGeoPoint, details: String, type: String) {
         super.init()
 
         self.parentId = parentId
         self.name = name
         self.coordinates = coordinates
         self.details = details
+        self.type = type
 
     }
     
@@ -60,7 +62,7 @@ extension Point: MKAnnotation {
     }
     
     func mapItem() -> MKMapItem {
-        let addressDictionary = [String(kABPersonAddressStreetKey): name]
+        let addressDictionary = [String(CNPostalAddressStreetKey): name]
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
         
         let mapItem = MKMapItem(placemark: placemark)

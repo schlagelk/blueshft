@@ -200,12 +200,27 @@ extension DetailViewController: MKMapViewDelegate {
         annotationView!.annotation = annotation
         annotationView!.animatesDrop = true
         
-        // if type of pin is recreational, academic, general purpose set here
-        annotationView!.pinTintColor = UIColor.cyanColor()
-        
         let detailView = UIView.loadFromNibNamed(identifier) as! PointPin
         detailView.pointDesc.text = annotation.details
+        detailView.typeDesc.text = annotation.type
         annotationView!.detailCalloutAccessoryView = detailView
+        
+        // set colors for map annotations and details
+        // need to figure out colors and shit
+        switch annotation.type {
+        case "campus life":
+            annotationView!.pinTintColor = UIColor.cyanColor()
+            detailView.typeDesc.backgroundColor = UIColor.cyanColor()
+        case "academic":
+            annotationView!.pinTintColor = UIColor.orangeColor()
+            detailView.typeDesc.backgroundColor = UIColor.orangeColor()
+        case "arts & entertainment":
+            annotationView!.pinTintColor = UIColor.blueColor()
+            detailView.typeDesc.backgroundColor = UIColor.blueColor()
+        default:
+            annotationView!.pinTintColor = UIColor.yellowColor()
+            detailView.typeDesc.backgroundColor = UIColor.yellowColor()
+        }
         return annotationView
     }
     
