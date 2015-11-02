@@ -209,17 +209,21 @@ extension DetailViewController: MKMapViewDelegate {
         // need to figure out colors and shit
         switch annotation.type {
         case "campus life":
-            annotationView!.pinTintColor = UIColor.cyanColor()
-            detailView.typeDesc.backgroundColor = UIColor.cyanColor()
+            let color = UIColor.cyanColor()
+            annotationView!.pinTintColor = color
+            detailView.typeDesc.backgroundColor = color
         case "academic":
-            annotationView!.pinTintColor = UIColor.orangeColor()
-            detailView.typeDesc.backgroundColor = UIColor.orangeColor()
+            let color = UIColor.blackColor()
+            annotationView!.pinTintColor = color
+            detailView.typeDesc.backgroundColor = color
         case "arts & entertainment":
-            annotationView!.pinTintColor = UIColor.blueColor()
-            detailView.typeDesc.backgroundColor = UIColor.blueColor()
+            let color = UIColor.orangeColor()
+            annotationView!.pinTintColor = color
+            detailView.typeDesc.backgroundColor = color
         default:
-            annotationView!.pinTintColor = UIColor.yellowColor()
-            detailView.typeDesc.backgroundColor = UIColor.yellowColor()
+            let color = UIColor.blueColor()
+            annotationView!.pinTintColor = color
+            detailView.typeDesc.backgroundColor = color
         }
         return annotationView
     }
