@@ -44,6 +44,11 @@
                         <constraint firstAttribute="height" constant="196" id="hNh-9z-yhF"/>
                         <constraint firstAttribute="bottom" secondItem="2ph-pb-10v" secondAttribute="bottom" id="wOB-Vk-BWU"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="hNh-9z-yhF"/>
+                        </mask>
+                    </variation>
                 </stackView>
             </subviews>
             <animations/>
