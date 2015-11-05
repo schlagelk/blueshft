@@ -202,28 +202,31 @@ extension DetailViewController: MKMapViewDelegate {
         
         let detailView = UIView.loadFromNibNamed(identifier) as! PointPin
         detailView.pointDesc.text = annotation.details
-        detailView.typeDesc.text = annotation.type
         annotationView!.detailCalloutAccessoryView = detailView
         
         // set colors for map annotations and details
         // need to figure out colors and shit
         switch annotation.type {
-        case "campus life":
+        case 4:
             let color = UIColor.cyanColor()
             annotationView!.pinTintColor = color
             detailView.typeDesc.backgroundColor = color
-        case "academic":
+            detailView.typeDesc.text = "Arts"
+        case 3:
             let color = UIColor.blackColor()
             annotationView!.pinTintColor = color
             detailView.typeDesc.backgroundColor = color
-        case "arts and entertainment":
+            detailView.typeDesc.text = "Academic"
+        case 2:
             let color = UIColor.orangeColor()
             annotationView!.pinTintColor = color
             detailView.typeDesc.backgroundColor = color
+            detailView.typeDesc.text = "Life"
         default:
             let color = UIColor.blueColor()
             annotationView!.pinTintColor = color
             detailView.typeDesc.backgroundColor = color
+            detailView.typeDesc.text = "General"
         }
         return annotationView
     }
