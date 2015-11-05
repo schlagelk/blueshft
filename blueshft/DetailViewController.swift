@@ -173,11 +173,9 @@ extension DetailViewController: MKMapViewDelegate {
         transitioningDelegate = simpleTransitionDelegate
         let overlay = self.storyboard?.instantiateViewControllerWithIdentifier("OverlayVC") as! OverlayViewController
         overlay.point = point
-        overlay.view.backgroundColor = UIColor(white:1, alpha: 0.5)
         overlay.transitioningDelegate = simpleTransitionDelegate
         overlay.modalPresentationStyle = UIModalPresentationStyle.Custom
         presentViewController(overlay, animated: true, completion: nil)
-        
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -198,6 +196,7 @@ extension DetailViewController: MKMapViewDelegate {
         detailView.pointDesc.text = annotation.details
         annotationView!.detailCalloutAccessoryView = detailView
         detailView.point = annotation
+        detailView.detailVC = self
         
         // set colors for map annotations and details
         // need to figure out colors and shit

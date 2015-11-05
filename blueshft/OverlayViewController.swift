@@ -34,10 +34,6 @@ class OverlayViewController: UIViewController {
         presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func getDirections(sender: AnyObject) {
-        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     var point: Point?
     
     override func viewDidLoad() {

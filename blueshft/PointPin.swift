@@ -19,9 +19,19 @@ class PointPin: UIView {
             // maybe load array of images here?
         }
     }
+    
+    var detailVC: DetailViewController?
 
+    @IBAction func seeMoreAboutPoint(sender: AnyObject) {
+        if let point = self.point {
+            detailVC?.showSimpleOverlayForPoint(point)
+        }
+    }
+    
     @IBAction func getDirectionsToPoint(sender: AnyObject) {
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
-        self.point?.mapItem().openInMapsWithLaunchOptions(launchOptions)
+        if let point = self.point {
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+            point.mapItem().openInMapsWithLaunchOptions(launchOptions)
+        }
     }
 }
