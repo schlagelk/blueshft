@@ -58,13 +58,13 @@ class OverlayViewController: UIViewController {
         configureUIElements()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDirections" {
-            if let destinationVC = segue.destinationViewController as? DetailViewController {
-                destinationVC.getDirectionsToPoint(point!)
-            }
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "showDirections" {
+//            if let destinationVC = segue.destinationViewController as? DetailViewController {
+//                destinationVC.getDirectionsToPoint(point!)
+//            }
+//        }
+//    }
     
     func configureUIElements() {
         contentContainerView.translatesAutoresizingMaskIntoConstraints = false

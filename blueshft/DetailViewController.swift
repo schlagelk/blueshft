@@ -180,12 +180,6 @@ extension DetailViewController: MKMapViewDelegate {
         
     }
     
-    func getDirectionsToPoint(point: Point) {
-        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
-        point.mapItem().openInMapsWithLaunchOptions(launchOptions)
-        
-    }
-    
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? Point else { return nil }
         
@@ -203,6 +197,7 @@ extension DetailViewController: MKMapViewDelegate {
         let detailView = UIView.loadFromNibNamed(identifier) as! PointPin
         detailView.pointDesc.text = annotation.details
         annotationView!.detailCalloutAccessoryView = detailView
+        detailView.point = annotation
         
         // set colors for map annotations and details
         // need to figure out colors and shit
