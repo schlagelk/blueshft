@@ -27,6 +27,11 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
     @IBAction func closeThumbs(sender: AnyObject) {
         presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBOutlet var viewContainer: UIView!
+    
+    @IBOutlet weak var closeButton: UIButton!
+    
     var photos = NSMutableOrderedSet()
     
     let imageCache = NSCache()
@@ -47,6 +52,8 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         // Do any additional setup after loading the view.
         setupView()
         populatePhotos()
+        self.view.addSubview(viewContainer)
+        self.view.bringSubviewToFront(viewContainer)
     }
     
     override func didReceiveMemoryWarning() {
@@ -116,6 +123,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         refreshControl.tintColor = UIColor.whiteColor()
         refreshControl.addTarget(self, action: "handleRefresh", forControlEvents: .ValueChanged)
         collectionView!.addSubview(refreshControl)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -127,9 +135,9 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
     
 //    override func scrollViewDidScroll(scrollView: UIScrollView) {
 //        // Populate more photos when the scrollbar indicator is at 80%
-//        if scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8 {
-//            populatePhotos()
-//        }
+////        if scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8 {
+////            populatePhotos()
+////        }
 //    }
     
     func populatePhotos() {
