@@ -100,6 +100,29 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <view key="backgroundView" contentMode="scaleToFill" id="3Xc-wT-1Ii">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRs-gv-tFf">
+                                    <rect key="frame" x="292" y="421" width="46" height="30"/>
+                                    <animations/>
+                                    <color key="backgroundColor" red="0.93333333330000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="Close">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="closeThumbs:" destination="BPi-h2-9xb" eventType="touchUpInside" id="d0U-Tl-h2d"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="LRs-gv-tFf" secondAttribute="bottom" constant="10" id="UXP-v9-VIT"/>
+                                <constraint firstItem="LRs-gv-tFf" firstAttribute="centerX" secondItem="3Xc-wT-1Ii" secondAttribute="centerX" id="erP-Bf-cea"/>
+                            </constraints>
+                        </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yMo-Rp-SQj">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>

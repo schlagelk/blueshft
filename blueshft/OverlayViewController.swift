@@ -24,9 +24,9 @@ import UIKit
 
 class OverlayViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
   
-//    @IBAction func closeButtonPressed(sender: AnyObject) {
-//        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
-//    }
+    @IBAction func closeThumbs(sender: AnyObject) {
+        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
     var photos = NSMutableOrderedSet()
     
     let imageCache = NSCache()
