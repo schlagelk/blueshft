@@ -85,9 +85,9 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
     }
     
     // Used to display a spinner at the bottom when we're waiting to load more photos
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        return collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: PhotoBrowserFooterViewIdentifier, forIndexPath: indexPath) 
-    }
+//    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+//        return collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: PhotoBrowserFooterViewIdentifier, forIndexPath: indexPath) 
+//    }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 //        performSegueWithIdentifier("ShowPhoto", sender: (self.photos.objectAtIndex(indexPath.item) as! PhotoInfo).id)
@@ -100,7 +100,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         
         // Using a standard UICollectionViewFlowLayout, displaying 3 cells in each row
         let layout = UICollectionViewFlowLayout()
-        let itemWidth = (view.bounds.size.width - 2) / 3
+        let itemWidth = (view.bounds.size.width - 2) / 2
         layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         layout.minimumInteritemSpacing = 1.0
         layout.minimumLineSpacing = 1.0
@@ -108,7 +108,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         
         collectionView!.collectionViewLayout = layout
         
-        navigationItem.title = "Featured"
+//        navigationItem.title = "bleh"
         
         collectionView!.registerClass(PhotoBrowserCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: PhotoBrowserCellIdentifier)
         collectionView!.registerClass(PhotoBrowserCollectionViewLoadingCell.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: PhotoBrowserFooterViewIdentifier)
@@ -125,23 +125,24 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
 //        }
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        // Populate more photos when the scrollbar indicator is at 80%
-        if scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8 {
-            populatePhotos()
-        }
-    }
+//    override func scrollViewDidScroll(scrollView: UIScrollView) {
+//        // Populate more photos when the scrollbar indicator is at 80%
+//        if scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8 {
+//            populatePhotos()
+//        }
+//    }
     
     func populatePhotos() {
-//        if populatingPhotos { // Do not populate more photos if we're in the process of loading a page
-//            return
-//        }
-//        
-//        populatingPhotos = true
+        if populatingPhotos { // Do not populate more photos if we're in the process of loading a page
+            return
+        }
+//
+        populatingPhotos = true
         
         let query = Thumbnail.query()
         let parentId: String = "dcEbZ8pUqv"
         query!.whereKey("parentId", equalTo: parentId)
+        query?.limit = 10
         
         query!.findObjectsInBackgroundWithBlock { (objects, error) in
             if error == nil {
@@ -150,7 +151,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
                     self.collectionView!.reloadData()
                 }
             }
-//            self.populatingPhotos = false
+            self.populatingPhotos = false
         }
     }
     
