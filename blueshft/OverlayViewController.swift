@@ -27,35 +27,6 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
 //    @IBAction func closeButtonPressed(sender: AnyObject) {
 //        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
 //    }
-    
-    var point: Point?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        setupView()
-        
-        let query = Thumbnail.query()
-        let parentId: String = "dcEbZ8pUqv"
-        query!.whereKey("parentId", equalTo: parentId)
-        
-        query!.findObjectsInBackgroundWithBlock { (objects, error) in
-            if error == nil {
-                if objects as? [Thumbnail] != nil {
-                    for imageObjects in objects! {
-                        if let castedImageObject = imageObjects as? Thumbnail {
-                            self.photos.addObject(castedImageObject)
-                        }
-                    }
-                    self.collectionView!.reloadData()
-                }
-            } else {
-                print("error: \(error)")
-            }
-        }
-    }
-    
     var photos = NSMutableOrderedSet()
     
     let imageCache = NSCache()
@@ -67,6 +38,16 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
     
     let PhotoBrowserCellIdentifier = "PhotoBrowserCell"
     let PhotoBrowserFooterViewIdentifier = "PhotoBrowserFooterView"
+    
+    var point: Point?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        setupView()
+        populatePhotos()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,10 +76,9 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PhotoBrowserCellIdentifier, forIndexPath: indexPath) as! PhotoBrowserCollectionViewCell
 //        
 //        cell.imageView.image = nil
-//        
-//        //MARK: get photos from PARSE
+//
         let image = photos.objectAtIndex(indexPath.row) as! Thumbnail
-        cell.imageView.image = UIImage(named: "2")
+
         cell.imageView.file = image.thumbnail
         cell.imageView.loadInBackground()
         return cell
@@ -158,42 +138,20 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
 //        }
 //        
 //        populatingPhotos = true
-//        //MARK: get photos from PARSE
-//        let query = Image.query()
-//        let parentId: String = "dcEbZ8pUqv"
-//        query!.whereKey("parentId", equalTo: parentId)
-//
-//        query!.findObjectsInBackgroundWithBlock { (objects, error) in
-//            if error == nil {
-//                if objects as? [Image] != nil {
-//                    for imageObjects in objects! {
-//                        if let castedImageObject = imageObjects as? Image {
-//                            let image = castedImageObject.thumbnail
-//                            print("col obj: \(castedImageObject)")
-//                            image.getDataInBackgroundWithBlock {
-//                                (imageData: NSData?, error: NSError?) -> Void in
-//                                if error == nil {
-//                                    if let imageData = imageData {
-//                                        let lastItem = self.photos.count
-//                                        self.photos.addObject(imageData)
-//                                        let indexPaths = (lastItem..<self.photos.count).map { NSIndexPath(forItem: $0, inSection: 0) }
-//                                        self.collectionView!.insertItemsAtIndexPaths(indexPaths)
-//                                        self.currentPage++
-//                                    }
-//                                } else {
-//                                    print("something happened while downloading thumbs")
-//                                }
-//                            }
-//                            self.populatingPhotos = false
-//                        }
-//                    }
-//                }
-//            } else {
-//                print("error: \(error)")
-//            }
-//        }
-
-
+        
+        let query = Thumbnail.query()
+        let parentId: String = "dcEbZ8pUqv"
+        query!.whereKey("parentId", equalTo: parentId)
+        
+        query!.findObjectsInBackgroundWithBlock { (objects, error) in
+            if error == nil {
+                if objects as? [Thumbnail] != nil {
+                    self.photos.addObjectsFromArray(objects!)
+                    self.collectionView!.reloadData()
+                }
+            }
+//            self.populatingPhotos = false
+        }
     }
     
     func handleRefresh() {
