@@ -87,6 +87,25 @@
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
+        <!--Photo Viewer View Controller-->
+        <scene sceneID="MPW-iR-nHy">
+            <objects>
+                <viewController id="eYb-4c-uR3" customClass="PhotoViewerViewController" customModule="blueshft" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dqK-gT-7YH"/>
+                        <viewControllerLayoutGuide type="bottom" id="yaK-g0-y44"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ufW-WA-G8D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qxa-bd-LWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="115"/>
+        </scene>
         <!--Overlay View Controller-->
         <scene sceneID="4QA-7W-srd">
             <objects>
@@ -122,6 +141,7 @@
                     <connections>
                         <outlet property="closeButton" destination="LRs-gv-tFf" id="SeT-xT-n9V"/>
                         <outlet property="viewContainer" destination="Cj0-4i-bIn" id="jrf-Ak-Udk"/>
+                        <segue destination="eYb-4c-uR3" kind="show" identifier="ShowPhoto" id="Dcd-Cv-6xG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lua-16-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>

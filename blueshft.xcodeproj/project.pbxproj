@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B9617882E868787C51F24D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1B536A295FCF87E3822C13 /* libPods.a */; };
+		844E458A1BFABBAC008556A9 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E45891BFABBAC008556A9 /* PhotoViewerViewController.swift */; };
+		844E458C1BFABE4F008556A9 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E458B1BFABE4F008556A9 /* Photo.swift */; };
 		84537C741BC9B8AC00837C51 /* DetailPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84537C731BC9B8AC00837C51 /* DetailPresentationController.swift */; };
 		84537C761BC9BC6400837C51 /* SimpleTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84537C751BC9BC6400837C51 /* SimpleTransitioner.swift */; };
 		84537C781BC9C6DF00837C51 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84537C771BC9C6DF00837C51 /* OverlayViewController.swift */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		1E1B536A295FCF87E3822C13 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		844E45891BFABBAC008556A9 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		844E458B1BFABE4F008556A9 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		84537C731BC9B8AC00837C51 /* DetailPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresentationController.swift; sourceTree = "<group>"; };
 		84537C751BC9BC6400837C51 /* SimpleTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTransitioner.swift; sourceTree = "<group>"; };
 		84537C771BC9C6DF00837C51 /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				845F51481BB7768E0050A80E /* School.swift */,
 				848C74FC1BF1483600D93D32 /* Thumbnail.swift */,
 				848468C41BBCBE6A0066F141 /* Tour.swift */,
+				844E458B1BFABE4F008556A9 /* Photo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				84FFC5081BB77169008F2745 /* DetailViewController.swift */,
 				84FFC5061BB77169008F2745 /* MasterViewController.swift */,
 				84537C771BC9C6DF00837C51 /* OverlayViewController.swift */,
+				844E45891BFABBAC008556A9 /* PhotoViewerViewController.swift */,
 				84537C751BC9BC6400837C51 /* SimpleTransitioner.swift */,
 			);
 			name = Controller;
@@ -382,11 +388,13 @@
 				84BAFF911BC07922005C963A /* Point.swift in Sources */,
 				84537C761BC9BC6400837C51 /* SimpleTransitioner.swift in Sources */,
 				848468C51BBCBE6A0066F141 /* Tour.swift in Sources */,
+				844E458A1BFABBAC008556A9 /* PhotoViewerViewController.swift in Sources */,
 				8460B8791BE6BD80000832B1 /* PointPin.swift in Sources */,
 				84FFC5051BB77169008F2745 /* blueshft.xcdatamodeld in Sources */,
 				84537C741BC9B8AC00837C51 /* DetailPresentationController.swift in Sources */,
 				848C74FD1BF1483600D93D32 /* Thumbnail.swift in Sources */,
 				84FFC5021BB77169008F2745 /* AppDelegate.swift in Sources */,
+				844E458C1BFABE4F008556A9 /* Photo.swift in Sources */,
 				84FFC5071BB77169008F2745 /* MasterViewController.swift in Sources */,
 				84537C781BC9C6DF00837C51 /* OverlayViewController.swift in Sources */,
 				84E943001BB87D770092ABAD /* SchoolCell.swift in Sources */,
