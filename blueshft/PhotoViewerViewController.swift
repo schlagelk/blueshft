@@ -22,7 +22,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         
         setupView()
         
@@ -51,7 +51,6 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         doubleTapRecognizer.numberOfTapsRequired = 2
         doubleTapRecognizer.numberOfTouchesRequired = 1
         scrollView.addGestureRecognizer(doubleTapRecognizer)
-        self.navigationItem.title = "Name of Point"
         
     }
     
@@ -88,16 +87,17 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         
-        items.append(barButtonItemWithImageNamed("hamburger", title: nil, action: "showDetails"))
+        items.append(barButtonItemWithImageNamed("hamburger", title: nil, action: "goBack"))
         
 //        if photoInfo?.commentsCount > 0 {
 //            items.append(barButtonItemWithImageNamed("bubble", title: "\(photoInfo?.commentsCount ?? 0)", action: "showComments"))
 //        }
         
         items.append(flexibleSpace)
-        let barButt = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "showActions")
+        let barButt = UIBarButtonItem(title: "foo bar", style: .Plain, target:nil, action:nil)
         items.append(barButt)
         items.append(flexibleSpace)
+
         
         items.append(barButtonItemWithImageNamed("like", title: "14"))
         items.append(barButtonItemWithImageNamed("heart", title: "10"))
@@ -106,7 +106,8 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         navigationController?.setToolbarHidden(false, animated: true)
     }
     
-    func showDetails() {
+    func goBack() {
+        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
 //        let photoDetailsViewController = storyboard?.instantiateViewControllerWithIdentifier("PhotoDetails") as? PhotoDetailsViewController
 //        photoDetailsViewController?.modalPresentationStyle = .OverCurrentContext
 //        photoDetailsViewController?.modalTransitionStyle = .CoverVertical
