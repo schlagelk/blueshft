@@ -103,6 +103,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         items.append(barButtonItemWithImageNamed("heart", title: "10"))
         
         self.setToolbarItems(items, animated: true)
+        navigationController?.toolbar.tintColor = UIColor.whiteColor()
         navigationController?.setToolbarHidden(false, animated: true)
     }
     
