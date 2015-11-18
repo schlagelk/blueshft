@@ -99,12 +99,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="G25-lt-d1U">
+                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="J0N-xn-3t7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="SR2-9z-agW" kind="unwind" unwindAction="unwindToSegue:" id="ETl-Ie-42T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxa-bd-LWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SR2-9z-agW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2148" y="115"/>
+            <point key="canvasLocation" x="2960" y="115"/>
         </scene>
         <!--Overlay View Controller-->
         <scene sceneID="4QA-7W-srd">
@@ -141,7 +154,7 @@
                     <connections>
                         <outlet property="closeButton" destination="LRs-gv-tFf" id="SeT-xT-n9V"/>
                         <outlet property="viewContainer" destination="Cj0-4i-bIn" id="jrf-Ak-Udk"/>
-                        <segue destination="eYb-4c-uR3" kind="show" identifier="ShowPhoto" id="Dcd-Cv-6xG"/>
+                        <segue destination="7AD-QO-Y5m" kind="show" identifier="ShowPhoto" id="Dcd-Cv-6xG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lua-16-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,8 +332,34 @@
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PSR-Y2-9M6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="7AD-QO-Y5m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="5u0-pA-rqz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="i4x-wl-IJK">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="eYb-4c-uR3" kind="relationship" relationship="rootViewController" id="aEg-1S-SVP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZT7-q2-Fvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="115"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
+        <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>

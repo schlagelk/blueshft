@@ -10,14 +10,13 @@ import UIKit
 import QuartzCore
 
 class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopoverPresentationControllerDelegate, UIActionSheetDelegate {
-    var photoID: Int = 0 // Is set by the collection view while performing a segue to this controller.
+    var photoID: Int = 4 // Is set by the collection view while performing a segue to this controller.
     
     let scrollView = UIScrollView()
     let imageView = UIImageView()
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
     var photoInfo: Photo? // your object
-    
     // MARK: Life-Cycle
     
     override func viewDidLoad() {
@@ -52,9 +51,20 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         doubleTapRecognizer.numberOfTapsRequired = 2
         doubleTapRecognizer.numberOfTouchesRequired = 1
         scrollView.addGestureRecognizer(doubleTapRecognizer)
+        self.navigationItem.title = "Name of Point"
+        
     }
     
     func loadPhoto() {
+        
+        let image = UIImage(named: "usc")
+        
+        addButtomBar()
+        
+        imageView.image = image
+        imageView.frame = self.centerFrameFromImage(image)
+        spinner.stopAnimating()
+        centerScrollViewContents()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -85,11 +95,12 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
 //        }
         
         items.append(flexibleSpace)
-        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "showActions"))
+        let barButt = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "showActions")
+        items.append(barButt)
         items.append(flexibleSpace)
         
-        items.append(barButtonItemWithImageNamed("like", title: "\(photoInfo?.likes ?? 0)"))
-        items.append(barButtonItemWithImageNamed("heart", title: "\(photoInfo?.favs ?? 0)"))
+        items.append(barButtonItemWithImageNamed("like", title: "14"))
+        items.append(barButtonItemWithImageNamed("heart", title: "10"))
         
         self.setToolbarItems(items, animated: true)
         navigationController?.setToolbarHidden(false, animated: true)
@@ -163,11 +174,11 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
 //        actionSheet.showFromToolbar(navigationController?.toolbar)
     }
     
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 1 {
-            downloadPhoto()
-        }
-    }
+//    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+//        if buttonIndex == 1 {
+//            downloadPhoto()
+//        }
+//    }
     
     // MARK: Gesture Recognizers
     

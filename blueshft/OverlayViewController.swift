@@ -32,6 +32,8 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
     
     @IBOutlet weak var closeButton: UIButton!
     
+    @IBAction func unwindToSegue (segue : UIStoryboardSegue) {}
+
     var photos = NSMutableOrderedSet()
     
     let imageCache = NSCache()
@@ -67,14 +69,6 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
 
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "showDirections" {
-//            if let destinationVC = segue.destinationViewController as? DetailViewController {
-//                destinationVC.getDirectionsToPoint(point!)
-//            }
-//        }
-//    }
-    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
@@ -97,7 +91,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
 //    }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        performSegueWithIdentifier("ShowPhoto", sender: (self.photos.objectAtIndex(indexPath.item) as! PhotoInfo).id)
+        performSegueWithIdentifier("ShowPhoto", sender: (self.photos.objectAtIndex(indexPath.item)))
     }
     
     // MARK: Helper
@@ -126,12 +120,11 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if segue.identifier == "ShowPhoto" {
-//            (segue.destinationViewController as! PhotoViewerViewController).photoID = sender!.integerValue
-//            (segue.destinationViewController as! PhotoViewerViewController).hidesBottomBarWhenPushed = true
+
 //        }
-    }
+//    }
     
 //    override func scrollViewDidScroll(scrollView: UIScrollView) {
 //        // Populate more photos when the scrollbar indicator is at 80%
