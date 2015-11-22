@@ -66,21 +66,20 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
                 print(error)
             }
         }
+        addButtomBar()
         imageView.file = self.image
         imageView.loadInBackground {(image: UIImage?, error: NSError?) ->Void in
             if error == nil {
                 if let leImage = image {
                     self.imageView.image = leImage
                     self.imageView.frame = self.centerFrameFromImage(self.imageView.image)
+                    self.spinner.stopAnimating()
+                    self.centerScrollViewContents()
                 }
             } else {
                 print("problem loading image \(error)")
             }
         }
-        
-//        addButtomBar()
-        spinner.stopAnimating()
-        centerScrollViewContents()
     }
     
     override func viewWillAppear(animated: Bool) {
