@@ -16,8 +16,10 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     let imageView = PFImageView()
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
+    // add init?
     var photoInfo: Photo?
     var image: PFFile?
+    var pointName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
             query?.limit = 1
             do {
                 let objects = try query?.findObjects() as! [Photo]
+                self.photoInfo = objects.first
                 self.image = objects.first?.pic
             } catch {
                 print(error)
@@ -100,6 +103,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     
     func addButtomBar() {
         var items = [UIBarButtonItem]()
+        let myToolbar: UIToolbar = UIToolbar()
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         
@@ -110,16 +114,21 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
 //        }
         
         items.append(flexibleSpace)
-        let barButt = UIBarButtonItem(title: "foo bar", style: .Plain, target:nil, action:nil)
+        let barButt = UIBarButtonItem(title: self.pointName, style: .Plain, target:nil, action:nil)
         items.append(barButt)
         items.append(flexibleSpace)
+        
+        let likes = String(photoInfo!.likes)
+        let favs = String(photoInfo!.favs)
+        items.append(barButtonItemWithImageNamed("like", title: likes))
+        items.append(barButtonItemWithImageNamed("heart", title: favs))
+        
+        myToolbar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
+        myToolbar.items = items
+        myToolbar.barTintColor = UIColor.blackColor()
+        myToolbar.opaque = false
+        self.view.addSubview(myToolbar)
 
-        
-        items.append(barButtonItemWithImageNamed("like", title: "14"))
-        items.append(barButtonItemWithImageNamed("heart", title: "10"))
-        
-        self.setToolbarItems(items, animated: true)
-        navigationController?.toolbar.tintColor = UIColor.whiteColor()
         navigationController?.setToolbarHidden(false, animated: true)
     }
     

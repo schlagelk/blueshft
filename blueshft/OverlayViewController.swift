@@ -108,9 +108,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         layout.footerReferenceSize = CGSize(width: collectionView!.bounds.size.width, height: 100.0)
         
         collectionView!.collectionViewLayout = layout
-        
-//        navigationItem.title = "bleh"
-        
+                
         collectionView!.registerClass(PhotoBrowserCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: PhotoBrowserCellIdentifier)
         collectionView!.registerClass(PhotoBrowserCollectionViewLoadingCell.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: PhotoBrowserFooterViewIdentifier)
         
@@ -124,6 +122,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         if segue.identifier == "ShowPhoto" {
             let sender = sender as! Thumbnail
             (segue.destinationViewController as! PhotoViewerViewController).parentId = sender.objectId
+            (segue.destinationViewController as! PhotoViewerViewController).pointName = point?.name
         }
     }
     
