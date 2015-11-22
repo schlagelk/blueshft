@@ -14,17 +14,15 @@ class Photo: PFObject {
     @NSManaged var pic: PFFile
     @NSManaged var text: String
     @NSManaged var likes: Int
-    @NSManaged var favs: Int
     
     
-    init(parentId: String, pic: PFFile, text: String, likes: Int, favs: Int) {
+    init(parentId: String, pic: PFFile, text: String, likes: Int) {
         super.init()
         
         self.parentId = parentId
         self.pic = pic
         self.text = text
         self.likes = likes
-        self.favs = favs
     }
     
     override init() {

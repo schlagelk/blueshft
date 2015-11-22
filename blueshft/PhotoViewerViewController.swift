@@ -88,15 +88,10 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // If the network is fast, the photo may be loaded before the view appears, but we still want an animation
-        if photoInfo != nil {
-            navigationController?.setToolbarHidden(false, animated: true)
-        }
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setToolbarHidden(true, animated: true)
     }
     
     // MARK: Bottom Bar
@@ -119,9 +114,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         items.append(flexibleSpace)
         
         let likes = String(photoInfo!.likes)
-        let favs = String(photoInfo!.favs)
         items.append(barButtonItemWithImageNamed("like", title: likes))
-        items.append(barButtonItemWithImageNamed("heart", title: favs))
         
         myToolbar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
         myToolbar.items = items
@@ -129,7 +122,6 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         myToolbar.opaque = false
         self.view.addSubview(myToolbar)
 
-        navigationController?.setToolbarHidden(false, animated: true)
     }
     
     func goBack() {
