@@ -17,7 +17,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var segControl: UISegmentedControl!
     
     lazy var locationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 550
+    let regionRadius: CLLocationDistance = 500
     
     let simpleTransitionDelegate = SimpleTransitionDelegate()
     

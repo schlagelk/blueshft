@@ -9,23 +9,21 @@
 import UIKit
 import QuartzCore
 
-class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopoverPresentationControllerDelegate, UIActionSheetDelegate {
-    var photoID: Int = 4 // Is set by the collection view while performing a segue to this controller.
+class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopoverPresentationControllerDelegate {
+    var parentId: String! // Is set by the collection view while performing a segue to this controller
     
     let scrollView = UIScrollView()
-    let imageView = UIImageView()
+    let imageView = PFImageView()
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
-    var photoInfo: Photo? // your object
-    // MARK: Life-Cycle
+    var photoInfo: Photo?
+    var image: PFFile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.setNavigationBarHidden(true, animated: true)
-        
         setupView()
-        
         loadPhoto()
     }
     
@@ -56,12 +54,31 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     
     func loadPhoto() {
         
-        let image = UIImage(named: "usc")
+        imageView.image = nil
+        let query = Photo.query()
+        if let parentId = self.parentId {
+            query!.whereKey("parentId", equalTo: parentId)
+            query?.limit = 1
+            do {
+                let objects = try query?.findObjects() as! [Photo]
+                self.image = objects.first?.pic
+            } catch {
+                print(error)
+            }
+        }
+        imageView.file = self.image
+        imageView.loadInBackground {(image: UIImage?, error: NSError?) ->Void in
+            if error == nil {
+                if let leImage = image {
+                    self.imageView.image = leImage
+                    self.imageView.frame = self.centerFrameFromImage(self.imageView.image)
+                }
+            } else {
+                print("problem loading image \(error)")
+            }
+        }
         
-        addButtomBar()
-        
-        imageView.image = image
-        imageView.frame = self.centerFrameFromImage(image)
+//        addButtomBar()
         spinner.stopAnimating()
         centerScrollViewContents()
     }
@@ -109,12 +126,6 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     
     func goBack() {
         presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
-//        let photoDetailsViewController = storyboard?.instantiateViewControllerWithIdentifier("PhotoDetails") as? PhotoDetailsViewController
-//        photoDetailsViewController?.modalPresentationStyle = .OverCurrentContext
-//        photoDetailsViewController?.modalTransitionStyle = .CoverVertical
-//        photoDetailsViewController?.photoInfo = photoInfo
-//        
-//        presentViewController(photoDetailsViewController!, animated: true, completion: nil)
     }
     
     func showComments() {
@@ -164,23 +175,6 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         
         return barButton
     }
-    
-    // MARK: Download Photo
-    
-    func downloadPhoto() {
-
-    }
-    
-    func showActions() {
-//        let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Download Photo")
-//        actionSheet.showFromToolbar(navigationController?.toolbar)
-    }
-    
-//    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-//        if buttonIndex == 1 {
-//            downloadPhoto()
-//        }
-//    }
     
     // MARK: Gesture Recognizers
     

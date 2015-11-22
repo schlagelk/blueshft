@@ -11,17 +11,17 @@ import Foundation
 class Photo: PFObject {
     
     @NSManaged var parentId: String
-    @NSManaged var photo: PFFile
+    @NSManaged var pic: PFFile
     @NSManaged var text: String
     @NSManaged var likes: Int
     @NSManaged var favs: Int
     
     
-    init(parentId: String, photo: PFFile, text: String, likes: Int, favs: Int) {
+    init(parentId: String, pic: PFFile, text: String, likes: Int, favs: Int) {
         super.init()
         
         self.parentId = parentId
-        self.photo = photo
+        self.pic = pic
         self.text = text
         self.likes = likes
         self.favs = favs

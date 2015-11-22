@@ -120,11 +120,12 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "ShowPhoto" {
-
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowPhoto" {
+            let sender = sender as! Thumbnail
+            (segue.destinationViewController as! PhotoViewerViewController).parentId = sender.objectId
+        }
+    }
     
 //    override func scrollViewDidScroll(scrollView: UIScrollView) {
 //        // Populate more photos when the scrollbar indicator is at 80%
@@ -141,18 +142,19 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         populatingPhotos = true
         
         let query = Thumbnail.query()
-        let parentId: String = "dcEbZ8pUqv"
-        query!.whereKey("parentId", equalTo: parentId)
-        query?.limit = 10
-        
-        query!.findObjectsInBackgroundWithBlock { (objects, error) in
-            if error == nil {
-                if objects as? [Thumbnail] != nil {
-                    self.photos.addObjectsFromArray(objects!)
-                    self.collectionView!.reloadData()
+        if let parentId = point!.objectId {
+            query!.whereKey("parentId", equalTo: parentId)
+            query?.limit = 6
+            
+            query!.findObjectsInBackgroundWithBlock { (objects, error) in
+                if error == nil {
+                    if objects as? [Thumbnail] != nil {
+                        self.photos.addObjectsFromArray(objects!)
+                        self.collectionView!.reloadData()
+                    }
                 }
+                self.populatingPhotos = false
             }
-            self.populatingPhotos = false
         }
     }
     
