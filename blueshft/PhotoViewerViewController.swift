@@ -104,17 +104,19 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         
         items.append(barButtonItemWithImageNamed("hamburger", title: nil, action: "goBack"))
         
-//        if photoInfo?.commentsCount > 0 {
-//            items.append(barButtonItemWithImageNamed("bubble", title: "\(photoInfo?.commentsCount ?? 0)", action: "showComments"))
-//        }
-        
         items.append(flexibleSpace)
         let barButt = UIBarButtonItem(title: self.pointName, style: .Plain, target:nil, action:nil)
         items.append(barButt)
         items.append(flexibleSpace)
         
-        let likes = String(photoInfo!.likes)
-        items.append(barButtonItemWithImageNamed("like", title: likes))
+        let likes = photoInfo!.likes ?? 0
+        if likes > 0 {
+            let likesToView = String(likes)
+            items.append(barButtonItemWithImageNamed("like", title: likesToView))
+        } else {
+            let likesToView = String(likes)
+            items.append(barButtonItemWithImageNamed("like", title: nil))
+        }
         
         myToolbar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
         myToolbar.items = items
