@@ -109,7 +109,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         items.append(barButt)
         items.append(flexibleSpace)
         
-        let likes = photoInfo!.likes ?? 0
+        let likes = photoInfo?.likes ?? 0
         if likes > 0 {
             let likesToView = String(likes)
             items.append(barButtonItemWithImageNamed("like", title: likesToView))
