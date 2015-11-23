@@ -117,8 +117,8 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
             let likesToView = String(likes)
             items.append(barButtonItemWithImageNamed("like", title: nil))
         }
-        
-        myToolbar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
+
+        myToolbar.frame = CGRectMake(0, self.view.frame.height - 44, self.view.frame.size.width, 44)
         myToolbar.items = items
         myToolbar.barTintColor = UIColor.blackColor()
         myToolbar.opaque = false
