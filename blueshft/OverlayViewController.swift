@@ -23,14 +23,8 @@
 import UIKit
 
 class OverlayViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-  
-    @IBAction func closeThumbs(sender: AnyObject) {
-        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
-    }
+
     
-    @IBOutlet var viewContainer: UIView!
-    
-    @IBOutlet weak var closeButton: UIButton!
     
     @IBAction func unwindToSegue (segue : UIStoryboardSegue) {}
 
@@ -54,8 +48,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         // Do any additional setup after loading the view.
         setupView()
         populatePhotos()
-        self.view.addSubview(viewContainer)
-        self.view.bringSubviewToFront(viewContainer)
+        addButtomBar()
     }
     
     override func didReceiveMemoryWarning() {
@@ -171,6 +164,59 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         refreshControl.endRefreshing()
         
         populatePhotos()
+    }
+    
+    func addButtomBar() {
+        var items = [UIBarButtonItem]()
+        let myToolbar: UIToolbar = UIToolbar()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        
+        items.append(barButtonItemWithImageNamed("hamburger", title: nil, action: "goBack"))
+        items.append(flexibleSpace)
+        
+        let barButt = UIBarButtonItem(title: self.point?.name, style: .Plain, target:nil, action:nil)
+        items.append(barButt)
+        items.append(flexibleSpace)
+
+        myToolbar.frame = CGRectMake(0, self.view.frame.height - 44, self.view.frame.size.width, 44)
+        myToolbar.items = items
+        myToolbar.barTintColor = UIColor.blackColor()
+        myToolbar.tintColor = UIColor.whiteColor()
+        myToolbar.opaque = false
+        self.view.addSubview(myToolbar)
+        
+    }
+    
+    func goBack() {
+        presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func barButtonItemWithImageNamed(imageName: String?, title: String?, action: Selector? = nil) -> UIBarButtonItem {
+        let button = UIButton(type: .Custom)
+        
+        if imageName != nil {
+            button.setImage(UIImage(named: imageName!)!.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+        }
+        
+        if title != nil {
+            button.setTitle(title, forState: .Normal)
+            button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 0.0)
+            
+            let font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
+            button.titleLabel?.font = font
+        }
+        
+        let size = button.sizeThatFits(CGSize(width: 90.0, height: 30.0))
+        button.frame.size = CGSize(width: min(size.width + 10.0, 60), height: size.height)
+        
+        if action != nil {
+            button.addTarget(self, action: action!, forControlEvents: .TouchUpInside)
+        }
+        
+        let barButton = UIBarButtonItem(customView: button)
+        
+        return barButton
     }
 }
 
