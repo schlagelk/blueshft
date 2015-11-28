@@ -134,11 +134,11 @@
 		84DEACC11BBA19C600F271A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				844E458B1BFABE4F008556A9 /* Photo.swift */,
 				84BAFF901BC07922005C963A /* Point.swift */,
 				845F51481BB7768E0050A80E /* School.swift */,
 				848C74FC1BF1483600D93D32 /* Thumbnail.swift */,
 				848468C41BBCBE6A0066F141 /* Tour.swift */,
-				844E458B1BFABE4F008556A9 /* Photo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -158,13 +158,13 @@
 			children = (
 				84537C731BC9B8AC00837C51 /* DetailPresentationController.swift */,
 				84FFC5081BB77169008F2745 /* DetailViewController.swift */,
+				846866591C0A101C00F8334D /* LoginViewController.swift */,
 				84FFC5061BB77169008F2745 /* MasterViewController.swift */,
 				84537C771BC9C6DF00837C51 /* OverlayViewController.swift */,
 				844E45891BFABBAC008556A9 /* PhotoViewerViewController.swift */,
-				84537C751BC9BC6400837C51 /* SimpleTransitioner.swift */,
-				846866591C0A101C00F8334D /* LoginViewController.swift */,
-				8468665B1C0A146600F8334D /* SignUpViewController.swift */,
 				8468665D1C0A280600F8334D /* ResetPasswordViewController.swift */,
+				8468665B1C0A146600F8334D /* SignUpViewController.swift */,
+				84537C751BC9BC6400837C51 /* SimpleTransitioner.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
