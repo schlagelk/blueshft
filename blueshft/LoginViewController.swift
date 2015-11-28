@@ -37,8 +37,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(sender: AnyObject) {
-        let username = self.usernameField.text
-        let password = self.passwordField.text
+        var username = self.usernameField.text
+        var password = self.passwordField.text
         
         // Validate the text fields
         if username?.characters.count < 5 {

@@ -75,7 +75,7 @@ class SignUpViewController: UIViewController {
                     
                 } else {
                     let alert = UIAlertController(title: "Success", message: "Logged In", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: self.dismissMe))
                     
                     self.presentViewController(alert, animated:true , completion:nil)
                     
@@ -85,6 +85,10 @@ class SignUpViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    func dismissMe(alertView: UIAlertAction) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*
