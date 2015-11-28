@@ -76,8 +76,16 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Blueshft" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Blueshft" id="mOI-FS-AaM">
+                        <barButtonItem key="rightBarButtonItem" image="user" id="Pzt-dY-pYT">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logoutPressed:" destination="JEX-9P-axG" id="kbm-1Z-Ev4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="logoutButton" destination="Pzt-dY-pYT" id="ZAI-oR-wtx"/>
                         <outlet property="mapView" destination="lkJ-f2-sip" id="Ygk-3R-JCm"/>
                         <outlet property="segControl" destination="WiK-45-G9P" id="Ydq-98-9n5"/>
                     </connections>
@@ -553,12 +561,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIA-qZ-utK">
                                 <rect key="frame" x="554" y="28" width="30" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Ev3-4W-eqF"/>
                                     <constraint firstAttribute="height" constant="30" id="YvX-7k-DSA"/>
                                 </constraints>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="close"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -576,10 +583,8 @@
                             <constraint firstAttribute="centerY" secondItem="qC1-OS-sXg" secondAttribute="centerY" id="GAy-6b-vzw"/>
                             <constraint firstItem="VIA-qZ-utK" firstAttribute="leading" secondItem="huL-my-0gR" secondAttribute="leading" constant="554" id="HtG-SH-BD1"/>
                             <constraint firstAttribute="trailing" secondItem="VIA-qZ-utK" secondAttribute="trailing" constant="16" id="PHY-Pj-B73"/>
-                            <constraint firstItem="VIA-qZ-utK" firstAttribute="top" secondItem="fgo-gL-fI8" secondAttribute="bottom" constant="8" id="fZK-21-cyU"/>
                             <constraint firstItem="VIA-qZ-utK" firstAttribute="top" secondItem="fgo-gL-fI8" secondAttribute="bottom" constant="8" id="jgk-FS-8Bh"/>
                             <constraint firstAttribute="centerX" secondItem="qC1-OS-sXg" secondAttribute="centerX" id="qZj-lN-Bd8"/>
-                            <constraint firstItem="Feq-UT-jNl" firstAttribute="top" secondItem="VIA-qZ-utK" secondAttribute="bottom" constant="542" id="tol-kx-Rse"/>
                             <constraint firstAttribute="trailing" secondItem="VIA-qZ-utK" secondAttribute="trailing" constant="16" id="vUQ-sf-lTN"/>
                         </constraints>
                         <variation key="default">
@@ -604,6 +609,7 @@
     <resources>
         <image name="bar" width="300" height="20"/>
         <image name="close" width="32" height="32"/>
+        <image name="user" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>

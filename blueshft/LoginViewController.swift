@@ -66,14 +66,10 @@ class LoginViewController: UIViewController {
                 
                 if ((user) != nil) {
                     let alert = UIAlertController(title: "Success", message: "Logged In", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: self.dismissLogin))
                     
                     self.presentViewController(alert, animated:true , completion:nil)
-                    
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                    })
-                    
+   
                 } else {
                     let alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -84,4 +80,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func dismissLogin(alertView: UIAlertAction) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

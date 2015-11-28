@@ -15,6 +15,12 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var segControl: UISegmentedControl!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
+    
+    @IBAction func logoutPressed(sender: AnyObject) {
+        PFUser.logOut()
+        logoutButton.enabled = false
+    }
     
     lazy var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 500
@@ -62,6 +68,14 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         checkLocationAuthorizationStatus()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if (PFUser.currentUser() == nil) {
+            logoutButton.enabled = false
+        } else {
+            logoutButton.enabled = true
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -220,7 +234,7 @@ extension DetailViewController: MKMapViewDelegate {
             let color = UIColor.blueColor()
             annotationView!.pinTintColor = color
             detailView.typeDesc.backgroundColor = color
-            detailView.typeDesc.text = "General"
+            detailView.typeDesc.text = "All Purpose"
         }
         return annotationView
     }
