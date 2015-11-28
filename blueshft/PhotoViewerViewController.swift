@@ -20,6 +20,9 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     var photoInfo: Photo?
     var image: PFFile?
     var pointName: String?
+    var likeCountForUser: Int?
+    
+    var myToolbar: UIToolbar = UIToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +101,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     
     func addButtomBar() {
         var items = [UIBarButtonItem]()
-        let myToolbar: UIToolbar = UIToolbar()
+        self.myToolbar.items = nil
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         
@@ -109,21 +112,96 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         items.append(barButt)
         items.append(flexibleSpace)
         
-        let likes = photoInfo?.likes ?? 0
-        if likes > 0 {
+        getLikesForUser()
+        var likes = photoInfo?.likes ?? 0
+        
+        if self.likeCountForUser > 0 {
             let likesToView = String(likes)
-            items.append(barButtonItemWithImageNamed("like", title: likesToView))
+            items.append(barButtonItemWithImageNamed("unlike", title: likesToView, action: "unlike"))
+
         } else {
             let likesToView = String(likes)
-            items.append(barButtonItemWithImageNamed("like", title: nil))
+            items.append(barButtonItemWithImageNamed("like", title: likesToView, action: "like"))
         }
 
-        myToolbar.frame = CGRectMake(0, self.view.frame.height - 44, self.view.frame.size.width, 44)
-        myToolbar.items = items
-        myToolbar.barTintColor = UIColor.blackColor()
-        myToolbar.opaque = false
-        self.view.addSubview(myToolbar)
+        self.myToolbar.frame = CGRectMake(0, self.view.frame.height - 44, self.view.frame.size.width, 44)
+        self.myToolbar.items = items
+        self.myToolbar.barTintColor = UIColor.blackColor()
+        self.myToolbar.opaque = false
+        self.view.addSubview(self.myToolbar)
 
+    }
+    
+    func getLikesForUser() {
+        if let objId = self.photoInfo?.objectId {
+            let user = PFUser.currentUser()
+            let className = "Like"
+            var query = PFQuery(className: className)
+
+            query.whereKey("objetoId", equalTo: objId)
+            query.whereKey("userId", equalTo: (user?.objectId)!)
+            let err: NSErrorPointer = nil
+            
+            do {
+                self.likeCountForUser = try query.countObjects(err)
+            } catch {
+                print(error)
+            }
+        } else {
+            print("no object id")
+        }
+    }
+    
+    func like() {
+        if let objId = self.photoInfo?.objectId {
+            let user = PFUser.currentUser()
+            let className = "Like"
+            let post = PFObject(className: className)
+            post["object"] = "photo"
+            post["user"] = user
+            post["objetoId"] = objId
+            post["userId"] = user?.objectId
+            
+            do {
+                try post.save()
+                var likes = self.photoInfo!.likes
+                ++likes
+                self.photoInfo?.likes = likes
+                self.photoInfo!.saveInBackground()
+                addButtomBar()
+            } catch {
+                print(error)
+            }
+        } else {
+                print("no object id")
+        }
+    }
+    
+    func unlike() {
+        if let objId = self.photoInfo?.objectId {
+            let user = PFUser.currentUser()
+            let className = "Like"
+            var query = PFQuery(className: className)
+            //fetch count
+            query.whereKey("objetoId", equalTo: objId)
+            query.whereKey("userId", equalTo: (user?.objectId)!)
+            do {
+                var objs = try query.findObjects()
+                for object in objs {
+                    object.deleteInBackground()
+                }
+                //update main object likes
+                var likes = self.photoInfo!.likes
+                --likes
+                self.photoInfo?.likes = likes
+                self.photoInfo!.saveInBackground()
+                addButtomBar()
+            } catch {
+                print (error)
+            }
+        } else {
+            print("no object id")
+        }
     }
     
     func goBack() {

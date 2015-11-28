@@ -447,13 +447,13 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="WvV-aY-Ae9"/>
-                                        <exclude reference="kHV-u0-iEL"/>
                                         <exclude reference="ff2-wC-Ar4"/>
+                                        <exclude reference="kHV-u0-iEL"/>
                                         <exclude reference="34W-LX-9uy"/>
-                                        <exclude reference="Alg-Yi-lCI"/>
-                                        <exclude reference="ucp-g6-al9"/>
-                                        <exclude reference="PkY-v6-rIf"/>
                                         <exclude reference="5Ng-aq-wnD"/>
+                                        <exclude reference="Alg-Yi-lCI"/>
+                                        <exclude reference="PkY-v6-rIf"/>
+                                        <exclude reference="ucp-g6-al9"/>
                                         <exclude reference="lhT-h7-W9J"/>
                                         <exclude reference="B7w-0Z-8uD"/>
                                         <exclude reference="Gxo-G6-cDR"/>
@@ -709,11 +709,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="2wF-gU-bZh"/>
                                 <exclude reference="7Wc-ec-MlX"/>
-                                <exclude reference="nxO-Eq-9JR"/>
                                 <exclude reference="S45-dg-72j"/>
                                 <exclude reference="Wll-dB-QHj"/>
-                                <exclude reference="2wF-gU-bZh"/>
+                                <exclude reference="nxO-Eq-9JR"/>
                                 <exclude reference="EPC-eJ-0bW"/>
                             </mask>
                         </variation>
