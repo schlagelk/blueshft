@@ -172,7 +172,7 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         
-        items.append(barButtonItemWithImageNamed("hamburger", title: nil, action: "goBack"))
+        items.append(barButtonItemWithImageNamed("close", title: nil, action: "goBack"))
         items.append(flexibleSpace)
         
         let barButt = UIBarButtonItem(title: self.point?.name, style: .Plain, target:nil, action:nil)
