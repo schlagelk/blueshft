@@ -55,6 +55,19 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         segControl.removeAllSegments()
         setupMap()
         setLocationAndCenterOnMap()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "isUserLoggedIn:", name: "BSUserLoggedInNotification", object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func isUserLoggedIn(notification: NSNotification) {
+        if (PFUser.currentUser() == nil) {
+            logoutButton.enabled = false
+        } else {
+            logoutButton.enabled = true
+        }
     }
     
     func checkLocationAuthorizationStatus() {

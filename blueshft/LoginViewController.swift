@@ -81,6 +81,7 @@ class LoginViewController: UIViewController {
     }
     
     func dismissLogin(alertView: UIAlertAction) {
+        NSNotificationCenter.defaultCenter().postNotificationName("BSUserLoggedInNotification", object: self, userInfo: ["logInAttempt": true])
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
