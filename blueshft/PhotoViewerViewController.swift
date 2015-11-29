@@ -12,8 +12,10 @@ import QuartzCore
 class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopoverPresentationControllerDelegate {
     var parentId: String! // Is set by the collection view while performing a segue to this controller
     
+    @IBOutlet weak var imageView: PFImageView!
+    @IBOutlet weak var descLabel: UILabel!
+    
     let scrollView = UIScrollView()
-    let imageView = PFImageView()
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
     // add init?
@@ -30,6 +32,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         navigationController?.setNavigationBarHidden(true, animated: true)
         setupView()
         loadPhoto()
+        self.descLabel.text = self.photoInfo?.text
     }
     
     func setupView() {
@@ -49,6 +52,8 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         
         imageView.contentMode = .ScaleAspectFill
         scrollView.addSubview(imageView)
+        self.descLabel.layer.cornerRadius = 5
+        imageView.addSubview(self.descLabel)
         
         let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "handleDoubleTap:")
         doubleTapRecognizer.numberOfTapsRequired = 2
