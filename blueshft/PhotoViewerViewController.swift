@@ -136,17 +136,13 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         if let objId = self.photoInfo?.objectId {
             let user = PFUser.currentUser()
             let className = "Like"
-            var query = PFQuery(className: className)
-
+            let query = PFQuery(className: className)
             query.whereKey("objetoId", equalTo: objId)
             query.whereKey("userId", equalTo: (user?.objectId)!)
-            let err: NSErrorPointer = nil
             
-            do {
-                self.likeCountForUser = try query.countObjects(err)
-            } catch {
-                print(error)
-            }
+            let err: NSErrorPointer = nil
+            self.likeCountForUser = query.countObjects(err)
+
         } else {
             print("no object id")
         }
@@ -155,8 +151,8 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     func like() {
         if let objId = self.photoInfo?.objectId {
             let user = PFUser.currentUser()
-            let className = "Like"
-            let post = PFObject(className: className)
+            
+            let post = PFObject(className: "Like")
             post["object"] = "photo"
             post["user"] = user
             post["objetoId"] = objId
@@ -180,13 +176,12 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     func unlike() {
         if let objId = self.photoInfo?.objectId {
             let user = PFUser.currentUser()
-            let className = "Like"
-            var query = PFQuery(className: className)
+            let query = PFQuery(className: "Like")
             //fetch count
             query.whereKey("objetoId", equalTo: objId)
             query.whereKey("userId", equalTo: (user?.objectId)!)
             do {
-                var objs = try query.findObjects()
+                let objs = try query.findObjects()
                 for object in objs {
                     object.deleteInBackground()
                 }
