@@ -53,7 +53,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         imageView.contentMode = .ScaleAspectFill
         scrollView.addSubview(imageView)
         self.descLabel.layer.cornerRadius = 5
-        imageView.addSubview(self.descLabel)
+        scrollView.addSubview(self.descLabel)
         
         let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "handleDoubleTap:")
         doubleTapRecognizer.numberOfTapsRequired = 2
@@ -215,6 +215,10 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
 //        photoCommentsViewController?.photoID = photoID
 //        photoCommentsViewController?.popoverPresentationController?.delegate = self
 //        presentViewController(photoCommentsViewController!, animated: true, completion: nil)
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake { self.descLabel.hidden = !self.descLabel.hidden }
     }
     
     // Needed for the Comments Popover

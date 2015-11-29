@@ -107,9 +107,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIQ-PO-B3w">
-                                <rect key="frame" x="120" y="485" width="360" height="35"/>
+                                <rect key="frame" x="190" y="467" width="220" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="KCy-Ge-21q"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="This is a place where we do really cool things and you can too!">
                                         <attributes>
@@ -140,6 +143,12 @@
                             <constraint firstItem="yaK-g0-y44" firstAttribute="top" secondItem="hT9-Sg-p1u" secondAttribute="bottom" id="x1h-dI-lpy"/>
                             <constraint firstItem="zIQ-PO-B3w" firstAttribute="leading" secondItem="ufW-WA-G8D" secondAttribute="leadingMargin" constant="100" id="zBh-tV-7y3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nOT-hv-hC0"/>
+                                <exclude reference="zBh-tV-7y3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="G25-lt-d1U"/>
