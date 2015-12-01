@@ -154,12 +154,3 @@ extension MasterViewController: UISearchBarDelegate {
         self.loadObjects()
     }
 }
-
-extension String {
-    
-    var toProper:String {
-        var result = lowercaseString
-        result.replaceRange(startIndex...startIndex, with: String(self[startIndex]).capitalizedString)
-        return result
-    }
-}

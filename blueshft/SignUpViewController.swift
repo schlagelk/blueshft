@@ -43,9 +43,7 @@ class SignUpViewController: UIViewController {
             
             self.presentViewController(alert, animated:true , completion:nil)
             
-        } else if email?.characters.count < 8 {
-            //improve this check, count doesnt matter - @ does
-            
+        } else if email?.isEmail != true {
             let alert = UIAlertController(title: "Invalid", message: "Please enter a valid email address", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
             
