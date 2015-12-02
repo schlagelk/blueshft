@@ -134,7 +134,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         self.myToolbar.barTintColor = UIColor.blackColor()
         self.myToolbar.opaque = false
         self.view.addSubview(self.myToolbar)
-
+        print("items \(self.myToolbar.items)")
     }
     
     func getLikesForUser() {
@@ -168,7 +168,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
                 var likes = self.photoInfo!.likes
                 ++likes
                 self.photoInfo?.likes = likes
-                self.photoInfo!.saveInBackground()
+                try self.photoInfo!.save()
                 addButtomBar()
             } catch {
                 print(error)
@@ -194,7 +194,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
                 var likes = self.photoInfo!.likes
                 --likes
                 self.photoInfo?.likes = likes
-                self.photoInfo!.saveInBackground()
+                try self.photoInfo!.save()
                 addButtomBar()
             } catch {
                 print (error)
