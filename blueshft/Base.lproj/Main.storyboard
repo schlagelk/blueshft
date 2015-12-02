@@ -368,6 +368,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-classroom" translatesAutoresizingMaskIntoConstraints="NO" id="h0o-5o-ZO9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01k-KC-TiU">
                                 <rect key="frame" x="165" y="127" width="270" height="346"/>
                                 <subviews>
@@ -507,9 +511,13 @@
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="01k-KC-TiU" secondAttribute="centerX" id="Brh-gQ-NFP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h0o-5o-ZO9" secondAttribute="trailing" constant="-20" id="DIJ-PW-GU7"/>
+                            <constraint firstItem="h0o-5o-ZO9" firstAttribute="leading" secondItem="Ws6-we-FsT" secondAttribute="leadingMargin" constant="-20" id="Z3q-Yi-5MI"/>
+                            <constraint firstItem="h0o-5o-ZO9" firstAttribute="centerX" secondItem="Ws6-we-FsT" secondAttribute="centerX" id="cUl-fL-wJo"/>
+                            <constraint firstItem="h0o-5o-ZO9" firstAttribute="top" secondItem="Ws6-we-FsT" secondAttribute="topMargin" id="eDC-ws-AuR"/>
+                            <constraint firstItem="vcV-vL-gjM" firstAttribute="top" secondItem="h0o-5o-ZO9" secondAttribute="bottom" id="rJo-wP-Ofb"/>
                             <constraint firstAttribute="centerY" secondItem="01k-KC-TiU" secondAttribute="centerY" id="wJ8-9O-Iqt"/>
                         </constraints>
                     </view>
@@ -534,6 +542,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-classroom" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-P2-TFJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qC1-OS-sXg">
                                 <rect key="frame" x="165" y="127" width="270" height="346"/>
                                 <subviews>
@@ -626,14 +638,18 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="aB5-P2-TFJ" secondAttribute="trailing" constant="-20" id="6sG-Gd-Pow"/>
+                            <constraint firstItem="aB5-P2-TFJ" firstAttribute="top" secondItem="huL-my-0gR" secondAttribute="topMargin" id="7MO-fu-kS4"/>
                             <constraint firstAttribute="centerY" secondItem="qC1-OS-sXg" secondAttribute="centerY" id="GAy-6b-vzw"/>
                             <constraint firstItem="VIA-qZ-utK" firstAttribute="leading" secondItem="huL-my-0gR" secondAttribute="leading" constant="554" id="HtG-SH-BD1"/>
                             <constraint firstAttribute="trailing" secondItem="VIA-qZ-utK" secondAttribute="trailing" constant="16" id="PHY-Pj-B73"/>
+                            <constraint firstItem="aB5-P2-TFJ" firstAttribute="leading" secondItem="huL-my-0gR" secondAttribute="leadingMargin" constant="-20" id="cT9-sx-9gF"/>
+                            <constraint firstItem="Feq-UT-jNl" firstAttribute="top" secondItem="aB5-P2-TFJ" secondAttribute="bottom" id="hNQ-hf-eMt"/>
                             <constraint firstItem="VIA-qZ-utK" firstAttribute="top" secondItem="fgo-gL-fI8" secondAttribute="bottom" constant="8" id="jgk-FS-8Bh"/>
                             <constraint firstAttribute="centerX" secondItem="qC1-OS-sXg" secondAttribute="centerX" id="qZj-lN-Bd8"/>
                             <constraint firstAttribute="trailing" secondItem="VIA-qZ-utK" secondAttribute="trailing" constant="16" id="vUQ-sf-lTN"/>
+                            <constraint firstItem="aB5-P2-TFJ" firstAttribute="centerX" secondItem="huL-my-0gR" secondAttribute="centerX" id="yr5-W4-bjn"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -665,6 +681,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-classroom" translatesAutoresizingMaskIntoConstraints="NO" id="KMI-2v-sgz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQU-1f-U9s">
                                 <rect key="frame" x="165" y="127" width="270" height="346"/>
                                 <subviews>
@@ -739,16 +759,20 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ryt-g9-4vY" firstAttribute="top" secondItem="9Vx-fZ-kt9" secondAttribute="bottom" constant="8" id="2wF-gU-bZh"/>
                             <constraint firstItem="ryt-g9-4vY" firstAttribute="top" secondItem="9Vx-fZ-kt9" secondAttribute="bottom" constant="8" id="7Wc-ec-MlX"/>
+                            <constraint firstItem="KMI-2v-sgz" firstAttribute="leading" secondItem="gEi-Sc-0ak" secondAttribute="leadingMargin" constant="-20" id="E3B-eN-po6"/>
                             <constraint firstItem="ZNs-fd-wzR" firstAttribute="top" secondItem="ryt-g9-4vY" secondAttribute="bottom" constant="542" id="EPC-eJ-0bW"/>
                             <constraint firstAttribute="centerX" secondItem="LQU-1f-U9s" secondAttribute="centerX" id="FrH-sS-Vq4"/>
+                            <constraint firstItem="KMI-2v-sgz" firstAttribute="top" secondItem="gEi-Sc-0ak" secondAttribute="topMargin" id="MTj-E1-n44"/>
                             <constraint firstAttribute="trailing" secondItem="ryt-g9-4vY" secondAttribute="trailing" constant="16" id="N5T-NP-ABc"/>
                             <constraint firstAttribute="trailing" secondItem="ryt-g9-4vY" secondAttribute="trailing" constant="16" id="S45-dg-72j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KMI-2v-sgz" secondAttribute="trailing" constant="-20" id="VtO-70-RZz"/>
                             <constraint firstAttribute="centerY" secondItem="LQU-1f-U9s" secondAttribute="centerY" id="WNW-k4-vgv"/>
                             <constraint firstAttribute="trailing" secondItem="ryt-g9-4vY" secondAttribute="trailing" constant="16" id="Wll-dB-QHj"/>
+                            <constraint firstItem="ZNs-fd-wzR" firstAttribute="top" secondItem="KMI-2v-sgz" secondAttribute="bottom" id="bIM-KJ-aBX"/>
+                            <constraint firstItem="KMI-2v-sgz" firstAttribute="centerX" secondItem="gEi-Sc-0ak" secondAttribute="centerX" id="doq-nl-h67"/>
                             <constraint firstItem="ryt-g9-4vY" firstAttribute="top" secondItem="9Vx-fZ-kt9" secondAttribute="bottom" constant="8" id="kKS-pF-rcV"/>
                             <constraint firstItem="ryt-g9-4vY" firstAttribute="leading" secondItem="gEi-Sc-0ak" secondAttribute="leading" constant="554" id="nxO-Eq-9JR"/>
                         </constraints>
@@ -776,6 +800,7 @@
     <resources>
         <image name="bar" width="300" height="20"/>
         <image name="close" width="32" height="32"/>
+        <image name="empty-classroom" width="473" height="356"/>
         <image name="user" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
