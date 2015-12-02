@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "unlike-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "unlike.png",
+      "filename" : "unlike@2x.png",
       "scale" : "2x"
     },
     {
