@@ -134,7 +134,6 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         self.myToolbar.barTintColor = UIColor.blackColor()
         self.myToolbar.opaque = false
         self.view.addSubview(self.myToolbar)
-        print("items \(self.myToolbar.items)")
     }
     
     func getLikesForUser() {
