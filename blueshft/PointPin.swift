@@ -69,7 +69,7 @@ class PointPin: UIView {
             self.stopTalkButton.hidden = true
         }
         
-        UIView.animateWithDuration(0.25, animations: { ()-> Void in
+        UIView.animateWithDuration(0.10, animations: { ()-> Void in
             self.talkButton.alpha = speakButtonAlpha
             self.stopTalkButton.alpha = stopButtonAlpha
         })

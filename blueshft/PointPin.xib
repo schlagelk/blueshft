@@ -32,10 +32,10 @@
                                     <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-xL-mzJ">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-xL-mzJ">
                                     <rect key="frame" x="0.0" y="174" width="220" height="22"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-tE-iUW">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-tE-iUW">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="22"/>
                                             <animations/>
                                             <state key="normal" title="Pics">
@@ -45,7 +45,7 @@
                                                 <action selector="seeMoreAboutPoint:" destination="uH7-e3-t5d" eventType="touchUpInside" id="FLs-zy-iwb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-J8-q6e">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-J8-q6e">
                                             <rect key="frame" x="75" y="0.0" width="70" height="22"/>
                                             <animations/>
                                             <state key="normal" title="Directions">
@@ -55,7 +55,7 @@
                                                 <action selector="getDirectionsToPoint:" destination="uH7-e3-t5d" eventType="touchUpInside" id="Qo8-S8-ZzR"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-uN-ytb">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-uN-ytb">
                                             <rect key="frame" x="150" y="0.0" width="70" height="22"/>
                                             <animations/>
                                             <state key="normal" title="Talk">
@@ -65,7 +65,7 @@
                                                 <action selector="speak:" destination="uH7-e3-t5d" eventType="touchUpInside" id="7p3-m8-ptb"/>
                                             </connections>
                                         </button>
-                                        <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Fx-PBv">
+                                        <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Fx-PBv">
                                             <rect key="frame" x="220" y="0.0" width="0.0" height="30"/>
                                             <animations/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.88241659630000002" colorSpace="calibratedRGB"/>
