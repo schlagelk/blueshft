@@ -23,17 +23,13 @@
 import UIKit
 
 class OverlayViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-
-    
     
     @IBAction func unwindToSegue (segue : UIStoryboardSegue) {}
 
     var photos = NSMutableOrderedSet()
-    
     let imageCache = NSCache()
     
     let refreshControl = UIRefreshControl()
-    
     var populatingPhotos = false
     var currentPage = 1
     
@@ -68,9 +64,6 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PhotoBrowserCellIdentifier, forIndexPath: indexPath) as! PhotoBrowserCollectionViewCell
-//        
-//        cell.imageView.image = nil
-//
         let image = photos.objectAtIndex(indexPath.row) as! Thumbnail
 
         cell.imageView.file = image.thumbnail
@@ -78,10 +71,6 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         return cell
     }
     
-    // Used to display a spinner at the bottom when we're waiting to load more photos
-//    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-//        return collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: PhotoBrowserFooterViewIdentifier, forIndexPath: indexPath) 
-//    }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("ShowPhoto", sender: (self.photos.objectAtIndex(indexPath.item)))
@@ -119,18 +108,11 @@ class OverlayViewController: UICollectionViewController, UICollectionViewDelegat
         }
     }
     
-//    override func scrollViewDidScroll(scrollView: UIScrollView) {
-//        // Populate more photos when the scrollbar indicator is at 80%
-////        if scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8 {
-////            populatePhotos()
-////        }
-//    }
-    
     func populatePhotos() {
-        if populatingPhotos { // Do not populate more photos if we're in the process of loading a page
+        if populatingPhotos {
             return
         }
-//
+        
         populatingPhotos = true
         
         let query = Thumbnail.query()
