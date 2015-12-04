@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import AVFoundation
+
 
 class PointPin: UIView {
 
@@ -32,6 +34,14 @@ class PointPin: UIView {
         if let point = self.point {
             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
             point.mapItem().openInMapsWithLaunchOptions(launchOptions)
+        }
+    }
+    @IBAction func speak(sender: AnyObject) {
+        if let point = self.point {
+            let utterance = AVSpeechUtterance(string: point.details)
+            
+            let synthesizer = AVSpeechSynthesizer()
+            synthesizer.speakUtterance(utterance)
         }
     }
 }
