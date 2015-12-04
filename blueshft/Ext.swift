@@ -10,7 +10,6 @@ import Foundation
 
 
 extension String {
-    
     var toProper:String {
         var result = lowercaseString
         result.replaceRange(startIndex...startIndex, with: String(self[startIndex]).capitalizedString)
@@ -24,5 +23,12 @@ extension String {
         } catch {
             return false
         }
+    }
+}
+
+
+extension UIView {
+    class func loadFromNibNamed(nibNamed: String, bundle: NSBundle? = nil) -> UIView? {
+        return UINib(nibName: nibNamed, bundle: bundle).instantiateWithOwner(nil, options: nil).first as? UIView
     }
 }

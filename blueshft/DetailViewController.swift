@@ -251,15 +251,4 @@ extension DetailViewController: MKMapViewDelegate {
         }
         return annotationView
     }
-    
-//    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-////        let point = view.annotation as! Point
-////        showSimpleOverlayForPoint(point)
-//    }
-}
-
-extension UIView {
-    class func loadFromNibNamed(nibNamed: String, bundle: NSBundle? = nil) -> UIView? {
-        return UINib(nibName: nibNamed, bundle: bundle).instantiateWithOwner(nil, options: nil).first as? UIView
-    }
 }

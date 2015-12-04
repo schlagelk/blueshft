@@ -26,7 +26,7 @@ class PointPin: UIView {
         }
     }
     
-    var detailVC: DetailViewController?
+    weak var detailVC: DetailViewController?
 
     @IBAction func seeMoreAboutPoint(sender: AnyObject) {
         if let point = self.point {
