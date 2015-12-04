@@ -43,6 +43,7 @@ class PointPin: UIView {
     @IBAction func speak(sender: AnyObject) {
         if let point = self.point {
             let utterance = AVSpeechUtterance(string: point.details)
+            synthesizer.delegate = self
             synthesizer.speakUtterance(utterance)
             animateButtonAppearanceForSpeech(true)
         }
@@ -72,6 +73,17 @@ class PointPin: UIView {
         UIView.animateWithDuration(0.10, animations: { ()-> Void in
             self.talkButton.alpha = speakButtonAlpha
             self.stopTalkButton.alpha = stopButtonAlpha
+        })
+    }
+}
+
+extension PointPin: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didFinishSpeechUtterance utterance: AVSpeechUtterance) {
+        UIView.animateWithDuration(0.10, animations: { ()-> Void in
+            self.talkButton.alpha = 1.0
+            self.stopTalkButton.alpha = 0.0
+            self.talkButton.hidden = false
+            self.stopTalkButton.hidden = true
         })
     }
 }
