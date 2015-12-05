@@ -220,7 +220,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if motion == .MotionShake { self.descLabel.hidden = !self.descLabel.hidden }
+        if motion == .MotionShake { self.labelContainer.hidden = !self.labelContainer.hidden }
     }
     
     // Needed for the Comments Popover
