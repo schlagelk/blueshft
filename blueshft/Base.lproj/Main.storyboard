@@ -107,11 +107,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIQ-PO-B3w">
-                                <rect key="frame" x="190" y="467" width="220" height="53"/>
+                                <rect key="frame" x="150" y="485" width="300" height="35"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="KCy-Ge-21q"/>
+                                    <constraint firstAttribute="width" constant="300" id="KCy-Ge-21q"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="This is a place where we do really cool things and you can too!">
