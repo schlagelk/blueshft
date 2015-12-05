@@ -75,7 +75,7 @@ class MasterViewController: PFQueryTableViewController {
         }
         query?.orderByDescending("createdAt")
         self.paginationEnabled = true
-        print("text; \(searchBar.text)")
+        
         return query!
     }
     

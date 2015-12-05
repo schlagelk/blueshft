@@ -12,6 +12,7 @@ import QuartzCore
 class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopoverPresentationControllerDelegate {
     var parentId: String! // Is set by the collection view while performing a segue to this controller
     
+    @IBOutlet weak var labelContainer: UIView!
     @IBOutlet weak var imageView: PFImageView!
     @IBOutlet weak var descLabel: UILabel!
     
@@ -52,8 +53,10 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         
         imageView.contentMode = .ScaleAspectFill
         scrollView.addSubview(imageView)
-        self.descLabel.layer.cornerRadius = 5
-        scrollView.addSubview(self.descLabel)
+        labelContainer.layer.cornerRadius = 10
+        scrollView.addSubview(labelContainer)
+
+        labelContainer.addSubview(descLabel)
         
         let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "handleDoubleTap:")
         doubleTapRecognizer.numberOfTapsRequired = 2

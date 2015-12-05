@@ -8,6 +8,7 @@
         <mutableArray key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -106,56 +107,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIQ-PO-B3w">
-                                <rect key="frame" x="150" y="485" width="300" height="35"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="KCy-Ge-21q"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="This is a place where we do really cool things and you can too!">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hT9-Sg-p1u" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttv-6W-XBG">
+                                <rect key="frame" x="150" y="465" width="300" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;description text&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2E-5h-HQ8">
+                                        <rect key="frame" x="8" y="8" width="284" height="19"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.18980823860000001" green="0.18980823860000001" blue="0.18980823860000001" alpha="0.80320945945945943" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="C2E-5h-HQ8" secondAttribute="trailing" constant="8" id="CFM-RZ-ePw"/>
+                                    <constraint firstItem="C2E-5h-HQ8" firstAttribute="top" secondItem="ttv-6W-XBG" secondAttribute="top" constant="8" id="fEu-0e-4Jw"/>
+                                    <constraint firstItem="C2E-5h-HQ8" firstAttribute="centerX" secondItem="ttv-6W-XBG" secondAttribute="centerX" id="iZa-3u-bNd"/>
+                                    <constraint firstItem="C2E-5h-HQ8" firstAttribute="leading" secondItem="ttv-6W-XBG" secondAttribute="leading" constant="8" id="oFE-L8-Jgv"/>
+                                    <constraint firstAttribute="width" constant="300" id="pNu-D3-gmo"/>
+                                    <constraint firstAttribute="bottom" secondItem="C2E-5h-HQ8" secondAttribute="bottom" constant="8" id="tJY-CQ-t7y"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hT9-Sg-p1u" firstAttribute="leading" secondItem="ufW-WA-G8D" secondAttribute="leadingMargin" constant="-20" id="1ht-j4-NJk"/>
-                            <constraint firstItem="zIQ-PO-B3w" firstAttribute="centerX" secondItem="ufW-WA-G8D" secondAttribute="centerX" id="4ZP-ab-OO5"/>
                             <constraint firstItem="hT9-Sg-p1u" firstAttribute="centerX" secondItem="ufW-WA-G8D" secondAttribute="centerX" id="WiT-Ca-JpF"/>
-                            <constraint firstItem="yaK-g0-y44" firstAttribute="top" secondItem="zIQ-PO-B3w" secondAttribute="bottom" constant="80" id="ZW1-vn-tqT"/>
                             <constraint firstItem="hT9-Sg-p1u" firstAttribute="top" secondItem="ufW-WA-G8D" secondAttribute="topMargin" id="c0Q-EE-dN2"/>
+                            <constraint firstItem="yaK-g0-y44" firstAttribute="top" secondItem="ttv-6W-XBG" secondAttribute="bottom" constant="100" id="cWa-MU-IT1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hT9-Sg-p1u" secondAttribute="trailing" constant="-20" id="cic-N8-QFn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zIQ-PO-B3w" secondAttribute="trailing" constant="100" id="nOT-hv-hC0"/>
+                            <constraint firstItem="ttv-6W-XBG" firstAttribute="centerX" secondItem="ufW-WA-G8D" secondAttribute="centerX" id="m4R-bU-1hS"/>
                             <constraint firstItem="yaK-g0-y44" firstAttribute="top" secondItem="hT9-Sg-p1u" secondAttribute="bottom" id="x1h-dI-lpy"/>
-                            <constraint firstItem="zIQ-PO-B3w" firstAttribute="leading" secondItem="ufW-WA-G8D" secondAttribute="leadingMargin" constant="100" id="zBh-tV-7y3"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="nOT-hv-hC0"/>
-                                <exclude reference="zBh-tV-7y3"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="G25-lt-d1U"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="descLabel" destination="zIQ-PO-B3w" id="q5I-Dx-Lno"/>
+                        <outlet property="descLabel" destination="C2E-5h-HQ8" id="DKC-l6-GTK"/>
                         <outlet property="imageView" destination="hT9-Sg-p1u" id="XHI-Kt-vsF"/>
+                        <outlet property="labelContainer" destination="ttv-6W-XBG" id="D4I-dU-oJ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxa-bd-LWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
