@@ -16,6 +16,11 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var beaconButton: UIBarButtonItem!
+    
+    @IBAction func beaconButtonPressed(sender: AnyObject) {
+        print("show beacons")
+    }
     
     @IBAction func logoutPressed(sender: AnyObject) {
         PFUser.logOut()
@@ -47,6 +52,9 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             self.navigationItem.title = detailItem?.name
         }
     }
+    
+    //probably just make this of type [clbeacon] or whatever
+    var beacons: [Int] = [1,2,3]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +64,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         setupMap()
         setLocationAndCenterOnMap()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "isUserLoggedIn:", name: "BSUserLoggedInNotification", object: nil)
+        setupBeacons()
     }
     
     deinit {
@@ -250,5 +259,12 @@ extension DetailViewController: MKMapViewDelegate {
             detailView.typeDesc.text = "All Purpose"
         }
         return annotationView
+    }
+    
+    func setupBeacons() {
+        beaconButton.enabled = false
+        if self.beacons.isEmpty { return } else {
+            beaconButton.enabled = true
+        }
     }
 }

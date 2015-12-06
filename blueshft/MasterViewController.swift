@@ -75,6 +75,7 @@ class MasterViewController: PFQueryTableViewController {
         }
         query?.orderByDescending("createdAt")
         self.paginationEnabled = true
+        query?.limit = 8
         
         return query!
     }

@@ -43,6 +43,7 @@ class PointPin: UIView {
     @IBAction func speak(sender: AnyObject) {
         if let point = self.point {
             let utterance = AVSpeechUtterance(string: point.details)
+            utterance.volume = 0.75
             synthesizer.delegate = self
             synthesizer.speakUtterance(utterance)
             animateButtonAppearanceForSpeech(true)

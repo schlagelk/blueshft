@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeue.ttc">
@@ -12,10 +13,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Recently Added-->
+        <!--Featured-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController title="Recently Added" id="RMx-3f-FxP" sceneMemberID="viewController">
+                <navigationController title="Featured" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -78,14 +79,23 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Blueshft" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" image="user" id="Pzt-dY-pYT">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="logoutPressed:" destination="JEX-9P-axG" id="kbm-1Z-Ev4"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="user" id="Pzt-dY-pYT">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="JEX-9P-axG" id="kbm-1Z-Ev4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="beacon" style="plain" id="gJ3-7O-7dl">
+                                <color key="tintColor" red="1" green="0.85158104830000003" blue="0.04893185831" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="beaconButtonPressed:" destination="JEX-9P-axG" id="qDR-7h-vfk"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="beaconButton" destination="gJ3-7O-7dl" id="lTB-6z-jsL"/>
                         <outlet property="logoutButton" destination="Pzt-dY-pYT" id="ZAI-oR-wtx"/>
                         <outlet property="mapView" destination="lkJ-f2-sip" id="Ygk-3R-JCm"/>
                         <outlet property="segControl" destination="WiK-45-G9P" id="Ydq-98-9n5"/>
@@ -801,6 +811,7 @@
     </scenes>
     <resources>
         <image name="bar" width="300" height="20"/>
+        <image name="beacon" width="32" height="32"/>
         <image name="close" width="32" height="32"/>
         <image name="empty-classroom" width="473" height="356"/>
         <image name="user" width="32" height="32"/>
