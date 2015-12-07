@@ -22,11 +22,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         print("show beacons")
     }
     
-    @IBAction func logoutPressed(sender: AnyObject) {
-        PFUser.logOut()
-        logoutButton.enabled = false
-    }
-    
     lazy var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 500
     
@@ -55,7 +50,14 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     
     //probably just make this of type [clbeacon] or whatever
     var beacons: [Int] = [1,2,3]
-
+    
+    func setupBeacons() {
+        beaconButton.enabled = false
+        if self.beacons.isEmpty { return } else {
+            beaconButton.enabled = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -71,7 +73,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    func isUserLoggedIn(notification: NSNotification) {
+    func isUserLoggedIn(notification: NSNotification?) {
         if (PFUser.currentUser() == nil) {
             logoutButton.enabled = false
         } else {
@@ -260,11 +262,31 @@ extension DetailViewController: MKMapViewDelegate {
         }
         return annotationView
     }
+}
+
+// #pragma mark - UIAdaptivePresentationControllerDelegate
+extension DetailViewController: UIPopoverPresentationControllerDelegate {
     
-    func setupBeacons() {
-        beaconButton.enabled = false
-        if self.beacons.isEmpty { return } else {
-            beaconButton.enabled = true
-        }
+    @IBAction func logoutPressed(sender: AnyObject) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let contentViewController: PopupViewController = storyboard.instantiateViewControllerWithIdentifier("PopupViewController") as! PopupViewController
+        contentViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+        contentViewController.userButton = self.logoutButton
+        
+        let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
+        detailPopover.barButtonItem = sender as? UIBarButtonItem
+        detailPopover.permittedArrowDirections = UIPopoverArrowDirection.Any
+        detailPopover.delegate = self
+        
+        presentViewController(contentViewController, animated: true, completion:nil)
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+            return UIModalPresentationStyle.None
+    }
+    
+    func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        let navController = UINavigationController(rootViewController: controller.presentedViewController)
+        return navController
     }
 }

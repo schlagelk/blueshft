@@ -105,6 +105,45 @@
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="yJ0-Bh-8vX">
+            <objects>
+                <viewController storyboardIdentifier="PopupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="785-Jm-eAr" customClass="PopupViewController" customModule="blueshft" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="arF-qD-BRd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hip-tg-veQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X94-1m-VGF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsJ-UU-VQk">
+                                <rect key="frame" x="268" y="546" width="65" height="34"/>
+                                <animations/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="785-Jm-eAr" eventType="touchUpInside" id="Ein-UL-U9j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" identifier=""/>
+                        <constraints>
+                            <constraint firstItem="Hip-tg-veQ" firstAttribute="top" secondItem="MsJ-UU-VQk" secondAttribute="bottom" constant="20" id="UbN-v8-jqY"/>
+                            <constraint firstItem="MsJ-UU-VQk" firstAttribute="centerX" secondItem="X94-1m-VGF" secondAttribute="centerX" id="Wf6-I4-5Th"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="MsJ-UU-VQk" id="Uoy-Lv-b6Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SlV-Ym-eZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709" y="842"/>
+        </scene>
         <!--Photo Viewer View Controller-->
         <scene sceneID="MPW-iR-nHy">
             <objects>
