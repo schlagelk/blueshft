@@ -172,13 +172,19 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
                 ++likes
                 self.photoInfo?.likes = likes
                 try self.photoInfo!.save()
-                addButtomBar()
+                removeUnlikeToolbarButtonAndAddLike(likes)
             } catch {
                 print(error)
             }
         } else {
                 print("no object id")
         }
+    }
+    
+    func removeUnlikeToolbarButtonAndAddLike(likes: Int) {
+        self.myToolbar.items?.removeLast()
+        let butt = barButtonItemWithImageNamed("unlike", title: String(likes), action: "unlike", tint: true)
+        self.myToolbar.items?.append(butt)
     }
     
     func unlike() {
@@ -198,13 +204,19 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
                 --likes
                 self.photoInfo?.likes = likes
                 try self.photoInfo!.save()
-                addButtomBar()
+                removeLikeToolbarButtonAndAddUnlike(likes)
             } catch {
                 print (error)
             }
         } else {
             print("no object id")
         }
+    }
+    
+    func removeLikeToolbarButtonAndAddUnlike(likes: Int) {
+        self.myToolbar.items?.removeLast()
+        let butt = barButtonItemWithImageNamed("like", title: String(likes), action: "like")
+        self.myToolbar.items?.append(butt)
     }
     
     func goBack() {
