@@ -125,7 +125,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         
         if self.likeCountForUser > 0 {
             let likesToView = String(likes)
-            items.append(barButtonItemWithImageNamed("unlike", title: likesToView, action: "unlike"))
+            items.append(barButtonItemWithImageNamed("unlike", title: likesToView, action: "unlike", tint: true))
 
         } else {
             let likesToView = String(likes)
@@ -236,7 +236,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         return navController
     }
     
-    func barButtonItemWithImageNamed(imageName: String?, title: String?, action: Selector? = nil) -> UIBarButtonItem {
+    func barButtonItemWithImageNamed(imageName: String?, title: String?, action: Selector? = nil, tint: Bool? = false) -> UIBarButtonItem {
         let button = UIButton(type: .Custom)
         
         if imageName != nil {
@@ -256,6 +256,10 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         
         if action != nil {
             button.addTarget(self, action: action!, forControlEvents: .TouchUpInside)
+        }
+        
+        if tint == true {
+            button.tintColor = UIColor.yellowColor()
         }
         
         let barButton = UIBarButtonItem(customView: button)

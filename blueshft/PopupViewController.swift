@@ -53,7 +53,7 @@ class PopupViewController: UIViewController {
                             }
                         }
                     } else {
-                        self.recentLikeLabel.text = "You have no recent +'s"
+                        self.recentLikeLabel.text = ""
                     }
                 } else {
                     print("error: \(error)")
