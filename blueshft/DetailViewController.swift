@@ -67,6 +67,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         setLocationAndCenterOnMap()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "isUserLoggedIn:", name: "BSUserLoggedInNotification", object: nil)
         setupBeacons()
+        self.navigationItem.backBarButtonItem?.title = ""
     }
     
     deinit {
@@ -272,7 +273,8 @@ extension DetailViewController: UIPopoverPresentationControllerDelegate {
         let contentViewController: PopupViewController = storyboard.instantiateViewControllerWithIdentifier("PopupViewController") as! PopupViewController
         contentViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
         contentViewController.userButton = self.logoutButton
-        
+        contentViewController.preferredContentSize = CGSize(width: 320, height: 200)
+
         let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
         detailPopover.barButtonItem = sender as? UIBarButtonItem
         detailPopover.permittedArrowDirections = UIPopoverArrowDirection.Any

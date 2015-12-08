@@ -10,6 +10,10 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -78,7 +82,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Blueshft" id="mOI-FS-AaM">
+                    <navigationItem key="navigationItem" id="mOI-FS-AaM">
                         <rightBarButtonItems>
                             <barButtonItem image="user" id="Pzt-dY-pYT">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,30 +118,68 @@
                         <viewControllerLayoutGuide type="bottom" id="Hip-tg-veQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="X94-1m-VGF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsJ-UU-VQk">
-                                <rect key="frame" x="268" y="546" width="65" height="34"/>
+                                <rect key="frame" x="100" y="147" width="120" height="33"/>
                                 <animations/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <color key="backgroundColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="X1m-ZB-wyp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logoutButtonPressed:" destination="785-Jm-eAr" eventType="touchUpInside" id="Ein-UL-U9j"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello, &lt;user name&gt;!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-pT-Imz">
+                                <rect key="frame" x="36" y="10" width="248" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Recent +" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-k9-2HC">
+                                <rect key="frame" x="26" y="27" width="99" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no recent +'s" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXU-c5-qXq">
+                                <rect key="frame" x="26" y="47" width="268" height="18"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration" identifier=""/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tXU-c5-qXq" secondAttribute="trailing" constant="10" id="98q-pZ-csP"/>
+                            <constraint firstItem="GyV-pT-Imz" firstAttribute="leading" secondItem="X94-1m-VGF" secondAttribute="leadingMargin" constant="20" id="Ak8-0e-nfC"/>
+                            <constraint firstItem="MBl-k9-2HC" firstAttribute="leading" secondItem="X94-1m-VGF" secondAttribute="leadingMargin" constant="10" id="C3G-gr-wAU"/>
+                            <constraint firstItem="tXU-c5-qXq" firstAttribute="centerX" secondItem="X94-1m-VGF" secondAttribute="centerX" id="CpK-qE-a5U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GyV-pT-Imz" secondAttribute="trailing" constant="20" id="HeH-HV-J6k"/>
+                            <constraint firstItem="GyV-pT-Imz" firstAttribute="top" secondItem="X94-1m-VGF" secondAttribute="topMargin" constant="10" id="JRc-Hw-Tc1"/>
+                            <constraint firstItem="MBl-k9-2HC" firstAttribute="top" secondItem="GyV-pT-Imz" secondAttribute="bottom" id="OYJ-Ju-Nnb"/>
+                            <constraint firstItem="GyV-pT-Imz" firstAttribute="centerX" secondItem="X94-1m-VGF" secondAttribute="centerX" id="Qtz-Oc-16Z"/>
                             <constraint firstItem="Hip-tg-veQ" firstAttribute="top" secondItem="MsJ-UU-VQk" secondAttribute="bottom" constant="20" id="UbN-v8-jqY"/>
                             <constraint firstItem="MsJ-UU-VQk" firstAttribute="centerX" secondItem="X94-1m-VGF" secondAttribute="centerX" id="Wf6-I4-5Th"/>
+                            <constraint firstItem="tXU-c5-qXq" firstAttribute="top" secondItem="GyV-pT-Imz" secondAttribute="bottom" constant="20" id="fi0-tH-CZe"/>
+                            <constraint firstItem="tXU-c5-qXq" firstAttribute="leading" secondItem="X94-1m-VGF" secondAttribute="leadingMargin" constant="10" id="yEf-tG-zfD"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
                     <connections>
+                        <outlet property="greetingLabel" destination="GyV-pT-Imz" id="2ln-9r-SK1"/>
                         <outlet property="logoutButton" destination="MsJ-UU-VQk" id="Uoy-Lv-b6Z"/>
+                        <outlet property="recentLikeLabel" destination="tXU-c5-qXq" id="dZN-3b-BFf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlV-Ym-eZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

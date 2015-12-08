@@ -164,6 +164,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
             post["user"] = user
             post["objetoId"] = objId
             post["userId"] = user?.objectId
+            post["name"] = self.pointName
             
             do {
                 try post.save()
