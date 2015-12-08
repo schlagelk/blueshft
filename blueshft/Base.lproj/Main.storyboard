@@ -128,7 +128,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXU-c5-qXq">
-                                <rect key="frame" x="26" y="47" width="268" height="0.0"/>
+                                <rect key="frame" x="36" y="32" width="258" height="0.0"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <nil key="highlightedColor"/>
@@ -165,8 +165,8 @@
                             <constraint firstItem="Hip-tg-veQ" firstAttribute="top" secondItem="MsJ-UU-VQk" secondAttribute="bottom" constant="20" id="UbN-v8-jqY"/>
                             <constraint firstItem="MsJ-UU-VQk" firstAttribute="centerX" secondItem="X94-1m-VGF" secondAttribute="centerX" id="Wf6-I4-5Th"/>
                             <constraint firstItem="flI-h8-6R4" firstAttribute="leading" secondItem="X94-1m-VGF" secondAttribute="leadingMargin" constant="-10" id="aY7-2g-0ox"/>
-                            <constraint firstItem="tXU-c5-qXq" firstAttribute="top" secondItem="GyV-pT-Imz" secondAttribute="bottom" constant="20" id="fi0-tH-CZe"/>
-                            <constraint firstItem="tXU-c5-qXq" firstAttribute="leading" secondItem="X94-1m-VGF" secondAttribute="leadingMargin" constant="10" id="yEf-tG-zfD"/>
+                            <constraint firstItem="tXU-c5-qXq" firstAttribute="top" secondItem="GyV-pT-Imz" secondAttribute="bottom" constant="5" id="fi0-tH-CZe"/>
+                            <constraint firstItem="tXU-c5-qXq" firstAttribute="leading" secondItem="X94-1m-VGF" secondAttribute="leadingMargin" constant="20" id="yEf-tG-zfD"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
