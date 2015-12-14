@@ -17,7 +17,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="240" height="196"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oy-fA-2y3">
-                                    <rect key="frame" x="0.0" y="0.0" width="32" height="13"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="11"/>
                                     <animations/>
                                     <color key="backgroundColor" red="0.93333333330000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -25,51 +25,51 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeT-iA-4Vm">
-                                    <rect key="frame" x="0.0" y="13" width="240" height="161"/>
+                                    <rect key="frame" x="0.0" y="11" width="240" height="143"/>
                                     <animations/>
                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                     <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-xL-mzJ">
-                                    <rect key="frame" x="0.0" y="174" width="220" height="22"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-xL-mzJ">
+                                    <rect key="frame" x="0.0" y="154" width="240" height="42"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-tE-iUW">
-                                            <rect key="frame" x="0.0" y="0.0" width="70" height="22"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-tE-iUW">
+                                            <rect key="frame" x="0.0" y="0.0" width="64" height="42"/>
                                             <animations/>
-                                            <state key="normal" title="Pics">
+                                            <state key="normal" image="foto">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.78499788849999996" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="seeMoreAboutPoint:" destination="uH7-e3-t5d" eventType="touchUpInside" id="FLs-zy-iwb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-J8-q6e">
-                                            <rect key="frame" x="75" y="0.0" width="70" height="22"/>
+                                        <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-J8-q6e">
+                                            <rect key="frame" x="88" y="0.0" width="64" height="42"/>
                                             <animations/>
-                                            <state key="normal" title="Directions">
+                                            <state key="normal" image="direkt">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.78499788849999996" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="getDirectionsToPoint:" destination="uH7-e3-t5d" eventType="touchUpInside" id="Qo8-S8-ZzR"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-uN-ytb">
-                                            <rect key="frame" x="150" y="0.0" width="70" height="22"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-uN-ytb">
+                                            <rect key="frame" x="176" y="0.0" width="64" height="42"/>
                                             <animations/>
-                                            <state key="normal" title="Talk">
+                                            <state key="normal" image="speak">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.88241659630000002" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
                                                 <action selector="speak:" destination="uH7-e3-t5d" eventType="touchUpInside" id="7p3-m8-ptb"/>
                                             </connections>
                                         </button>
-                                        <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Fx-PBv">
-                                            <rect key="frame" x="220" y="0.0" width="0.0" height="30"/>
+                                        <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Fx-PBv">
+                                            <rect key="frame" x="240" y="0.0" width="0.0" height="64"/>
                                             <animations/>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.88241659630000002" colorSpace="calibratedRGB"/>
-                                            <state key="normal" title="Stop"/>
+                                            <state key="normal" image="stoptalking"/>
                                             <connections>
                                                 <action selector="stopSpeek:" destination="uH7-e3-t5d" eventType="touchUpInside" id="EQu-Qf-fBZ"/>
                                             </connections>
@@ -79,6 +79,17 @@
                                 </stackView>
                             </subviews>
                             <animations/>
+                            <constraints>
+                                <constraint firstItem="kwv-xL-mzJ" firstAttribute="top" secondItem="oeT-iA-4Vm" secondAttribute="bottom" constant="50" id="G79-oe-UzL"/>
+                                <constraint firstAttribute="bottom" secondItem="kwv-xL-mzJ" secondAttribute="bottom" constant="20" id="JOr-Ei-jFX"/>
+                                <constraint firstItem="kwv-xL-mzJ" firstAttribute="centerX" secondItem="2ph-pb-10v" secondAttribute="centerX" id="qVW-rD-mHZ"/>
+                                <constraint firstItem="kwv-xL-mzJ" firstAttribute="leading" secondItem="2ph-pb-10v" secondAttribute="leading" constant="15" id="whp-wq-LqV"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="whp-wq-LqV"/>
+                                </mask>
+                            </variation>
                         </stackView>
                     </subviews>
                     <animations/>
@@ -114,4 +125,10 @@
             <point key="canvasLocation" x="518" y="568"/>
         </view>
     </objects>
+    <resources>
+        <image name="direkt" width="64" height="64"/>
+        <image name="foto" width="64" height="64"/>
+        <image name="speak" width="64" height="64"/>
+        <image name="stoptalking" width="64" height="64"/>
+    </resources>
 </document>
