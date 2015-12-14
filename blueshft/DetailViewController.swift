@@ -265,7 +265,6 @@ extension DetailViewController: MKMapViewDelegate {
     }
 }
 
-// #pragma mark - UIAdaptivePresentationControllerDelegate
 extension DetailViewController: UIPopoverPresentationControllerDelegate {
     
     @IBAction func logoutPressed(sender: AnyObject) {
