@@ -326,7 +326,7 @@
                         </connections>
                     </collectionView>
                     <connections>
-                        <segue destination="eYb-4c-uR3" kind="show" identifier="ShowPhoto" id="XXZ-fV-2o7"/>
+                        <segue destination="eYb-4c-uR3" kind="presentation" identifier="ShowPhoto" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="XXZ-fV-2o7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lua-16-3bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -504,15 +504,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01k-KC-TiU">
                                 <rect key="frame" x="165" y="127" width="270" height="346"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blueshft" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmX-X7-fg1">
-                                        <rect key="frame" x="91" y="20" width="88" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blueshft" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmX-X7-fg1">
+                                        <rect key="frame" x="81" y="20" width="108" height="39"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="33"/>
+                                        <color key="textColor" red="0.1222351408" green="0.49003604682368418" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ElA-lS-YEk">
-                                        <rect key="frame" x="13" y="133" width="245" height="30"/>
+                                        <rect key="frame" x="13" y="114" width="245" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="245" id="6RX-Os-E7f"/>
@@ -522,7 +522,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fT5-f0-Rtj">
-                                        <rect key="frame" x="13" y="80" width="245" height="30"/>
+                                        <rect key="frame" x="13" y="61" width="245" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4Xz-cL-eLy"/>
@@ -532,7 +532,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8K-eS-Cpl">
-                                        <rect key="frame" x="103" y="195" width="63" height="45"/>
+                                        <rect key="frame" x="103" y="176" width="63" height="45"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="OEe-um-7FV"/>
@@ -548,7 +548,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-ev-xXK">
-                                        <rect key="frame" x="0.0" y="284" width="270" height="20"/>
+                                        <rect key="frame" x="0.0" y="265" width="270" height="20"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="1Wz-6D-jH5"/>
@@ -558,7 +558,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rg4-a6-0ff">
-                                        <rect key="frame" x="103" y="300" width="64" height="33"/>
+                                        <rect key="frame" x="103" y="281" width="64" height="33"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="244-Sj-5tS"/>
@@ -575,7 +575,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h7-hR-MId">
-                                        <rect key="frame" x="75" y="259" width="121" height="33"/>
+                                        <rect key="frame" x="75" y="240" width="121" height="33"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="36z-43-RdJ"/>
@@ -678,15 +678,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qC1-OS-sXg">
                                 <rect key="frame" x="165" y="127" width="270" height="346"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blueshft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-4V-3dm">
-                                        <rect key="frame" x="92" y="20" width="88" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blueshft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-4V-3dm">
+                                        <rect key="frame" x="82" y="20" width="108" height="39"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="33"/>
+                                        <color key="textColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q9d-HN-Vfv">
-                                        <rect key="frame" x="13" y="81" width="245" height="30"/>
+                                        <rect key="frame" x="13" y="62" width="245" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="245" id="45f-v4-d1q"/>
@@ -696,7 +696,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRo-fl-Jw8">
-                                        <rect key="frame" x="13" y="184" width="245" height="30"/>
+                                        <rect key="frame" x="13" y="165" width="245" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="245" id="8jv-6I-YOd"/>
@@ -705,7 +705,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-Aw-f1n">
-                                        <rect key="frame" x="13" y="134" width="245" height="30"/>
+                                        <rect key="frame" x="13" y="115" width="245" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="P2Y-eh-X1S"/>
@@ -715,7 +715,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enp-rw-ssf">
-                                        <rect key="frame" x="85" y="246" width="100" height="45"/>
+                                        <rect key="frame" x="85" y="227" width="100" height="45"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="i55-9x-8ze"/>
@@ -843,15 +843,15 @@
                                             <action selector="passwordReset:" destination="64m-U6-Bdj" eventType="touchUpInside" id="zyU-Lo-0Mj"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blueshft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMk-Bv-Dh2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blueshft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMk-Bv-Dh2">
                                         <rect key="frame" x="80" y="20" width="112" height="58"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="112" id="24x-zS-aKJ"/>
                                             <constraint firstAttribute="height" constant="58" id="G0U-pO-4xU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="33"/>
+                                        <color key="textColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
