@@ -18,10 +18,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var beaconButton: UIBarButtonItem!
     
-    @IBAction func beaconButtonPressed(sender: AnyObject) {
-        print("show beacons")
-    }
-    
     lazy var locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 500
     
@@ -265,6 +261,7 @@ extension DetailViewController: MKMapViewDelegate {
     }
 }
 
+// MARK: Popover stuff
 extension DetailViewController: UIPopoverPresentationControllerDelegate {
     
     @IBAction func logoutPressed(sender: AnyObject) {
@@ -274,6 +271,20 @@ extension DetailViewController: UIPopoverPresentationControllerDelegate {
         contentViewController.userButton = self.logoutButton
         contentViewController.preferredContentSize = CGSize(width: 320, height: 260)
 
+        let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
+        detailPopover.barButtonItem = sender as? UIBarButtonItem
+        detailPopover.permittedArrowDirections = UIPopoverArrowDirection.Any
+        detailPopover.delegate = self
+        
+        presentViewController(contentViewController, animated: true, completion:nil)
+    }
+    
+    @IBAction func beaconButtonPressed(sender: AnyObject) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let contentViewController: BeaconsViewController = storyboard.instantiateViewControllerWithIdentifier("BeaconsViewController") as! BeaconsViewController
+        contentViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+        contentViewController.preferredContentSize = CGSize(width: 320, height: 460)
+        
         let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
         detailPopover.barButtonItem = sender as? UIBarButtonItem
         detailPopover.permittedArrowDirections = UIPopoverArrowDirection.Any
