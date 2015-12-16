@@ -244,28 +244,28 @@ extension DetailViewController: MKMapViewDelegate {
         
         // set colors for map annotations and details
         // need to figure out colors and shit
-        switch annotation.type {
-        case 4:
-            let color = UIColor.cyanColor()
-            annotationView!.pinTintColor = color
-            detailView.typeDesc.backgroundColor = color
-            detailView.typeDesc.text = "Arts"
-        case 3:
-            let color = UIColor.blackColor()
-            annotationView!.pinTintColor = color
-            detailView.typeDesc.backgroundColor = color
-            detailView.typeDesc.text = "Academic"
-        case 2:
-            let color = UIColor.orangeColor()
-            annotationView!.pinTintColor = color
-            detailView.typeDesc.backgroundColor = color
-            detailView.typeDesc.text = "Life"
-        default:
-            let color = UIColor.blueColor()
-            annotationView!.pinTintColor = color
-            detailView.typeDesc.backgroundColor = color
-            detailView.typeDesc.text = "All Purpose"
-        }
+//        switch annotation.type {
+//        case 4:
+//            let color = UIColor.cyanColor()
+//            annotationView!.pinTintColor = color
+//            detailView.typeDesc.backgroundColor = color
+//            detailView.typeDesc.text = "Arts"
+//        case 3:
+//            let color = UIColor.blackColor()
+//            annotationView!.pinTintColor = color
+//            detailView.typeDesc.backgroundColor = color
+//            detailView.typeDesc.text = "Academic"
+//        case 2:
+//            let color = UIColor.orangeColor()
+//            annotationView!.pinTintColor = color
+//            detailView.typeDesc.backgroundColor = color
+//            detailView.typeDesc.text = "Life"
+//        default:
+//            let color = UIColor.blueColor()
+//            annotationView!.pinTintColor = color
+//            detailView.typeDesc.backgroundColor = color
+//            detailView.typeDesc.text = "All Purpose"
+//        }
         return annotationView
     }
 }
