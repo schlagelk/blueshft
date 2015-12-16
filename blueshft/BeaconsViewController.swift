@@ -11,14 +11,11 @@ import UIKit
 class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "groupcell")
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,13 +35,19 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
+        //return self.beacons.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")
         
         // Configure the cell...
+        //cell!.textLabel?.text = self.beacons[indexPath.row]
         
-        return cell
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("You selected beacon #\(indexPath.row)!")
     }
 }

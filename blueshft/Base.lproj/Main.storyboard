@@ -209,6 +209,10 @@
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qUP-WV-Vrf" id="us8-cR-qaz"/>
+                                    <outlet property="delegate" destination="qUP-WV-Vrf" id="egb-AC-ltC"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
