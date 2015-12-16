@@ -19,13 +19,15 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var beaconButton: UIBarButtonItem!
     
     lazy var locationManager = CLLocationManager()
+    lazy var currentLocation = CLLocation()
+
     let regionRadius: CLLocationDistance = 500
+    let distanceInMetersToActivateBeacons = 3000.00
     
     let simpleTransitionDelegate = SimpleTransitionDelegate()
     
     var tours = [Tour]() {
         didSet {
-            print("total tours: \(self.tours)")
         }
     }
     
@@ -40,17 +42,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     var detailItem: School? {
         didSet {
             getToursForMap()
+            setupBeacons()
             self.navigationItem.title = detailItem?.name
-        }
-    }
-    
-    //probably just make this of type [clbeacon] or whatever
-    var beacons: [Int] = [1,2,3]
-    
-    func setupBeacons() {
-        beaconButton.enabled = false
-        if self.beacons.isEmpty { return } else {
-            beaconButton.enabled = true
         }
     }
     
@@ -68,6 +61,22 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    //probably just make this of type [clbeacon] or whatever
+    var beacons: [Int] = [1,2,3]
+    
+    func setupBeacons() {
+        beaconButton.enabled = false
+        guard self.detailItem?.headquarters.longitude != nil && self.detailItem?.headquarters.latitude != nil else { return }
+        if let currentLocationExists = locationManager.location {
+            let castedLocationOfSchool = CLLocation(latitude: (self.detailItem?.headquarters.latitude)!, longitude:(self.detailItem?.headquarters.longitude)!)
+            currentLocation = locationManager.location!
+            let distanceToSchool = currentLocation.distanceFromLocation(castedLocationOfSchool)
+            if distanceToSchool < distanceInMetersToActivateBeacons {
+                beaconButton.enabled = true
+            }
+        }
     }
     
     func isUserLoggedIn(notification: NSNotification?) {
