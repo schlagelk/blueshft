@@ -11,9 +11,16 @@ import UIKit
 class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var beacons: [Point]? {
+        didSet {
+
+        }
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.beacons)
 
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }

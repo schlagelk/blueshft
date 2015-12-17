@@ -30,7 +30,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         didSet {
         }
     }
-    
+
     var toursOnView = [String: String]()
     
     var idOfMapOnView: String? {
@@ -62,9 +62,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    
-    //probably just make this of type [clbeacon] or whatever
-    var beacons: [Int] = [1,2,3]
     
     func setupBeacons() {
         beaconButton.enabled = false
@@ -293,6 +290,9 @@ extension DetailViewController: UIPopoverPresentationControllerDelegate {
         let contentViewController: BeaconsViewController = storyboard.instantiateViewControllerWithIdentifier("BeaconsViewController") as! BeaconsViewController
         contentViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
         contentViewController.preferredContentSize = CGSize(width: 320, height: 460)
+        
+        var testingPassingData = mapView.annotations.filter { $0 !== mapView.userLocation }
+        contentViewController.beacons = testingPassingData as? [Point]
         
         let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
         detailPopover.barButtonItem = sender as? UIBarButtonItem
