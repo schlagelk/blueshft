@@ -12,7 +12,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
-    var beacons: [Point]? {
+    var beacons = [Point]() {
         didSet {
 
         }
@@ -41,17 +41,16 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-        //return self.beacons.count
+        return self.beacons.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")
-        
-        // Configure the cell...
-        //cell!.textLabel?.text = self.beacons[indexPath.row]
-        
-        return cell!
+        let cellIdentifier = "BeaconsTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BeaconsTableViewCell
+        let beaconOnCell = beacons[indexPath.row]
+        cell.beaconNameLabel.text = beaconOnCell.name
+        cell.beaconImage.image = UIImage(named: "+")
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

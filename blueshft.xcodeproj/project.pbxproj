@@ -25,6 +25,7 @@
 		848468C51BBCBE6A0066F141 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848468C41BBCBE6A0066F141 /* Tour.swift */; };
 		848C74FD1BF1483600D93D32 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C74FC1BF1483600D93D32 /* Thumbnail.swift */; };
 		84BAFF911BC07922005C963A /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BAFF901BC07922005C963A /* Point.swift */; };
+		84CA2C801C23452900D9C1B9 /* BeaconsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA2C7F1C23452900D9C1B9 /* BeaconsTableViewCell.swift */; };
 		84DCA1721C151DA600FE60FE /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DCA1711C151DA600FE60FE /* PopupViewController.swift */; };
 		84E943001BB87D770092ABAD /* SchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E942FF1BB87D770092ABAD /* SchoolCell.swift */; };
 		84FFC5021BB77169008F2745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC5011BB77169008F2745 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 		848468C41BBCBE6A0066F141 /* Tour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		848C74FC1BF1483600D93D32 /* Thumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		84BAFF901BC07922005C963A /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		84CA2C7F1C23452900D9C1B9 /* BeaconsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconsTableViewCell.swift; sourceTree = "<group>"; };
 		84DCA1711C151DA600FE60FE /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		84E942FF1BB87D770092ABAD /* SchoolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolCell.swift; sourceTree = "<group>"; };
 		84FFC4FE1BB77169008F2745 /* blueshft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blueshft.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 			children = (
 				8460B8781BE6BD80000832B1 /* PointPin.swift */,
 				84E942FF1BB87D770092ABAD /* SchoolCell.swift */,
+				84CA2C7F1C23452900D9C1B9 /* BeaconsTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -173,17 +176,17 @@
 		84DEACC31BBA19D100F271A3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8415C9591C205A5B00EBD3B2 /* BeaconsViewController.swift */,
 				84537C731BC9B8AC00837C51 /* DetailPresentationController.swift */,
 				84FFC5081BB77169008F2745 /* DetailViewController.swift */,
 				846866591C0A101C00F8334D /* LoginViewController.swift */,
 				84FFC5061BB77169008F2745 /* MasterViewController.swift */,
 				84537C771BC9C6DF00837C51 /* OverlayViewController.swift */,
 				844E45891BFABBAC008556A9 /* PhotoViewerViewController.swift */,
+				84DCA1711C151DA600FE60FE /* PopupViewController.swift */,
 				8468665D1C0A280600F8334D /* ResetPasswordViewController.swift */,
 				8468665B1C0A146600F8334D /* SignUpViewController.swift */,
 				84537C751BC9BC6400837C51 /* SimpleTransitioner.swift */,
-				84DCA1711C151DA600FE60FE /* PopupViewController.swift */,
-				8415C9591C205A5B00EBD3B2 /* BeaconsViewController.swift */,
 				8415C95B1C2068AE00EBD3B2 /* TableViewController.swift */,
 			);
 			name = Controller;
@@ -436,6 +439,7 @@
 				84E943001BB87D770092ABAD /* SchoolCell.swift in Sources */,
 				845F51491BB7768E0050A80E /* School.swift in Sources */,
 				84FFC5091BB77169008F2745 /* DetailViewController.swift in Sources */,
+				84CA2C801C23452900D9C1B9 /* BeaconsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

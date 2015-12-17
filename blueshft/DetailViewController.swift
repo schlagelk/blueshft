@@ -72,6 +72,9 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             let distanceToSchool = currentLocation.distanceFromLocation(castedLocationOfSchool)
             if distanceToSchool < distanceInMetersToActivateBeacons {
                 beaconButton.enabled = true
+                // startRangingBeaconsInRegion
+                // range should be tour unique id
+                // or can i make the popup the cl delegate using this class locationManager reference?
             }
         }
     }
@@ -292,7 +295,7 @@ extension DetailViewController: UIPopoverPresentationControllerDelegate {
         contentViewController.preferredContentSize = CGSize(width: 320, height: 460)
         
         var testingPassingData = mapView.annotations.filter { $0 !== mapView.userLocation }
-        contentViewController.beacons = testingPassingData as? [Point]
+        contentViewController.beacons = testingPassingData as! [Point]
         
         let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
         detailPopover.barButtonItem = sender as? UIBarButtonItem
