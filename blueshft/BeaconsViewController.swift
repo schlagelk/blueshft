@@ -49,7 +49,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BeaconsTableViewCell
         let beaconOnCell = beacons[indexPath.row]
         cell.beaconNameLabel.text = beaconOnCell.name
-        cell.beaconImage.image = UIImage(named: "+")
+        cell.beaconDescLabel.text = beaconOnCell.details
         return cell
     }
     

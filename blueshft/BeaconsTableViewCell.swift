@@ -11,7 +11,7 @@ import UIKit
 class BeaconsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var beaconNameLabel: UILabel!
-    @IBOutlet weak var beaconImage: UIImageView!
+    @IBOutlet weak var beaconDescLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
