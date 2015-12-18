@@ -12,6 +12,10 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var tableView: UITableView!
     
+    var selectedCellIndexPath: NSIndexPath?
+    let SelectedCellHeight: CGFloat = 140
+    let UnselectedCellHeight: CGFloat = 80.0
+    
     var beacons = [Point]() {
         didSet {
 
@@ -54,6 +58,25 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected beacon #\(indexPath.row)!")
+        if let selectedCellIndexPath = selectedCellIndexPath {
+            if selectedCellIndexPath == indexPath {
+                self.selectedCellIndexPath = nil
+            } else {
+                self.selectedCellIndexPath = indexPath
+            }
+        } else {
+            selectedCellIndexPath = indexPath
+        }
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        if let selectedCellIndexPath = selectedCellIndexPath {
+            if selectedCellIndexPath == indexPath {
+                return SelectedCellHeight
+            }
+        }
+        return UnselectedCellHeight
     }
 }
