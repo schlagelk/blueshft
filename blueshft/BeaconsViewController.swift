@@ -16,14 +16,16 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     let SelectedCellHeight: CGFloat = 140
     let UnselectedCellHeight: CGFloat = 80.0
     
-    var beacons = [Point]() {
+    var beacons = [Beacon]() {
         didSet {
-
+            print(self.beacons)
+            // maybe beginUpdates & endUpdates for table here?
         }
     }
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataForBeacons()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +52,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BeaconsTableViewCell
         let beaconOnCell = beacons[indexPath.row]
         cell.beaconNameLabel.text = beaconOnCell.name
-        cell.beaconDescLabel.text = beaconOnCell.details
+        cell.beaconDescLabel.text = beaconOnCell.subTitle
         return cell
     }
     
@@ -75,5 +77,17 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         return UnselectedCellHeight
+    }
+    
+    func loadDataForBeacons() {
+        let query = Beacon.query()
+        query!.whereKey("minor", equalTo: "8U8j3o7u7T")
+        query!.whereKey("major", equalTo: "123")
+        do {
+            let objects = try query!.findObjects() as! [Beacon]
+            self.beacons.appendContentsOf(objects)
+        } catch {
+            print(error)
+        }
     }
 }

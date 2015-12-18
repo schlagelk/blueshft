@@ -293,9 +293,10 @@ extension DetailViewController: UIPopoverPresentationControllerDelegate {
         let contentViewController: BeaconsViewController = storyboard.instantiateViewControllerWithIdentifier("BeaconsViewController") as! BeaconsViewController
         contentViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
         contentViewController.preferredContentSize = CGSize(width: 320, height: 460)
-        
-        var testingPassingData = mapView.annotations.filter { $0 !== mapView.userLocation }
-        contentViewController.beacons = testingPassingData as! [Point]
+        var testingPassingData: [Beacon]?
+        if var testingPassingData = testingPassingData {
+            contentViewController.beacons = testingPassingData
+        }
         
         let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
         detailPopover.barButtonItem = sender as? UIBarButtonItem
