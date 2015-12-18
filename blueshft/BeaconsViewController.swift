@@ -24,9 +24,6 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.beacons)
-
-        //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,7 +68,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.endUpdates()
     }
     
-    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if let selectedCellIndexPath = selectedCellIndexPath {
             if selectedCellIndexPath == indexPath {
                 return SelectedCellHeight
