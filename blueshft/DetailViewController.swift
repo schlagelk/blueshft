@@ -23,6 +23,18 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var stickyNameLabel: UILabel!
     @IBOutlet weak var stickyLocationLabel: UILabel!
     
+    
+    @IBOutlet weak var showStickyButton: UIButton!
+    @IBAction func showStickyPressed(sender: AnyObject) {
+        self.tagView.hidden = false
+        self.showStickyButton.hidden = true
+    }
+    
+    @IBAction func closeStickyPressed(sender: AnyObject) {
+        self.tagView.hidden = true
+        self.showStickyButton.hidden = false
+    }
+    
     private var animator: UIDynamicAnimator!
     var stickyBehavior: StickyEdgesBehavior!
     private var offset = CGPoint.zero
@@ -132,6 +144,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: sticky
     func setUpSticky() {
+        self.showStickyButton.hidden = true
         if self.detailItem != nil {
             tagView.hidden = false
             tagView.layer.borderWidth = 0.5
