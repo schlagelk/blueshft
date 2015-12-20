@@ -16,6 +16,9 @@ class School: PFObject {
     @NSManaged var state: String
     @NSManaged var image: PFFile
     @NSManaged var headquarters: PFGeoPoint
+    var location: String {
+        return city + ", " + state
+    }
     
     init(name: String, students: String, city: String, state: String, image: PFFile, headquarters: PFGeoPoint) {
         super.init()

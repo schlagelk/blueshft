@@ -145,7 +145,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             animator.addBehavior(stickyBehavior)
             stickyStudentsLabel.text = self.detailItem?.students
             stickyNameLabel.text = self.detailItem?.name
-            stickyLocationLabel.text = "\(self.detailItem?.city)" + "\(self.detailItem?.state)"
+            stickyLocationLabel.text = self.detailItem?.location
         } else {
             tagView.hidden = true
         }

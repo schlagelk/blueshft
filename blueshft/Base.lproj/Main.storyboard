@@ -61,7 +61,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhR-Qi-hZs" userLabel="Meta View">
                                         <rect key="frame" x="170" y="407" width="260" height="111"/>
                                         <subviews>
-                                            <visualEffectView opaque="NO" alpha="0.88" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4f-d3-v8Y">
+                                            <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4f-d3-v8Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="260" height="111"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="qRu-jG-fhr">
                                                     <rect key="frame" x="0.0" y="0.0" width="260" height="111"/>
