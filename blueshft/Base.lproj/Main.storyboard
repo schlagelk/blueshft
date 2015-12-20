@@ -15,6 +15,9 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -66,19 +69,19 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20,000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl0-85-4BA">
                                                             <rect key="frame" x="41" y="46" width="211" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Denver, CO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWz-Y1-YIi">
                                                             <rect key="frame" x="41" y="85" width="211" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blueshft University" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K4-o0-wVj">
                                                             <rect key="frame" x="41" y="8" width="211" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -93,8 +96,21 @@
                                             <constraint firstAttribute="height" constant="111" id="Twl-0s-Iu1"/>
                                         </constraints>
                                     </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-45-G9P">
+                                        <rect key="frame" x="230" y="10" width="141" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="RjT-k3-eam"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Standard"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </segmentedControl>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="WiK-45-G9P" firstAttribute="top" secondItem="v8I-g7-pJz" secondAttribute="top" constant="10" id="3Di-dw-IsL"/>
+                                    <constraint firstItem="WiK-45-G9P" firstAttribute="centerX" secondItem="v8I-g7-pJz" secondAttribute="centerX" id="G8H-fC-urk"/>
                                     <constraint firstItem="hhR-Qi-hZs" firstAttribute="centerX" secondItem="v8I-g7-pJz" secondAttribute="centerX" id="QbE-uD-Ien"/>
                                     <constraint firstItem="lkJ-f2-sip" firstAttribute="leading" secondItem="v8I-g7-pJz" secondAttribute="leading" id="Ybc-vT-p5n"/>
                                     <constraint firstItem="lkJ-f2-sip" firstAttribute="centerX" secondItem="v8I-g7-pJz" secondAttribute="centerX" id="ZXe-kb-mj1"/>
@@ -104,29 +120,14 @@
                                     <constraint firstAttribute="bottom" secondItem="lkJ-f2-sip" secondAttribute="bottom" id="mAm-bn-AX0"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-45-G9P">
-                                <rect key="frame" x="0.0" y="560" width="600" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RjT-k3-eam"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Standard"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <color key="tintColor" red="0.0" green="0.84371054292929293" blue="0.84371054292929293" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="v8I-g7-pJz" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="10G-FG-l9T"/>
-                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="WiK-45-G9P" secondAttribute="bottom" constant="20" id="8w7-7t-r7i"/>
                             <constraint firstItem="v8I-g7-pJz" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="GBg-a9-Xhf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v8I-g7-pJz" secondAttribute="trailing" constant="-20" id="RDd-FL-f8U"/>
                             <constraint firstItem="v8I-g7-pJz" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="TVH-dV-WLE"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="v8I-g7-pJz" secondAttribute="bottom" id="fwt-Zl-aeh"/>
-                            <constraint firstItem="WiK-45-G9P" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="i7L-4L-Td2"/>
-                            <constraint firstItem="WiK-45-G9P" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="mCX-bS-B7O"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WiK-45-G9P" secondAttribute="trailing" id="sII-bn-kui"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

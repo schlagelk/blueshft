@@ -53,7 +53,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         didSet {
             getToursForMap()
             setupBeacons()
-            self.navigationItem.title = detailItem?.name
         }
     }
     
@@ -69,15 +68,20 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationItem.backBarButtonItem?.title = ""
         
         // MARK: sticky
-        tagView.layer.borderWidth = 0.5
-        tagView.layer.cornerRadius = 15
-        
-        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
-        tagView.addGestureRecognizer(gestureRecognizer)
-        
-        animator = UIDynamicAnimator(referenceView: containerView)
-        stickyBehavior = StickyEdgesBehavior(item: tagView, edgeInset: 8)
-        animator.addBehavior(stickyBehavior)
+        if self.detailItem != nil {
+            tagView.hidden = false
+            tagView.layer.borderWidth = 0.5
+            tagView.layer.cornerRadius = 10
+            
+            let gestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
+            tagView.addGestureRecognizer(gestureRecognizer)
+            
+            animator = UIDynamicAnimator(referenceView: containerView)
+            stickyBehavior = StickyEdgesBehavior(item: tagView, edgeInset: 8)
+            animator.addBehavior(stickyBehavior)
+        } else {
+            tagView.hidden = true
+        }
     }
     
     func pan(pan: UIPanGestureRecognizer) {
@@ -119,9 +123,10 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        stickyBehavior.isEnabled = false
-        stickyBehavior.updateFieldsInBounds(containerView.bounds)
+        if self.detailItem != nil {
+            stickyBehavior.isEnabled = false
+            stickyBehavior.updateFieldsInBounds(containerView.bounds)
+        }
     }
     
     deinit {
