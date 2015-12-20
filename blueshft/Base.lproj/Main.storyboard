@@ -52,6 +52,53 @@
                                     <outlet property="delegate" destination="JEX-9P-axG" id="IGj-am-svo"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8I-g7-pJz" userLabel="Container View">
+                                <rect key="frame" x="20" y="74" width="560" height="516"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhR-Qi-hZs" userLabel="Meta View">
+                                        <rect key="frame" x="170" y="407" width="260" height="111"/>
+                                        <subviews>
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4f-d3-v8Y">
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="111"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="qRu-jG-fhr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="111"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20,000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl0-85-4BA">
+                                                            <rect key="frame" x="41" y="46" width="211" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Denver, CO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWz-Y1-YIi">
+                                                            <rect key="frame" x="41" y="85" width="211" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blueshft University" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K4-o0-wVj">
+                                                            <rect key="frame" x="41" y="8" width="211" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <blurEffect style="light"/>
+                                            </visualEffectView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="IX2-9c-Vlf"/>
+                                            <constraint firstAttribute="height" constant="111" id="Twl-0s-Iu1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hhR-Qi-hZs" firstAttribute="centerX" secondItem="v8I-g7-pJz" secondAttribute="centerX" id="QbE-uD-Ien"/>
+                                    <constraint firstAttribute="bottom" secondItem="hhR-Qi-hZs" secondAttribute="bottom" constant="8" id="kxb-6c-pko"/>
+                                </constraints>
+                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-45-G9P">
                                 <rect key="frame" x="0.0" y="560" width="600" height="41"/>
                                 <constraints>
@@ -66,12 +113,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="v8I-g7-pJz" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="10G-FG-l9T"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="WiK-45-G9P" secondAttribute="bottom" constant="20" id="8w7-7t-r7i"/>
                             <constraint firstItem="lkJ-f2-sip" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="9ZS-g1-FfJ"/>
                             <constraint firstItem="lkJ-f2-sip" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-20" id="FHk-8U-Wgs"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="lkJ-f2-sip" secondAttribute="bottom" constant="-20" id="FLY-xW-y3k"/>
+                            <constraint firstItem="v8I-g7-pJz" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="GBg-a9-Xhf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v8I-g7-pJz" secondAttribute="trailing" id="RDd-FL-f8U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lkJ-f2-sip" secondAttribute="trailing" constant="-20" id="SH5-yU-baX"/>
+                            <constraint firstItem="v8I-g7-pJz" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="10" id="TVH-dV-WLE"/>
                             <constraint firstItem="lkJ-f2-sip" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="fF6-Ll-HFi"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="v8I-g7-pJz" secondAttribute="bottom" constant="10" id="fwt-Zl-aeh"/>
                             <constraint firstItem="WiK-45-G9P" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="i7L-4L-Td2"/>
                             <constraint firstItem="lkJ-f2-sip" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jxU-DT-atG"/>
                             <constraint firstItem="WiK-45-G9P" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="mCX-bS-B7O"/>
@@ -97,9 +149,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="beaconButton" destination="gJ3-7O-7dl" id="lTB-6z-jsL"/>
+                        <outlet property="containerView" destination="v8I-g7-pJz" id="jbT-l8-zhO"/>
                         <outlet property="logoutButton" destination="Pzt-dY-pYT" id="ZAI-oR-wtx"/>
                         <outlet property="mapView" destination="lkJ-f2-sip" id="Ygk-3R-JCm"/>
+                        <outlet property="schoolLocationLabel" destination="WiK-45-G9P" id="Oh0-5R-eo0"/>
+                        <outlet property="schoolNameLabel" destination="v8I-g7-pJz" id="A8T-yi-Xp5"/>
+                        <outlet property="schoolStudentsLabel" destination="v8I-g7-pJz" id="GUP-Ic-rYX"/>
                         <outlet property="segControl" destination="WiK-45-G9P" id="Ydq-98-9n5"/>
+                        <outlet property="tagView" destination="hhR-Qi-hZs" id="ZSD-tl-lQw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>

@@ -17,6 +17,16 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var beaconButton: UIBarButtonItem!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var tagView: UIView!
+    
+    @IBOutlet weak var schoolNameLabel: UIView!
+    @IBOutlet weak var schoolStudentsLabel: UIView!
+    @IBOutlet weak var schoolLocationLabel: UISegmentedControl!
+    
+    private var animator: UIDynamicAnimator!
+    var stickyBehavior: StickyEdgesBehavior!
+    private var offset = CGPoint.zero
     
     lazy var locationManager = CLLocationManager()
     lazy var currentLocation = CLLocation()
@@ -57,6 +67,61 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "isUserLoggedIn:", name: "BSUserLoggedInNotification", object: nil)
         setupBeacons()
         self.navigationItem.backBarButtonItem?.title = ""
+        
+        // MARK: sticky
+        tagView.layer.borderWidth = 0.5
+        tagView.layer.cornerRadius = 15
+        
+        let gestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
+        tagView.addGestureRecognizer(gestureRecognizer)
+        
+        animator = UIDynamicAnimator(referenceView: containerView)
+        stickyBehavior = StickyEdgesBehavior(item: tagView, edgeInset: 8)
+        animator.addBehavior(stickyBehavior)
+    }
+    
+    func pan(pan: UIPanGestureRecognizer) {
+        var location = pan.locationInView(containerView)
+        
+        switch pan.state {
+        case .Began:
+            let center = tagView.center
+            offset.x = location.x - center.x
+            offset.y = location.y - center.y
+            
+            stickyBehavior.isEnabled = false
+            
+        case .Changed:
+            let referenceBounds = containerView.bounds
+            let referenceWidth = referenceBounds.width
+            let referenceHeight = referenceBounds.height
+            
+            let itemBounds = tagView.bounds
+            let itemHalfWidth = itemBounds.width / 2.0
+            let itemHalfHeight = itemBounds.height / 2.0
+            
+            location.x -= offset.x
+            location.y -= offset.y
+            
+            location.x = max(itemHalfWidth, location.x)
+            location.x = min(referenceWidth - itemHalfWidth, location.x)
+            location.y = max(itemHalfHeight, location.y)
+            location.y = min(referenceHeight - itemHalfHeight, location.y)
+            
+            tagView.center = location
+        case .Cancelled, .Ended:
+            let velocity = pan.velocityInView(containerView)
+            stickyBehavior.isEnabled = true
+            stickyBehavior.addLinearVelocity(velocity)
+        default: ()
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        stickyBehavior.isEnabled = false
+        stickyBehavior.updateFieldsInBounds(containerView.bounds)
     }
     
     deinit {

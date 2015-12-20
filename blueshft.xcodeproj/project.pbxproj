@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B9617882E868787C51F24D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1B536A295FCF87E3822C13 /* libPods.a */; };
 		8415C95A1C205A5B00EBD3B2 /* BeaconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415C9591C205A5B00EBD3B2 /* BeaconsViewController.swift */; };
+		842661361C27441C00CD46E5 /* StickyEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842661351C27441C00CD46E5 /* StickyEdges.swift */; };
 		844E458A1BFABBAC008556A9 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E45891BFABBAC008556A9 /* PhotoViewerViewController.swift */; };
 		844E458C1BFABE4F008556A9 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E458B1BFABE4F008556A9 /* Photo.swift */; };
 		84537C741BC9B8AC00837C51 /* DetailPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84537C731BC9B8AC00837C51 /* DetailPresentationController.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		1E1B536A295FCF87E3822C13 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8415C9591C205A5B00EBD3B2 /* BeaconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconsViewController.swift; sourceTree = "<group>"; };
+		842661351C27441C00CD46E5 /* StickyEdges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyEdges.swift; sourceTree = "<group>"; };
 		844E45891BFABBAC008556A9 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		844E458B1BFABE4F008556A9 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		84537C731BC9B8AC00837C51 /* DetailPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresentationController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		84DEACC21BBA19CC00F271A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				842661351C27441C00CD46E5 /* StickyEdges.swift */,
 				8447FCA51C1F831B00F63151 /* Storyboards */,
 				8460B8781BE6BD80000832B1 /* PointPin.swift */,
 				84E942FF1BB87D770092ABAD /* SchoolCell.swift */,
@@ -428,6 +431,7 @@
 				84537C741BC9B8AC00837C51 /* DetailPresentationController.swift in Sources */,
 				848C74FD1BF1483600D93D32 /* Thumbnail.swift in Sources */,
 				8468665E1C0A280600F8334D /* ResetPasswordViewController.swift in Sources */,
+				842661361C27441C00CD46E5 /* StickyEdges.swift in Sources */,
 				84FFC5021BB77169008F2745 /* AppDelegate.swift in Sources */,
 				844E458C1BFABE4F008556A9 /* Photo.swift in Sources */,
 				84FFC5071BB77169008F2745 /* MasterViewController.swift in Sources */,
