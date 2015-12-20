@@ -66,8 +66,11 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "isUserLoggedIn:", name: "BSUserLoggedInNotification", object: nil)
         setupBeacons()
         self.navigationItem.backBarButtonItem?.title = ""
-        
-        // MARK: sticky
+        setUpSticky()
+    }
+    
+    // MARK: sticky
+    func setUpSticky() {
         if self.detailItem != nil {
             tagView.hidden = false
             tagView.layer.borderWidth = 0.5
