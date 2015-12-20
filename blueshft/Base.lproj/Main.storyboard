@@ -67,25 +67,34 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="260" height="111"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20,000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl0-85-4BA">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="20,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl0-85-4BA">
                                                             <rect key="frame" x="41" y="46" width="211" height="21"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Denver, CO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWz-Y1-YIi">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Denver, CO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWz-Y1-YIi">
                                                             <rect key="frame" x="41" y="85" width="211" height="21"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blueshft University" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K4-o0-wVj">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Blueshft University" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K4-o0-wVj">
                                                             <rect key="frame" x="41" y="8" width="211" height="21"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="SWz-Y1-YIi" firstAttribute="centerX" secondItem="qRu-jG-fhr" secondAttribute="centerX" id="3eO-Cu-Uc8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4K4-o0-wVj" secondAttribute="trailing" constant="4" id="96e-5a-bpn"/>
+                                                        <constraint firstItem="Cl0-85-4BA" firstAttribute="top" secondItem="4K4-o0-wVj" secondAttribute="bottom" constant="8" id="L2o-4c-OVx"/>
+                                                        <constraint firstItem="4K4-o0-wVj" firstAttribute="leading" secondItem="qRu-jG-fhr" secondAttribute="leading" constant="4" id="SSn-fw-gfp"/>
+                                                        <constraint firstItem="4K4-o0-wVj" firstAttribute="top" secondItem="qRu-jG-fhr" secondAttribute="top" constant="8" id="UZi-Vu-eT2"/>
+                                                        <constraint firstItem="Cl0-85-4BA" firstAttribute="centerX" secondItem="qRu-jG-fhr" secondAttribute="centerX" id="hjf-uO-Y2C"/>
+                                                        <constraint firstItem="SWz-Y1-YIi" firstAttribute="top" secondItem="Cl0-85-4BA" secondAttribute="bottom" constant="8" id="iIF-Td-hYK"/>
+                                                    </constraints>
                                                 </view>
                                                 <blurEffect style="dark"/>
                                             </visualEffectView>
@@ -152,10 +161,10 @@
                         <outlet property="containerView" destination="v8I-g7-pJz" id="jbT-l8-zhO"/>
                         <outlet property="logoutButton" destination="Pzt-dY-pYT" id="ZAI-oR-wtx"/>
                         <outlet property="mapView" destination="lkJ-f2-sip" id="Ygk-3R-JCm"/>
-                        <outlet property="schoolLocationLabel" destination="WiK-45-G9P" id="Oh0-5R-eo0"/>
-                        <outlet property="schoolNameLabel" destination="v8I-g7-pJz" id="A8T-yi-Xp5"/>
-                        <outlet property="schoolStudentsLabel" destination="v8I-g7-pJz" id="GUP-Ic-rYX"/>
                         <outlet property="segControl" destination="WiK-45-G9P" id="Ydq-98-9n5"/>
+                        <outlet property="stickyLocationLabel" destination="SWz-Y1-YIi" id="PWV-vh-9AJ"/>
+                        <outlet property="stickyNameLabel" destination="4K4-o0-wVj" id="P4b-pV-6YZ"/>
+                        <outlet property="stickyStudentsLabel" destination="Cl0-85-4BA" id="gWC-nk-Fya"/>
                         <outlet property="tagView" destination="hhR-Qi-hZs" id="ZSD-tl-lQw"/>
                     </connections>
                 </viewController>
