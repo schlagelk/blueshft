@@ -91,8 +91,8 @@
                                                                 <constraint firstAttribute="height" constant="20" id="1Bo-wH-sp0"/>
                                                                 <constraint firstAttribute="width" constant="20" id="ShB-h6-T9T"/>
                                                             </constraints>
-                                                            <color key="tintColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <state key="normal" image="unlike"/>
+                                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <state key="normal" image="x"/>
                                                             <connections>
                                                                 <action selector="closeStickyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="WX6-qV-wJo"/>
                                                             </connections>
@@ -136,7 +136,7 @@
                                             <constraint firstAttribute="height" constant="45" id="TDk-Jm-8lb"/>
                                             <constraint firstAttribute="width" constant="45" id="d7J-NQ-twa"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.8008604307432432" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="like"/>
                                         <connections>
                                             <action selector="showStickyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="DVx-cr-SvA"/>
@@ -1029,6 +1029,7 @@
         <image name="like" width="32" height="32"/>
         <image name="unlike" width="32" height="32"/>
         <image name="user" width="32" height="32"/>
+        <image name="x" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
