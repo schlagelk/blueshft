@@ -302,7 +302,7 @@
                                                     <color key="textColor" red="0.4638770518" green="0.4638770518" blue="0.4638770518" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nt6-5o-oMk" customClass="PFImageView">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nt6-5o-oMk" customClass="PFImageView">
                                                     <rect key="frame" x="18" y="73" width="294" height="87"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="KTc-nW-oEm"/>
@@ -326,7 +326,7 @@
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="10" id="eeP-Ao-Ww2"/>
                                                 <constraint firstItem="WIn-dB-bJc" firstAttribute="centerX" secondItem="Bv2-X6-PCd" secondAttribute="centerX" id="k4C-zc-BEW"/>
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="5" id="nnm-hK-m6u"/>
-                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="4" id="sFb-Y7-Q0L"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="8" id="sFb-Y7-Q0L"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="nt6-5o-oMk" secondAttribute="bottom" constant="2" id="unI-AC-kMW"/>
                                             </constraints>
                                             <variation key="default">
