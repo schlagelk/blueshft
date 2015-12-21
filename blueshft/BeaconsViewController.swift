@@ -13,7 +13,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var selectedCellIndexPath: NSIndexPath?
-    let SelectedCellHeight: CGFloat = 140
+    let SelectedCellHeight: CGFloat = 180
     let UnselectedCellHeight: CGFloat = 80.0
     
     var beacons = [Beacon]() {
@@ -57,14 +57,30 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BeaconsTableViewCell
+        currentCell.beaconImage.hidden = false
+        let beaconOnCell = beacons[indexPath.row]
+        
         if let selectedCellIndexPath = selectedCellIndexPath {
             if selectedCellIndexPath == indexPath {
                 self.selectedCellIndexPath = nil
+                currentCell.beaconImage.hidden = true
             } else {
                 self.selectedCellIndexPath = indexPath
             }
         } else {
             selectedCellIndexPath = indexPath
+        }
+        
+        currentCell.beaconImage.file = beaconOnCell.image
+        currentCell.beaconImage.loadInBackground {(image: UIImage?, error: NSError?) ->Void in
+            if error == nil {
+                if let leImage = image {
+                    currentCell.beaconImage.image = leImage
+                }
+            } else {
+                print("problem loading image \(error)")
+            }
         }
         tableView.beginUpdates()
         tableView.endUpdates()

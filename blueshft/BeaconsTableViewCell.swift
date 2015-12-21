@@ -13,6 +13,8 @@ class BeaconsTableViewCell: UITableViewCell {
     @IBOutlet weak var beaconNameLabel: UILabel!
     @IBOutlet weak var beaconDescLabel: UILabel!
     
+    @IBOutlet weak var beaconImage: PFImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -85,13 +85,13 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeU-bk-hXR">
+                                                        <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeU-bk-hXR">
                                                             <rect key="frame" x="240" y="0.0" width="15" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="1Bo-wH-sp0"/>
                                                                 <constraint firstAttribute="width" constant="20" id="ShB-h6-T9T"/>
                                                             </constraints>
-                                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="tintColor" red="1" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" image="unlike"/>
                                                             <connections>
                                                                 <action selector="closeStickyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="WX6-qV-wJo"/>
@@ -133,8 +133,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-8B-0hw">
                                         <rect key="frame" x="284" y="356" width="32" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="TDk-Jm-8lb"/>
-                                            <constraint firstAttribute="width" constant="35" id="d7J-NQ-twa"/>
+                                            <constraint firstAttribute="height" constant="45" id="TDk-Jm-8lb"/>
+                                            <constraint firstAttribute="width" constant="45" id="d7J-NQ-twa"/>
                                         </constraints>
                                         <color key="tintColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="like"/>
@@ -286,11 +286,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.52124763253939388" green="0.52124763253939388" blue="0.52124763253939388" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BeaconsTableViewCell" rowHeight="80" id="AEC-bg-CRx" customClass="BeaconsTableViewCell" customModule="blueshft" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BeaconsTableViewCell" rowHeight="180" id="AEC-bg-CRx" customClass="BeaconsTableViewCell" customModule="blueshft" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AEC-bg-CRx" id="Bv2-X6-PCd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phD-mp-0vS">
@@ -308,6 +308,9 @@
                                                     <color key="textColor" red="0.4638770518" green="0.4638770518" blue="0.4638770518" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nt6-5o-oMk" customClass="PFImageView">
+                                                    <rect key="frame" x="18" y="73" width="294" height="87"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="phD-mp-0vS" firstAttribute="top" secondItem="Bv2-X6-PCd" secondAttribute="topMargin" constant="5" id="09E-CQ-yd7"/>
@@ -315,12 +318,25 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="WIn-dB-bJc" secondAttribute="bottom" constant="-25" id="B9T-ff-z46"/>
                                                 <constraint firstItem="bOD-yi-oPa" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="10" id="FdP-ix-fGy"/>
                                                 <constraint firstItem="bOD-yi-oPa" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="10" id="HmI-R3-oBs"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="10" id="LiR-Z6-EJ5"/>
                                                 <constraint firstItem="phD-mp-0vS" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="10" id="Rcs-fn-9p8"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="10" id="eeP-Ao-Ww2"/>
                                                 <constraint firstItem="WIn-dB-bJc" firstAttribute="centerX" secondItem="Bv2-X6-PCd" secondAttribute="centerX" id="k4C-zc-BEW"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="5" id="nnm-hK-m6u"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="4" id="sFb-Y7-Q0L"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nt6-5o-oMk" secondAttribute="bottom" constant="2" id="unI-AC-kMW"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="eeP-Ao-Ww2"/>
+                                                    <exclude reference="nnm-hK-m6u"/>
+                                                    <exclude reference="unI-AC-kMW"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="beaconDescLabel" destination="bOD-yi-oPa" id="9EW-0V-jzj"/>
+                                            <outlet property="beaconImage" destination="nt6-5o-oMk" id="CX6-CD-dhe"/>
                                             <outlet property="beaconNameLabel" destination="phD-mp-0vS" id="JQp-8v-Hnx"/>
                                         </connections>
                                     </tableViewCell>
