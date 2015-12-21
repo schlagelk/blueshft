@@ -293,12 +293,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phD-mp-0vS">
-                                                    <rect key="frame" x="18" y="13" width="55" height="19"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="unlike" translatesAutoresizingMaskIntoConstraints="NO" id="WIn-dB-bJc">
                                                     <rect key="frame" x="150" y="60" width="16" height="16"/>
                                                 </imageView>
@@ -310,16 +304,25 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nt6-5o-oMk" customClass="PFImageView">
                                                     <rect key="frame" x="18" y="73" width="294" height="87"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="KTc-nW-oEm"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phD-mp-0vS">
+                                                    <rect key="frame" x="13" y="13" width="55" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="phD-mp-0vS" firstAttribute="top" secondItem="Bv2-X6-PCd" secondAttribute="topMargin" constant="5" id="09E-CQ-yd7"/>
                                                 <constraint firstItem="bOD-yi-oPa" firstAttribute="top" secondItem="phD-mp-0vS" secondAttribute="bottom" constant="4" id="57P-QN-9l6"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="WIn-dB-bJc" secondAttribute="bottom" constant="-25" id="B9T-ff-z46"/>
-                                                <constraint firstItem="bOD-yi-oPa" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="10" id="FdP-ix-fGy"/>
+                                                <constraint firstItem="bOD-yi-oPa" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="5" id="FdP-ix-fGy"/>
                                                 <constraint firstItem="bOD-yi-oPa" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="10" id="HmI-R3-oBs"/>
-                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="10" id="LiR-Z6-EJ5"/>
-                                                <constraint firstItem="phD-mp-0vS" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="10" id="Rcs-fn-9p8"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="5" id="LiR-Z6-EJ5"/>
+                                                <constraint firstItem="phD-mp-0vS" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="5" id="Rcs-fn-9p8"/>
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="10" id="eeP-Ao-Ww2"/>
                                                 <constraint firstItem="WIn-dB-bJc" firstAttribute="centerX" secondItem="Bv2-X6-PCd" secondAttribute="centerX" id="k4C-zc-BEW"/>
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="5" id="nnm-hK-m6u"/>
