@@ -56,6 +56,33 @@ class MasterViewController: PFQueryTableViewController {
             cell?.nameLabel.text = school.name
             cell?.locationLabel.text = school.location
             cell?.enrollmentLabel.text = school.students
+            
+            // i think this can be better
+            let query = Criteria.query()
+            query!.whereKey("parentId", equalTo: school.objectId!)
+            query!.findObjectsInBackgroundWithBlock { (objects, error) in
+                if error == nil {
+                    if let criteriums = objects as? [Criteria] {
+                        var criteriaString = ""
+                        for crite in criteriums {
+                            if let criteName = crite.objectForKey("name") as? String {
+                                criteriaString += criteName
+                            }
+                            if let criteCrite = crite.objectForKey("criteria") as? String {
+                                criteriaString += ": \(criteCrite) "
+                            }
+                        }
+
+                            cell?.criteriaLabel.text = criteriaString
+
+                    }
+                } else {
+                    print("error: \(error)")
+                }
+                
+            }
+            
+
         } else {
             // we didnt get anything back
         

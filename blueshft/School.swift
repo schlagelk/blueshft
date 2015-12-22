@@ -16,6 +16,7 @@ class School: PFObject {
     @NSManaged var state: String
     @NSManaged var image: PFFile
     @NSManaged var headquarters: PFGeoPoint
+    
     var location: String {
         return city + ", " + state
     }

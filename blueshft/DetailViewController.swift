@@ -159,6 +159,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             stickyStudentsLabel.text = self.detailItem?.students
             stickyNameLabel.text = self.detailItem?.name
             stickyLocationLabel.text = self.detailItem?.location
+
         } else {
             tagView.hidden = true
         }

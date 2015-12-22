@@ -14,4 +14,5 @@ class SchoolCell: PFTableViewCell {
     @IBOutlet weak var enrollmentLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var schoolImage: PFImageView!
+    @IBOutlet weak var criteriaLabel: UILabel!
 }

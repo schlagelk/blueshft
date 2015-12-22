@@ -18,6 +18,7 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -508,7 +509,20 @@
                                         </imageView>
                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5fp-zc-L6P">
                                             <rect key="frame" x="0.0" y="-1" width="600" height="280"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;criteria&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPd-Nq-uWm">
+                                                    <rect key="frame" x="16" y="205" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.00015782828282828731" green="0.00015782828282828731" blue="0.00015782828282828731" alpha="0.32000000000000001" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="bPd-Nq-uWm" secondAttribute="bottom" constant="40" id="CFJ-LX-hiJ"/>
+                                                <constraint firstItem="bPd-Nq-uWm" firstAttribute="leading" secondItem="5fp-zc-L6P" secondAttribute="leading" constant="5" id="QcZ-Wa-b6o"/>
+                                                <constraint firstAttribute="trailing" secondItem="bPd-Nq-uWm" secondAttribute="trailing" constant="5" id="grO-IR-PwU"/>
+                                            </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRe-5g-KDc">
                                             <rect key="frame" x="13" y="95" width="59" height="28"/>
@@ -530,7 +544,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="M7y-PA-7WC" firstAttribute="top" secondItem="fRe-5g-KDc" secondAttribute="bottom" constant="34" id="0Ig-Ll-k6r"/>
+                                        <constraint firstItem="M7y-PA-7WC" firstAttribute="top" secondItem="fRe-5g-KDc" secondAttribute="bottom" constant="20" id="0Ig-Ll-k6r"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="5fp-zc-L6P" secondAttribute="trailing" constant="-8" id="5qY-RX-oZb"/>
                                         <constraint firstItem="5fp-zc-L6P" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="-8" id="AL4-go-TPx"/>
                                         <constraint firstItem="fRe-5g-KDc" firstAttribute="top" secondItem="ye8-HG-BPY" secondAttribute="bottom" constant="22" id="BVH-Br-RL4"/>
@@ -566,6 +580,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="criteriaLabel" destination="bPd-Nq-uWm" id="L1S-da-MPW"/>
                                     <outlet property="enrollmentLabel" destination="M7y-PA-7WC" id="ZBB-VQ-DTf"/>
                                     <outlet property="locationLabel" destination="ye8-HG-BPY" id="Ist-Qn-n80"/>
                                     <outlet property="nameLabel" destination="fRe-5g-KDc" id="mXc-aW-i2U"/>
