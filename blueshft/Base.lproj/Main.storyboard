@@ -19,6 +19,7 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -59,13 +60,36 @@
                                             <outlet property="delegate" destination="JEX-9P-axG" id="IGj-am-svo"/>
                                         </connections>
                                     </mapView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-45-G9P">
+                                        <rect key="frame" x="230" y="10" width="141" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="RjT-k3-eam"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Standard"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-8B-0hw">
+                                        <rect key="frame" x="284" y="356" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="TDk-Jm-8lb"/>
+                                            <constraint firstAttribute="width" constant="45" id="d7J-NQ-twa"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.8008604307432432" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="like"/>
+                                        <connections>
+                                            <action selector="showStickyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="DVx-cr-SvA"/>
+                                        </connections>
+                                    </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhR-Qi-hZs" userLabel="Meta View">
-                                        <rect key="frame" x="170" y="407" width="260" height="111"/>
+                                        <rect key="frame" x="170" y="348" width="260" height="173"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N4f-d3-v8Y">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="111"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="173"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="qRu-jG-fhr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="111"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="173"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="20,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl0-85-4BA">
@@ -98,9 +122,16 @@
                                                                 <action selector="closeStickyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="WX6-qV-wJo"/>
                                                             </connections>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uki-pb-nLq">
+                                                            <rect key="frame" x="109" y="128" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="SWz-Y1-YIi" firstAttribute="centerX" secondItem="qRu-jG-fhr" secondAttribute="centerX" id="3eO-Cu-Uc8"/>
+                                                        <constraint firstItem="Uki-pb-nLq" firstAttribute="top" secondItem="SWz-Y1-YIi" secondAttribute="bottom" constant="6" id="66l-ME-fUw"/>
                                                         <constraint firstAttribute="trailing" secondItem="4K4-o0-wVj" secondAttribute="trailing" constant="4" id="96e-5a-bpn"/>
                                                         <constraint firstItem="AeU-bk-hXR" firstAttribute="top" secondItem="qRu-jG-fhr" secondAttribute="top" constant="1" id="KtN-4j-XW1"/>
                                                         <constraint firstItem="Cl0-85-4BA" firstAttribute="top" secondItem="4K4-o0-wVj" secondAttribute="bottom" constant="8" id="L2o-4c-OVx"/>
@@ -109,6 +140,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="AeU-bk-hXR" secondAttribute="trailing" constant="1" id="YAi-6X-Ves"/>
                                                         <constraint firstItem="Cl0-85-4BA" firstAttribute="centerX" secondItem="qRu-jG-fhr" secondAttribute="centerX" id="hjf-uO-Y2C"/>
                                                         <constraint firstItem="SWz-Y1-YIi" firstAttribute="top" secondItem="Cl0-85-4BA" secondAttribute="bottom" constant="8" id="iIF-Td-hYK"/>
+                                                        <constraint firstItem="Uki-pb-nLq" firstAttribute="centerX" secondItem="qRu-jG-fhr" secondAttribute="centerX" id="oI8-OS-Yjd"/>
                                                     </constraints>
                                                 </view>
                                                 <blurEffect style="dark"/>
@@ -117,32 +149,9 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="IX2-9c-Vlf"/>
-                                            <constraint firstAttribute="height" constant="111" id="Twl-0s-Iu1"/>
+                                            <constraint firstAttribute="height" constant="140" id="Twl-0s-Iu1"/>
                                         </constraints>
                                     </view>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WiK-45-G9P">
-                                        <rect key="frame" x="230" y="10" width="141" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="RjT-k3-eam"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="Standard"/>
-                                            <segment title="Second"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
-                                    </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-8B-0hw">
-                                        <rect key="frame" x="284" y="356" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="TDk-Jm-8lb"/>
-                                            <constraint firstAttribute="width" constant="45" id="d7J-NQ-twa"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.8008604307432432" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="like"/>
-                                        <connections>
-                                            <action selector="showStickyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="DVx-cr-SvA"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="WiK-45-G9P" firstAttribute="top" secondItem="v8I-g7-pJz" secondAttribute="top" constant="10" id="3Di-dw-IsL"/>
@@ -192,6 +201,7 @@
                         <outlet property="mapView" destination="lkJ-f2-sip" id="Ygk-3R-JCm"/>
                         <outlet property="segControl" destination="WiK-45-G9P" id="Ydq-98-9n5"/>
                         <outlet property="showStickyButton" destination="IkD-8B-0hw" id="m4S-Qc-Vrs"/>
+                        <outlet property="stickyCriteriaLabel" destination="Uki-pb-nLq" id="mZh-6o-QzF"/>
                         <outlet property="stickyLocationLabel" destination="SWz-Y1-YIi" id="PWV-vh-9AJ"/>
                         <outlet property="stickyNameLabel" destination="4K4-o0-wVj" id="P4b-pV-6YZ"/>
                         <outlet property="stickyStudentsLabel" destination="Cl0-85-4BA" id="gWC-nk-Fya"/>

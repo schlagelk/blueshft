@@ -23,6 +23,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var stickyNameLabel: UILabel!
     @IBOutlet weak var stickyLocationLabel: UILabel!
     
+    @IBOutlet weak var stickyCriteriaLabel: UILabel!
     
     @IBOutlet weak var showStickyButton: UIButton!
     @IBAction func showStickyPressed(sender: AnyObject) {
@@ -159,7 +160,23 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             stickyStudentsLabel.text = self.detailItem?.students
             stickyNameLabel.text = self.detailItem?.name
             stickyLocationLabel.text = self.detailItem?.location
-
+            
+            //copy and pasted this crap. bleh
+            if let objectID = self.detailItem?.objectId {
+                let query = Criteria.query()
+                query!.whereKey("parentId", equalTo: objectID)
+                query!.findObjectsInBackgroundWithBlock { (objects, error) in
+                    if error == nil {
+                        if let criteriums = objects as? [Criteria] {
+                            let criteString = criteriums.reduce("| ") { (critestring, object) in critestring + "\(object.name): \(object.criteria) | " }
+                            self.stickyCriteriaLabel.text = criteString
+                        }
+                    } else {
+                        print("error: \(error)")
+                    }
+                    
+                }
+            }
         } else {
             tagView.hidden = true
         }
