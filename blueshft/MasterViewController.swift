@@ -63,18 +63,8 @@ class MasterViewController: PFQueryTableViewController {
             query!.findObjectsInBackgroundWithBlock { (objects, error) in
                 if error == nil {
                     if let criteriums = objects as? [Criteria] {
-                        var criteriaString = ""
-                        for crite in criteriums {
-                            if let criteName = crite.objectForKey("name") as? String {
-                                criteriaString += criteName
-                            }
-                            if let criteCrite = crite.objectForKey("criteria") as? String {
-                                criteriaString += ": \(criteCrite) "
-                            }
-                        }
-
-                            cell?.criteriaLabel.text = criteriaString
-
+                        let criteString = criteriums.reduce("") { (critestring, object) in critestring + "\(object.name): \(object.criteria) | " }
+                        cell?.criteriaLabel.text = criteString
                     }
                 } else {
                     print("error: \(error)")
