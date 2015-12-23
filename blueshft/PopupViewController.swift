@@ -52,8 +52,6 @@ class PopupViewController: UIViewController {
                                 self.recentLikeLabel.text = like["name"] as! String
                             }
                         }
-                    } else {
-                        self.recentLikeLabel.text = ""
                     }
                 } else {
                     print("error: \(error)")
