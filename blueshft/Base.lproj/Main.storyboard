@@ -27,7 +27,7 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController title="Featured" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="black" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -143,7 +143,7 @@
                                                         <constraint firstItem="Uki-pb-nLq" firstAttribute="centerX" secondItem="qRu-jG-fhr" secondAttribute="centerX" id="oI8-OS-Yjd"/>
                                                     </constraints>
                                                 </view>
-                                                <blurEffect style="dark"/>
+                                                <blurEffect style="light"/>
                                             </visualEffectView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
