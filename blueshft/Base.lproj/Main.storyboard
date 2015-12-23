@@ -309,13 +309,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOD-yi-oPa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOD-yi-oPa">
                                                     <rect key="frame" x="18" y="35" width="294" height="30"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" red="0.4638770518" green="0.4638770518" blue="0.4638770518" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phD-mp-0vS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phD-mp-0vS">
                                                     <rect key="frame" x="13" y="8" width="55" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -337,7 +337,7 @@
                                                 <constraint firstItem="phD-mp-0vS" firstAttribute="top" secondItem="Bv2-X6-PCd" secondAttribute="topMargin" id="09E-CQ-yd7"/>
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="5" id="0Wm-IF-Ocd"/>
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="centerX" secondItem="Bv2-X6-PCd" secondAttribute="centerX" id="24c-8u-xyk"/>
-                                                <constraint firstItem="bOD-yi-oPa" firstAttribute="top" secondItem="phD-mp-0vS" secondAttribute="bottom" constant="10" id="57P-QN-9l6"/>
+                                                <constraint firstItem="bOD-yi-oPa" firstAttribute="top" secondItem="phD-mp-0vS" secondAttribute="bottom" constant="7" id="57P-QN-9l6"/>
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="centerX" secondItem="Bv2-X6-PCd" secondAttribute="centerX" id="BgG-7J-9aN"/>
                                                 <constraint firstItem="bOD-yi-oPa" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="5" id="FdP-ix-fGy"/>
                                                 <constraint firstItem="bOD-yi-oPa" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="5" id="HmI-R3-oBs"/>
