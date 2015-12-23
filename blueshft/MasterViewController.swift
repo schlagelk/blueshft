@@ -57,9 +57,18 @@ class MasterViewController: PFQueryTableViewController {
             cell?.locationLabel.text = school.location
             cell?.enrollmentLabel.text = school.students
             
+            // images and tint colors
+            let locationImage = UIImage(named:"location")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            cell?.locationImage.image = locationImage
+            let studentsImage = UIImage(named:"student")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            cell?.studentsImage.image = studentsImage
+            let criteImage = UIImage(named:"crite")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            cell?.criteriaImage.image = criteImage
+            
             // i think this can be better
             let query = Criteria.query()
             query!.whereKey("parentId", equalTo: school.objectId!)
+            query!.limit = 3
             query!.findObjectsInBackgroundWithBlock { (objects, error) in
                 if error == nil {
                     if let criteriums = objects as? [Criteria] {

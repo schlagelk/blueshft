@@ -15,4 +15,8 @@ class SchoolCell: PFTableViewCell {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var schoolImage: PFImageView!
     @IBOutlet weak var criteriaLabel: UILabel!
+    @IBOutlet weak var locationImage: UIImageView!
+    @IBOutlet weak var studentsImage: UIImageView!
+    @IBOutlet weak var criteriaImage: UIImageView!
+    
 }
