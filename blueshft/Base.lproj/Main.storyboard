@@ -302,46 +302,57 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.52124763253939388" green="0.52124763253939388" blue="0.52124763253939388" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BeaconsTableViewCell" rowHeight="180" id="AEC-bg-CRx" customClass="BeaconsTableViewCell" customModule="blueshft" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="180"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BeaconsTableViewCell" rowHeight="220" id="AEC-bg-CRx" customClass="BeaconsTableViewCell" customModule="blueshft" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AEC-bg-CRx" id="Bv2-X6-PCd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOD-yi-oPa">
                                                     <rect key="frame" x="18" y="35" width="294" height="30"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" red="0.4638770518" green="0.4638770518" blue="0.4638770518" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nt6-5o-oMk" customClass="PFImageView">
-                                                    <rect key="frame" x="18" y="73" width="294" height="87"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="KTc-nW-oEm"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phD-mp-0vS">
-                                                    <rect key="frame" x="13" y="13" width="55" height="19"/>
+                                                    <rect key="frame" x="13" y="8" width="55" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nt6-5o-oMk" customClass="PFImageView">
+                                                    <rect key="frame" x="60" y="78" width="200" height="87"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="NeV-0g-OT6"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="NeV-0g-OT6"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="phD-mp-0vS" firstAttribute="top" secondItem="Bv2-X6-PCd" secondAttribute="topMargin" constant="5" id="09E-CQ-yd7"/>
-                                                <constraint firstItem="bOD-yi-oPa" firstAttribute="top" secondItem="phD-mp-0vS" secondAttribute="bottom" constant="4" id="57P-QN-9l6"/>
+                                                <constraint firstItem="phD-mp-0vS" firstAttribute="top" secondItem="Bv2-X6-PCd" secondAttribute="topMargin" id="09E-CQ-yd7"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="5" id="0Wm-IF-Ocd"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="centerX" secondItem="Bv2-X6-PCd" secondAttribute="centerX" id="24c-8u-xyk"/>
+                                                <constraint firstItem="bOD-yi-oPa" firstAttribute="top" secondItem="phD-mp-0vS" secondAttribute="bottom" constant="10" id="57P-QN-9l6"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="centerX" secondItem="Bv2-X6-PCd" secondAttribute="centerX" id="BgG-7J-9aN"/>
                                                 <constraint firstItem="bOD-yi-oPa" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="5" id="FdP-ix-fGy"/>
-                                                <constraint firstItem="bOD-yi-oPa" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="10" id="HmI-R3-oBs"/>
-                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="5" id="LiR-Z6-EJ5"/>
+                                                <constraint firstItem="bOD-yi-oPa" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="5" id="HmI-R3-oBs"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="10" id="KIn-7z-pGj"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" id="LiR-Z6-EJ5"/>
                                                 <constraint firstItem="phD-mp-0vS" firstAttribute="leading" secondItem="Bv2-X6-PCd" secondAttribute="leadingMargin" constant="5" id="Rcs-fn-9p8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nt6-5o-oMk" secondAttribute="bottom" constant="2" id="chA-6I-4a9"/>
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="10" id="eeP-Ao-Ww2"/>
+                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="trailing" secondItem="Bv2-X6-PCd" secondAttribute="trailingMargin" constant="5" id="mHC-yC-D3I"/>
                                                 <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="5" id="nnm-hK-m6u"/>
-                                                <constraint firstItem="nt6-5o-oMk" firstAttribute="top" secondItem="bOD-yi-oPa" secondAttribute="bottom" constant="8" id="sFb-Y7-Q0L"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="nt6-5o-oMk" secondAttribute="bottom" constant="2" id="unI-AC-kMW"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="0Wm-IF-Ocd"/>
                                                     <exclude reference="eeP-Ao-Ww2"/>
                                                     <exclude reference="nnm-hK-m6u"/>
                                                     <exclude reference="unI-AC-kMW"/>

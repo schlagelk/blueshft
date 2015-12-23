@@ -13,7 +13,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     var selectedCellIndexPath: NSIndexPath?
-    let SelectedCellHeight: CGFloat = 180
+    let SelectedCellHeight: CGFloat = 220
     let UnselectedCellHeight: CGFloat = 80.0
     
     var beacons = [Beacon]() {
