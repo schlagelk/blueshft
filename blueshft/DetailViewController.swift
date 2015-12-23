@@ -148,8 +148,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         self.showStickyButton.hidden = true
         if self.detailItem != nil {
             tagView.hidden = false
-            tagView.layer.borderWidth = 0.5
-            tagView.layer.cornerRadius = 10
+            tagView.layer.cornerRadius = 2
             
             let gestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
             tagView.addGestureRecognizer(gestureRecognizer)
