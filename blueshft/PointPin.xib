@@ -71,8 +71,12 @@
                                 </stackView>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="oeT-iA-4Vm" firstAttribute="top" secondItem="2ph-pb-10v" secondAttribute="top" id="Aoa-CC-OBl"/>
                                 <constraint firstItem="kwv-xL-mzJ" firstAttribute="top" secondItem="oeT-iA-4Vm" secondAttribute="bottom" constant="50" id="G79-oe-UzL"/>
+                                <constraint firstItem="oeT-iA-4Vm" firstAttribute="leading" secondItem="2ph-pb-10v" secondAttribute="leading" id="ImA-65-Sm1"/>
                                 <constraint firstAttribute="bottom" secondItem="kwv-xL-mzJ" secondAttribute="bottom" constant="20" id="JOr-Ei-jFX"/>
+                                <constraint firstAttribute="trailing" secondItem="oeT-iA-4Vm" secondAttribute="trailing" id="S8G-Ia-T08"/>
+                                <constraint firstItem="oeT-iA-4Vm" firstAttribute="centerX" secondItem="2ph-pb-10v" secondAttribute="centerX" id="l1L-Yy-dPI"/>
                                 <constraint firstItem="kwv-xL-mzJ" firstAttribute="centerX" secondItem="2ph-pb-10v" secondAttribute="centerX" id="qVW-rD-mHZ"/>
                                 <constraint firstItem="kwv-xL-mzJ" firstAttribute="leading" secondItem="2ph-pb-10v" secondAttribute="leading" constant="15" id="whp-wq-LqV"/>
                             </constraints>
@@ -100,8 +104,12 @@
             <constraints>
                 <constraint firstItem="1Jh-7j-92u" firstAttribute="top" secondItem="uH7-e3-t5d" secondAttribute="top" id="FKJ-Hb-fMq"/>
                 <constraint firstItem="1Jh-7j-92u" firstAttribute="leading" secondItem="uH7-e3-t5d" secondAttribute="leading" id="JMA-Zy-OK4"/>
+                <constraint firstItem="1Jh-7j-92u" firstAttribute="top" secondItem="uH7-e3-t5d" secondAttribute="top" id="KOo-MV-arQ"/>
+                <constraint firstItem="1Jh-7j-92u" firstAttribute="leading" secondItem="uH7-e3-t5d" secondAttribute="leading" id="cRL-eV-2xT"/>
                 <constraint firstAttribute="bottom" secondItem="1Jh-7j-92u" secondAttribute="bottom" id="n7Z-zv-ep2"/>
+                <constraint firstAttribute="bottom" secondItem="1Jh-7j-92u" secondAttribute="bottom" id="oBk-LT-mvX"/>
                 <constraint firstAttribute="trailing" secondItem="1Jh-7j-92u" secondAttribute="trailing" id="pmN-8L-b0K"/>
+                <constraint firstAttribute="trailing" secondItem="1Jh-7j-92u" secondAttribute="trailing" id="uw6-CN-C6x"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
