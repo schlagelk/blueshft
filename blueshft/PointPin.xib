@@ -17,17 +17,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="240" height="196"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeT-iA-4Vm">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="176"/>
                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                     <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-xL-mzJ">
-                                    <rect key="frame" x="0.0" y="160" width="240" height="36"/>
+                                    <rect key="frame" x="0.0" y="176" width="240" height="20"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-tE-iUW">
-                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-tE-iUW">
+                                            <rect key="frame" x="0.0" y="0.0" width="32" height="20"/>
                                             <state key="normal" image="foto">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.78499788849999996" colorSpace="calibratedRGB"/>
                                             </state>
@@ -35,8 +35,8 @@
                                                 <action selector="seeMoreAboutPoint:" destination="uH7-e3-t5d" eventType="touchUpInside" id="FLs-zy-iwb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-J8-q6e">
-                                            <rect key="frame" x="72" y="0.0" width="64" height="36"/>
+                                        <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-J8-q6e">
+                                            <rect key="frame" x="104" y="0.0" width="32" height="20"/>
                                             <state key="normal" image="direkt">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.78499788849999996" colorSpace="calibratedRGB"/>
                                             </state>
@@ -45,7 +45,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-uN-ytb">
-                                            <rect key="frame" x="176" y="0.0" width="64" height="36"/>
+                                            <rect key="frame" x="208" y="0.0" width="32" height="20"/>
                                             <state key="normal" image="speak">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.88241659630000002" colorSpace="calibratedRGB"/>
                                             </state>
@@ -54,8 +54,8 @@
                                             </connections>
                                         </button>
                                         <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Fx-PBv">
-                                            <rect key="frame" x="240" y="0.0" width="0.0" height="64"/>
-                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.88241659630000002" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="240" y="0.0" width="0.0" height="32"/>
+                                            <color key="tintColor" red="0.91092722039999996" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" image="stoptalking"/>
                                             <connections>
                                                 <action selector="stopSpeek:" destination="uH7-e3-t5d" eventType="touchUpInside" id="EQu-Qf-fBZ"/>
@@ -114,9 +114,9 @@
         </view>
     </objects>
     <resources>
-        <image name="direkt" width="64" height="64"/>
-        <image name="foto" width="64" height="64"/>
-        <image name="speak" width="64" height="64"/>
-        <image name="stoptalking" width="64" height="64"/>
+        <image name="direkt" width="32" height="32"/>
+        <image name="foto" width="32" height="32"/>
+        <image name="speak" width="32" height="32"/>
+        <image name="stoptalking" width="32" height="32"/>
     </resources>
 </document>
