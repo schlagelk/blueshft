@@ -148,7 +148,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
         self.showStickyButton.hidden = true
         if self.detailItem != nil {
             tagView.hidden = false
-            tagView.layer.cornerRadius = 2
+            tagView.layer.cornerRadius = 6
             
             let gestureRecognizer = UIPanGestureRecognizer(target: self, action: "pan:")
             tagView.addGestureRecognizer(gestureRecognizer)
@@ -383,7 +383,7 @@ extension DetailViewController: UIPopoverPresentationControllerDelegate {
         let contentViewController: PopupViewController = storyboard.instantiateViewControllerWithIdentifier("PopupViewController") as! PopupViewController
         contentViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
         contentViewController.userButton = self.logoutButton
-        contentViewController.preferredContentSize = CGSize(width: 320, height: 260)
+        contentViewController.preferredContentSize = CGSize(width: 320, height: 200)
 
         let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
         detailPopover.barButtonItem = sender as? UIBarButtonItem
