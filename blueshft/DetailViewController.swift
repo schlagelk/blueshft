@@ -359,7 +359,7 @@ extension DetailViewController: MKMapViewDelegate {
 //            detailView.typeDesc.backgroundColor = color
 //            detailView.typeDesc.text = "All Purpose"
 //        }
-        annotationView!.pinTintColor = UIColor.blueColor()
+        annotationView!.pinTintColor = UIColor.blueshftBlue()
 
         return annotationView
     }
