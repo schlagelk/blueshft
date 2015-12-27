@@ -40,6 +40,23 @@ class School: PFObject {
         let query = PFQuery(className: self.parseClassName())
         return query
     }
+    
+    func getCriteriaStringForLabel(label: UILabel) {
+        let query = Criteria.query()
+        query!.whereKey("parentId", equalTo: self.objectId!)
+        query!.limit = 3
+        query!.findObjectsInBackgroundWithBlock { (objects, error) in
+            if error == nil {
+                if let criteriums = objects as? [Criteria] {
+                    let criteString = criteriums.reduce("") { (critestring, object) in critestring + "\(object.name): \(object.criteria) " }
+                    label.text = criteString
+                }
+            } else {
+                print("error: \(error)")
+            }
+            
+        }
+    }
 }
 
 extension School: PFSubclassing {

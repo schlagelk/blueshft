@@ -64,23 +64,8 @@ class MasterViewController: PFQueryTableViewController {
             cell?.studentsImage.image = studentsImage
             let criteImage = UIImage(named:"crite")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             cell?.criteriaImage.image = criteImage
-            
-            // i think this can be better
-            let query = Criteria.query()
-            query!.whereKey("parentId", equalTo: school.objectId!)
-            query!.limit = 3
-            query!.findObjectsInBackgroundWithBlock { (objects, error) in
-                if error == nil {
-                    if let criteriums = objects as? [Criteria] {
-                        let criteString = criteriums.reduce("") { (critestring, object) in critestring + "\(object.name): \(object.criteria) " }
-                        cell?.criteriaLabel.text = criteString
-                    }
-                } else {
-                    print("error: \(error)")
-                }
-                
-            }
-            
+
+            school.getCriteriaStringForLabel(cell!.criteriaLabel)
 
         } else {
             // we didnt get anything back

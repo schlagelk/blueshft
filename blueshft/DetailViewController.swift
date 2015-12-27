@@ -160,22 +160,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             stickyNameLabel.text = self.detailItem?.name
             stickyLocationLabel.text = self.detailItem?.location
             
-            //copy and pasted this crap. bleh
-            if let objectID = self.detailItem?.objectId {
-                let query = Criteria.query()
-                query!.whereKey("parentId", equalTo: objectID)
-                query!.findObjectsInBackgroundWithBlock { (objects, error) in
-                    if error == nil {
-                        if let criteriums = objects as? [Criteria] {
-                            let criteString = criteriums.reduce("| ") { (critestring, object) in critestring + "\(object.name): \(object.criteria) | " }
-                            self.stickyCriteriaLabel.text = criteString
-                        }
-                    } else {
-                        print("error: \(error)")
-                    }
-                    
-                }
-            }
+            self.detailItem?.getCriteriaStringForLabel(stickyCriteriaLabel)
         } else {
             tagView.hidden = true
         }
