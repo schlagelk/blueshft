@@ -60,3 +60,9 @@ extension UIView {
         self.layer.addSublayer(border)
     }
 }
+
+extension UIColor {
+    class func blueshftBlue () -> UIColor {
+        return UIColor(red: 31/255, green: 125/255, blue: 177/255, alpha: 1)
+    }
+}

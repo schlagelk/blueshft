@@ -58,7 +58,7 @@ class PopupViewController: UIViewController {
                             for like in likes {
                                 self.recentLikeLabel.text = like["name"] as? String
                                 self.likeImage.image = self.likeImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-                                self.likeImage.tintColor = UIColor(red: 31/255, green: 125/255, blue: 177/255, alpha: 1)
+                                self.likeImage.tintColor = UIColor.blueshftBlue()
                             }
                         }
                     }

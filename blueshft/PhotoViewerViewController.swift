@@ -271,7 +271,7 @@ class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIPopov
         }
         
         if tint == true {
-            button.tintColor = UIColor(red: 232/255, green: 104/255, blue: 87/255, alpha: 1)
+            button.tintColor = UIColor.blueshftBlue()
         }
         
         let barButton = UIBarButtonItem(customView: button)
