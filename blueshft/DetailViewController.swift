@@ -159,11 +159,14 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             stickyStudentsLabel.text = self.detailItem?.students
             stickyNameLabel.text = self.detailItem?.name
             stickyLocationLabel.text = self.detailItem?.location
-            
             self.detailItem?.getCriteriaStringForLabel(stickyCriteriaLabel)
+            print(self.detailItem?.classSize)
+            print(self.detailItem?.popMajors)
+            
         } else {
             tagView.hidden = true
         }
+        self.showStickyButton.layer.cornerRadius = 6
     }
     
     func pan(pan: UIPanGestureRecognizer) {
@@ -356,6 +359,8 @@ extension DetailViewController: MKMapViewDelegate {
 //            detailView.typeDesc.backgroundColor = color
 //            detailView.typeDesc.text = "All Purpose"
 //        }
+        annotationView!.pinTintColor = UIColor.blueColor()
+
         return annotationView
     }
 }

@@ -75,12 +75,12 @@
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-8B-0hw">
                                         <rect key="frame" x="284" y="356" width="32" height="32"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.85333086993243246" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="TDk-Jm-8lb"/>
                                             <constraint firstAttribute="width" constant="45" id="d7J-NQ-twa"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.8008604307432432" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="more"/>
                                         <connections>
                                             <action selector="showStickyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="DVx-cr-SvA"/>
                                         </connections>
@@ -1170,7 +1170,6 @@
         <image name="close" width="32" height="32"/>
         <image name="empty-classroom" width="473" height="356"/>
         <image name="like" width="32" height="32"/>
-        <image name="more" width="64" height="64"/>
         <image name="physik" width="357" height="464"/>
         <image name="user" width="32" height="32"/>
         <image name="x" width="16" height="16"/>
