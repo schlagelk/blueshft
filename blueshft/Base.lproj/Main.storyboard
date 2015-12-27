@@ -924,7 +924,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-classroom" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-P2-TFJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalk" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-P2-TFJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qC1-OS-sXg">
@@ -1054,7 +1054,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-classroom" translatesAutoresizingMaskIntoConstraints="NO" id="KMI-2v-sgz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="physik" translatesAutoresizingMaskIntoConstraints="NO" id="KMI-2v-sgz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQU-1f-U9s">
@@ -1077,7 +1077,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
                                         <state key="normal" title="Reset Password">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1091,11 +1091,11 @@
                                             <constraint firstAttribute="height" constant="58" id="G0U-pO-4xU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="33"/>
-                                        <color key="textColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="0.90326752533783783" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="91N-Hf-Xq3"/>
                                     <constraint firstItem="3jw-AK-h6N" firstAttribute="centerX" secondItem="mf7-S1-WWL" secondAttribute="centerX" constant="-0.5" id="AWD-SL-Mm5"/>
@@ -1113,7 +1113,7 @@
                                     <constraint firstAttribute="height" constant="30" id="35w-GZ-eqF"/>
                                     <constraint firstAttribute="width" constant="30" id="5wa-fo-YKV"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="close"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1166,10 +1166,12 @@
     <resources>
         <image name="bar" width="300" height="20"/>
         <image name="beacon" width="32" height="32"/>
+        <image name="chalk" width="671" height="766"/>
         <image name="close" width="32" height="32"/>
         <image name="empty-classroom" width="473" height="356"/>
         <image name="like" width="32" height="32"/>
         <image name="more" width="64" height="64"/>
+        <image name="physik" width="357" height="464"/>
         <image name="user" width="32" height="32"/>
         <image name="x" width="16" height="16"/>
     </resources>
