@@ -1054,7 +1054,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="physik" translatesAutoresizingMaskIntoConstraints="NO" id="KMI-2v-sgz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chalk" translatesAutoresizingMaskIntoConstraints="NO" id="KMI-2v-sgz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQU-1f-U9s">
@@ -1170,7 +1170,6 @@
         <image name="close" width="32" height="32"/>
         <image name="empty-classroom" width="473" height="356"/>
         <image name="like" width="32" height="32"/>
-        <image name="physik" width="357" height="464"/>
         <image name="user" width="32" height="32"/>
         <image name="x" width="16" height="16"/>
     </resources>
