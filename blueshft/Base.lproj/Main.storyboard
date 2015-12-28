@@ -96,9 +96,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="173"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Blueshft University" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K4-o0-wVj">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Blueshft University" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K4-o0-wVj">
                                                             <rect key="frame" x="8" y="8" width="284" height="21"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -115,7 +115,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uki-pb-nLq">
-                                                            <rect key="frame" x="36" y="64" width="42" height="21"/>
+                                                            <rect key="frame" x="36" y="65" width="42" height="20"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -224,9 +224,10 @@
                                                         <constraint firstItem="SWz-Y1-YIi" firstAttribute="centerX" secondItem="qRu-jG-fhr" secondAttribute="centerX" id="3eO-Cu-Uc8"/>
                                                         <constraint firstItem="Uki-pb-nLq" firstAttribute="top" secondItem="SWz-Y1-YIi" secondAttribute="bottom" constant="6" id="66l-ME-fUw"/>
                                                         <constraint firstItem="Tnb-KY-VlC" firstAttribute="leading" secondItem="qRu-jG-fhr" secondAttribute="leading" constant="5" id="8J3-1H-dfW"/>
-                                                        <constraint firstItem="4K4-o0-wVj" firstAttribute="top" secondItem="qRu-jG-fhr" secondAttribute="top" constant="8" id="95A-Mg-GJD"/>
+                                                        <constraint firstItem="4K4-o0-wVj" firstAttribute="top" secondItem="qRu-jG-fhr" secondAttribute="top" constant="5" id="95A-Mg-GJD"/>
                                                         <constraint firstAttribute="trailing" secondItem="4K4-o0-wVj" secondAttribute="trailing" constant="4" id="96e-5a-bpn"/>
                                                         <constraint firstItem="4K4-o0-wVj" firstAttribute="leading" secondItem="qRu-jG-fhr" secondAttribute="leading" constant="5" id="9Fw-QP-6rH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4K4-o0-wVj" secondAttribute="trailing" constant="5" id="Aey-B2-T7g"/>
                                                         <constraint firstItem="Cl0-85-4BA" firstAttribute="top" secondItem="4K4-o0-wVj" secondAttribute="bottom" constant="10" id="EF7-D3-mWY"/>
                                                         <constraint firstItem="AJv-4z-VXU" firstAttribute="leading" secondItem="SWz-Y1-YIi" secondAttribute="trailing" constant="3" id="ILf-iK-u46"/>
                                                         <constraint firstItem="AeU-bk-hXR" firstAttribute="top" secondItem="qRu-jG-fhr" secondAttribute="top" constant="1" id="KtN-4j-XW1"/>
