@@ -73,14 +73,15 @@
                                         </segments>
                                         <color key="tintColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-8B-0hw">
-                                        <rect key="frame" x="284" y="356" width="32" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-8B-0hw">
+                                        <rect key="frame" x="288" y="360" width="24" height="24"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.85333086993243246" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="TDk-Jm-8lb"/>
                                             <constraint firstAttribute="width" constant="45" id="d7J-NQ-twa"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.8008604307432432" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="sticky"/>
                                         <connections>
                                             <action selector="showStickyPressed:" destination="JEX-9P-axG" eventType="touchUpInside" id="DVx-cr-SvA"/>
                                         </connections>
@@ -1091,11 +1092,11 @@
                                             <constraint firstAttribute="height" constant="58" id="G0U-pO-4xU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="33"/>
-                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <color key="textColor" red="0.1222351408" green="0.49003604680000001" blue="0.69464172980000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="0.90326752533783783" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="91N-Hf-Xq3"/>
                                     <constraint firstItem="3jw-AK-h6N" firstAttribute="centerX" secondItem="mf7-S1-WWL" secondAttribute="centerX" constant="-0.5" id="AWD-SL-Mm5"/>
@@ -1113,7 +1114,7 @@
                                     <constraint firstAttribute="height" constant="30" id="35w-GZ-eqF"/>
                                     <constraint firstAttribute="width" constant="30" id="5wa-fo-YKV"/>
                                 </constraints>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="close"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1170,6 +1171,7 @@
         <image name="close" width="32" height="32"/>
         <image name="empty-classroom" width="473" height="356"/>
         <image name="like" width="32" height="32"/>
+        <image name="sticky" width="24" height="24"/>
         <image name="user" width="32" height="32"/>
         <image name="x" width="16" height="16"/>
     </resources>
