@@ -22,6 +22,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var stickyStudentsLabel: UILabel!
     @IBOutlet weak var stickyNameLabel: UILabel!
     @IBOutlet weak var stickyLocationLabel: UILabel!
+    @IBOutlet weak var stickyMajorsLabel: UILabel!
+    @IBOutlet weak var stickyClassSizeLabel: UILabel!
     
     @IBOutlet weak var stickyCriteriaLabel: UILabel!
     
@@ -156,13 +158,12 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             animator = UIDynamicAnimator(referenceView: containerView)
             stickyBehavior = StickyEdgesBehavior(item: tagView, edgeInset: 8)
             animator.addBehavior(stickyBehavior)
-            stickyStudentsLabel.text = self.detailItem?.students
-            stickyNameLabel.text = self.detailItem?.name
-            stickyLocationLabel.text = self.detailItem?.location
-            self.detailItem?.getCriteriaStringForLabel(stickyCriteriaLabel)
-            print(self.detailItem?.classSize)
-            print(self.detailItem?.popMajors)
-            
+            stickyStudentsLabel.text = self.detailItem!.students
+            stickyNameLabel.text = self.detailItem!.name
+            stickyLocationLabel.text = self.detailItem!.location
+            self.detailItem!.getCriteriaStringForLabel(stickyCriteriaLabel)
+            stickyMajorsLabel.text = self.detailItem!.popMajors
+            stickyClassSizeLabel.text = "Avg class: \(self.detailItem!.classSize)"
         } else {
             tagView.hidden = true
         }
