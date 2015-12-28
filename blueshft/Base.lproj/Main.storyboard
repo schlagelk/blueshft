@@ -227,10 +227,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-pT-Imz">
-                                <rect key="frame" x="36" y="10" width="248" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hello!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-pT-Imz">
+                                <rect key="frame" x="36" y="10" width="258" height="17"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.18980823860000001" green="0.18980823860000001" blue="0.18980823860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsJ-UU-VQk">
@@ -291,11 +291,10 @@
                         <accessibility key="accessibilityConfiguration" identifier=""/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="tXU-c5-qXq" secondAttribute="trailing" constant="5" id="98q-pZ-csP"/>
-                            <constraint firstItem="GyV-pT-Imz" firstAttribute="leading" secondItem="X94-1m-VGF" secondAttribute="leadingMargin" constant="20" id="Ak8-0e-nfC"/>
                             <constraint firstItem="tXU-c5-qXq" firstAttribute="centerX" secondItem="X94-1m-VGF" secondAttribute="centerX" id="CpK-qE-a5U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tXU-c5-qXq" secondAttribute="trailing" constant="35" id="D71-Wv-alG"/>
                             <constraint firstItem="aoB-A4-McI" firstAttribute="top" secondItem="flI-h8-6R4" secondAttribute="bottom" constant="8" id="EaA-b1-bIj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GyV-pT-Imz" secondAttribute="trailing" constant="20" id="HeH-HV-J6k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GyV-pT-Imz" secondAttribute="trailing" id="HeH-HV-J6k"/>
                             <constraint firstItem="tXU-c5-qXq" firstAttribute="leading" secondItem="flI-h8-6R4" secondAttribute="trailing" constant="1" id="JIu-xf-KO5"/>
                             <constraint firstItem="GyV-pT-Imz" firstAttribute="top" secondItem="X94-1m-VGF" secondAttribute="topMargin" constant="10" id="JRc-Hw-Tc1"/>
                             <constraint firstItem="aoB-A4-McI" firstAttribute="centerX" secondItem="X94-1m-VGF" secondAttribute="centerX" id="JU6-BY-Nk7"/>
