@@ -11,6 +11,8 @@ import UIKit
 class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var containerInfoView: UIView!
+    @IBOutlet weak var beaconInfoImage: UIImageView!
     
     var selectedCellIndexPath: NSIndexPath?
     let SelectedCellHeight: CGFloat = 220
@@ -26,6 +28,9 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDataForBeacons()
+        containerInfoView.addTopBorderWithColor(UIColor.grayColor(), width: 0.8)
+        let beacmage = UIImage(named:"beacon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        beaconInfoImage.image = beacmage
     }
 
     override func didReceiveMemoryWarning() {
