@@ -65,10 +65,7 @@ class LoginViewController: UIViewController {
                 spinner.stopAnimating()
                 
                 if ((user) != nil) {
-                    let alert = UIAlertController(title: "Success", message: "Logged In", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: self.dismissLogin))
-                    
-                    self.presentViewController(alert, animated:true , completion:nil)
+                    self.dismissLogin()
    
                 } else {
                     let alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.Alert)
@@ -80,7 +77,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func dismissLogin(alertView: UIAlertAction) {
+    func dismissLogin() {
         NSNotificationCenter.defaultCenter().postNotificationName("BSUserLoggedInNotification", object: self, userInfo: ["logInAttempt": true])
         self.dismissViewControllerAnimated(true, completion: nil)
     }
