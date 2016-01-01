@@ -3,31 +3,61 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="uH7-e3-t5d" customClass="PointPin" customModule="blueshft" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="240" height="196"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Jh-7j-92u">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="196"/>
+                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Jh-7j-92u">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="375"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2ph-pb-10v">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="196"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2ph-pb-10v">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="375"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeT-iA-4Vm">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="176"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeT-iA-4Vm">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="282"/>
                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                     <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-xL-mzJ">
-                                    <rect key="frame" x="0.0" y="176" width="240" height="20"/>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nf-73-A7q">
+                                    <rect key="frame" x="0.0" y="282" width="240" height="62"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-tE-iUW">
-                                            <rect key="frame" x="0.0" y="0.0" width="32" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="General" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etZ-v7-oRz">
+                                            <rect key="frame" x="0.0" y="45" width="240" height="14"/>
+                                            <color key="backgroundColor" red="0.23921568627450979" green="0.40784313725490196" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="etZ-v7-oRz" firstAttribute="leading" secondItem="8nf-73-A7q" secondAttribute="leading" id="Gkk-Mb-Y4i"/>
+                                        <constraint firstItem="etZ-v7-oRz" firstAttribute="top" secondItem="8nf-73-A7q" secondAttribute="top" constant="10" id="Hqh-b3-eEP"/>
+                                        <constraint firstAttribute="trailing" secondItem="etZ-v7-oRz" secondAttribute="trailing" constant="60" id="hPL-FR-uot"/>
+                                        <constraint firstAttribute="bottom" secondItem="etZ-v7-oRz" secondAttribute="bottom" constant="10" id="qj8-z2-ktp"/>
+                                        <constraint firstItem="etZ-v7-oRz" firstAttribute="centerX" secondItem="8nf-73-A7q" secondAttribute="centerX" id="xlD-Rf-PuV"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="hPL-FR-uot"/>
+                                            <exclude reference="xlD-Rf-PuV"/>
+                                        </mask>
+                                    </variation>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-xL-mzJ">
+                                    <rect key="frame" x="0.0" y="344" width="240" height="31"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-tE-iUW">
+                                            <rect key="frame" x="0.0" y="0.0" width="32" height="31"/>
                                             <state key="normal" image="foto">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.78499788849999996" colorSpace="calibratedRGB"/>
                                             </state>
@@ -35,8 +65,8 @@
                                                 <action selector="seeMoreAboutPoint:" destination="uH7-e3-t5d" eventType="touchUpInside" id="FLs-zy-iwb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-J8-q6e">
-                                            <rect key="frame" x="104" y="0.0" width="32" height="20"/>
+                                        <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-J8-q6e">
+                                            <rect key="frame" x="104" y="0.0" width="32" height="31"/>
                                             <state key="normal" image="direkt">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.78499788849999996" colorSpace="calibratedRGB"/>
                                             </state>
@@ -44,8 +74,8 @@
                                                 <action selector="getDirectionsToPoint:" destination="uH7-e3-t5d" eventType="touchUpInside" id="Qo8-S8-ZzR"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-uN-ytb">
-                                            <rect key="frame" x="208" y="0.0" width="32" height="20"/>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-uN-ytb">
+                                            <rect key="frame" x="208" y="0.0" width="32" height="31"/>
                                             <state key="normal" image="speak">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.88241659630000002" colorSpace="calibratedRGB"/>
                                             </state>
@@ -53,7 +83,7 @@
                                                 <action selector="speak:" destination="uH7-e3-t5d" eventType="touchUpInside" id="7p3-m8-ptb"/>
                                             </connections>
                                         </button>
-                                        <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Fx-PBv">
+                                        <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-Fx-PBv">
                                             <rect key="frame" x="240" y="0.0" width="0.0" height="32"/>
                                             <color key="tintColor" red="0.91092722039999996" green="0.40784313729999999" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                             <state key="normal" image="stoptalking"/>
@@ -71,12 +101,16 @@
                                 </stackView>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="kwv-xL-mzJ" firstAttribute="top" secondItem="8nf-73-A7q" secondAttribute="bottom" id="08Z-XS-wER"/>
                                 <constraint firstItem="oeT-iA-4Vm" firstAttribute="top" secondItem="2ph-pb-10v" secondAttribute="top" id="Aoa-CC-OBl"/>
+                                <constraint firstItem="8nf-73-A7q" firstAttribute="leading" secondItem="2ph-pb-10v" secondAttribute="leading" id="EvT-r6-9Cz"/>
                                 <constraint firstItem="kwv-xL-mzJ" firstAttribute="top" secondItem="oeT-iA-4Vm" secondAttribute="bottom" constant="50" id="G79-oe-UzL"/>
                                 <constraint firstItem="oeT-iA-4Vm" firstAttribute="leading" secondItem="2ph-pb-10v" secondAttribute="leading" id="ImA-65-Sm1"/>
                                 <constraint firstAttribute="bottom" secondItem="kwv-xL-mzJ" secondAttribute="bottom" constant="20" id="JOr-Ei-jFX"/>
                                 <constraint firstAttribute="trailing" secondItem="oeT-iA-4Vm" secondAttribute="trailing" id="S8G-Ia-T08"/>
+                                <constraint firstItem="8nf-73-A7q" firstAttribute="top" secondItem="oeT-iA-4Vm" secondAttribute="bottom" id="Yg6-gL-a5D"/>
                                 <constraint firstItem="oeT-iA-4Vm" firstAttribute="centerX" secondItem="2ph-pb-10v" secondAttribute="centerX" id="l1L-Yy-dPI"/>
+                                <constraint firstAttribute="trailing" secondItem="8nf-73-A7q" secondAttribute="trailing" id="omC-Zp-OUB"/>
                                 <constraint firstItem="kwv-xL-mzJ" firstAttribute="centerX" secondItem="2ph-pb-10v" secondAttribute="centerX" id="qVW-rD-mHZ"/>
                                 <constraint firstItem="kwv-xL-mzJ" firstAttribute="leading" secondItem="2ph-pb-10v" secondAttribute="leading" constant="15" id="whp-wq-LqV"/>
                             </constraints>
@@ -117,8 +151,9 @@
                 <outlet property="pointDesc" destination="oeT-iA-4Vm" id="jUR-A0-X7j"/>
                 <outlet property="stopTalkButton" destination="7bv-Fx-PBv" id="sIx-5p-RfN"/>
                 <outlet property="talkButton" destination="cBB-uN-ytb" id="Ieh-jK-G5R"/>
+                <outlet property="typeDesc" destination="etZ-v7-oRz" id="NmO-g7-GKT"/>
             </connections>
-            <point key="canvasLocation" x="518" y="568"/>
+            <point key="canvasLocation" x="548" y="657.5"/>
         </view>
     </objects>
     <resources>

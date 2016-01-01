@@ -62,7 +62,19 @@ extension UIView {
 }
 
 extension UIColor {
-    class func blueshftBlue () -> UIColor {
+    class func blueshftBlue() -> UIColor {
         return UIColor(red: 31/255, green: 125/255, blue: 177/255, alpha: 1)
+    }
+    
+    class func artsYellow() -> UIColor {
+        return UIColor(red: 1, green: 165/255, blue: 87/255, alpha: 1)
+    }
+    
+    class func academicRed() -> UIColor {
+        return UIColor(red: 238/255, green: 77/255, blue: 77/255, alpha: 1)
+    }
+    
+    class func lifeGreen() -> UIColor {
+        return UIColor(red: 34/255, green: 160/255, blue: 100/255, alpha: 1)
     }
 }
