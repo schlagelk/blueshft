@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerInfoView: UIView!
@@ -18,16 +18,20 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     let SelectedCellHeight: CGFloat = 220
     let UnselectedCellHeight: CGFloat = 80.0
     
-    var beacons = [Beacon]() {
+    weak var locationManager: CLLocationManager?
+    var region: CLBeaconRegion?
+    
+    var beacons4School = [Beacon]() {
         didSet {
-            print(self.beacons)
             // maybe beginUpdates & endUpdates for table here?
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }
     }
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadDataForBeacons()
+//        loadDataForBeacons()
         containerInfoView.addTopBorderWithColor(UIColor.grayColor(), width: 0.8)
         let beacmage = UIImage(named:"beacon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         beaconInfoImage.image = beacmage
@@ -38,6 +42,10 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    deinit {
+        self.region = nil
+        self.locationManager = nil
+    }
 
     /*
     // MARK: - Navigation
@@ -49,13 +57,13 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.beacons.count
+        return self.beacons4School.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "BeaconsTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! BeaconsTableViewCell
-        let beaconOnCell = beacons[indexPath.row]
+        let beaconOnCell = beacons4School[indexPath.row]
         cell.beaconNameLabel.text = beaconOnCell.name
         cell.beaconDescLabel.text = beaconOnCell.subTitle
         return cell
@@ -64,7 +72,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! BeaconsTableViewCell
         currentCell.beaconImage.hidden = false
-        let beaconOnCell = beacons[indexPath.row]
+        let beaconOnCell = beacons4School[indexPath.row]
         
         if let selectedCellIndexPath = selectedCellIndexPath {
             if selectedCellIndexPath == indexPath {
@@ -100,15 +108,27 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         return UnselectedCellHeight
     }
     
-    func loadDataForBeacons() {
-        let query = Beacon.query()
-        query!.whereKey("minor", equalTo: "8U8j3o7u7T")
-        query!.whereKey("major", equalTo: "123")
-        do {
-            let objects = try query!.findObjects() as! [Beacon]
-            self.beacons.appendContentsOf(objects)
-        } catch {
-            print(error)
+    //MARK: Beacons
+    
+    func loadDataForBeacons(major: String) {
+        if self.locationManager != nil && self.region != nil {
+            self.locationManager!.startRangingBeaconsInRegion(self.region!)
+            let query = Beacon.query()
+            query!.whereKey("major", equalTo: major)
+            do {
+                let objects = try query!.findObjects() as! [Beacon]
+                self.beacons4School.appendContentsOf(objects)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        let knownBeacons = beacons.filter { $0.proximity != CLProximity.Unknown }
+        if knownBeacons.count > 0 {
+            let closestBeacon = knownBeacons[0] as CLBeacon
+            loadDataForBeacons(closestBeacon.major.stringValue)
         }
     }
 }
