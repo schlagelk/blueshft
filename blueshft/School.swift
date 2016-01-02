@@ -18,12 +18,13 @@ class School: PFObject {
     @NSManaged var headquarters: PFGeoPoint
     @NSManaged var popMajors: String
     @NSManaged var classSize: String
+    @NSManaged var majorValue: String
     
     var location: String {
         return city + ", " + state
     }
     
-    init(name: String, students: String, city: String, state: String, image: PFFile, headquarters: PFGeoPoint, classSize: String, popMajors: String) {
+    init(name: String, students: String, city: String, state: String, image: PFFile, headquarters: PFGeoPoint, classSize: String, popMajors: String, majorValue: String) {
         super.init()
  
         self.name = name
@@ -34,6 +35,7 @@ class School: PFObject {
         self.headquarters = headquarters
         self.popMajors = popMajors
         self.classSize = classSize
+        self.majorValue = majorValue
     }
     
     override init() {

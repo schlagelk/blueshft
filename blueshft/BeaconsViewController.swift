@@ -21,11 +21,12 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     weak var locationManager: CLLocationManager?
     var region: CLBeaconRegion?
     
+    weak var detailVC: DetailViewController?
+    
     var beacons4School = [Beacon]() {
         didSet {
             // maybe beginUpdates & endUpdates for table here?
-            tableView.beginUpdates()
-            tableView.endUpdates()
+            tableView.reloadData()
         }
     }
         
@@ -35,6 +36,10 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         containerInfoView.addTopBorderWithColor(UIColor.grayColor(), width: 0.8)
         let beacmage = UIImage(named:"beacon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         beaconInfoImage.image = beacmage
+        if self.locationManager != nil && self.region != nil {
+            self.locationManager?.delegate = self
+            self.locationManager!.startRangingBeaconsInRegion(self.region!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +48,11 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     deinit {
-        self.region = nil
-        self.locationManager = nil
+        if self.locationManager != nil && self.region != nil {
+            self.locationManager?.stopMonitoringForRegion(self.region!)
+            self.locationManager?.delegate = detailVC
+            self.region = nil
+        }
     }
 
     /*
@@ -111,18 +119,20 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     //MARK: Beacons
     
     func loadDataForBeacons(major: String) {
-        if self.locationManager != nil && self.region != nil {
-            self.locationManager!.startRangingBeaconsInRegion(self.region!)
-            let query = Beacon.query()
-            query!.whereKey("major", equalTo: major)
-            do {
-                let objects = try query!.findObjects() as! [Beacon]
-                self.beacons4School.appendContentsOf(objects)
-            } catch {
-                print(error)
-            }
+
+        let query = Beacon.query()
+        query!.whereKey("major", equalTo: major)
+        // TODO - need to specify a minor value?
+        do {
+            let objects = try query!.findObjects() as! [Beacon]
+            self.beacons4School.removeAll()
+            self.beacons4School.appendContentsOf(objects)
+        } catch {
+            print(error)
         }
     }
+    
+    
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         let knownBeacons = beacons.filter { $0.proximity != CLProximity.Unknown }

@@ -46,7 +46,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     lazy var currentLocation = CLLocation()
 
     let regionRadius: CLLocationDistance = 500
-    let distanceInMetersToActivateBeacons = 3000.00
+    let distanceInMetersToActivateBeacons = 30000.00
     
     let simpleTransitionDelegate = SimpleTransitionDelegate()
     
@@ -387,9 +387,10 @@ extension DetailViewController: UIPopoverPresentationControllerDelegate {
         let contentViewController: BeaconsViewController = storyboard.instantiateViewControllerWithIdentifier("BeaconsViewController") as! BeaconsViewController
         contentViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
         contentViewController.preferredContentSize = CGSize(width: 320, height: 460)
-        contentViewController.locationManager = self.locationManager
         
-        contentViewController.region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "123456789blueshft")!, identifier: "blueshft")
+        contentViewController.locationManager = self.locationManager
+        contentViewController.detailVC = self
+        contentViewController.region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "EF40CC29-A057-4441-8C13-30A5C37FA9DF")!, identifier: "blueshft")
         
         let detailPopover: UIPopoverPresentationController = contentViewController.popoverPresentationController!
         detailPopover.barButtonItem = sender as? UIBarButtonItem
