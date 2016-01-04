@@ -46,7 +46,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
     lazy var currentLocation = CLLocation()
 
     let regionRadius: CLLocationDistance = 500
-    let distanceInMetersToActivateBeacons = 30000.00
+    let distanceInMetersToActivateBeacons = 3000.00
     
     let simpleTransitionDelegate = SimpleTransitionDelegate()
     
