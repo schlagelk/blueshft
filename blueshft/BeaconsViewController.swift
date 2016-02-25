@@ -29,6 +29,8 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
             tableView.reloadData()
         }
     }
+  
+  var timer = 1
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,10 +137,31 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+      timer++
+      if timer % 3 == 0 {
         let knownBeacons = beacons.filter { $0.proximity != CLProximity.Unknown }
         if knownBeacons.count > 0 {
-            let closestBeacon = knownBeacons[0] as CLBeacon
-            loadDataForBeacons(closestBeacon.major.stringValue)
+          self.beacons4School.removeAll()
+          // get data for each beacon, append to data source if succesful
+          var query = Beacon.query()
+          for beacon in knownBeacons {
+            query?.whereKey("major", equalTo: beacon.major.stringValue)
+            query?.whereKey("minor", equalTo: beacon.minor.stringValue)
+            query?.limit = 1
+            
+            do {
+              let objects = try query?.findObjects() as! [Beacon]
+              if objects.first != nil {
+                self.beacons4School.append(objects.first!)
+              }
+            } catch {
+              print(error)
+            }
+          }
+          UIView.transitionWithView(tableView, duration: 0.10, options: .TransitionCrossDissolve, animations: {
+            self.tableView.reloadData()
+            }, completion: nil)
         }
+      }
     }
 }
