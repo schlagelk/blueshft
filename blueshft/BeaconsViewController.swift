@@ -34,7 +34,6 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadDataForBeacons()
         containerInfoView.addTopBorderWithColor(UIColor.grayColor(), width: 0.8)
         let beacmage = UIImage(named:"beacon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         beaconInfoImage.image = beacmage
@@ -94,9 +93,10 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             selectedCellIndexPath = indexPath
         }
-        
+        self.locationManager!.stopRangingBeaconsInRegion(self.region!)
+      
         currentCell.beaconImage.file = beaconOnCell.image
-        currentCell.beaconImage.loadInBackground {(image: UIImage?, error: NSError?) ->Void in
+        currentCell.beaconImage.loadInBackground { (image: UIImage?, error: NSError?) ->Void in
             if error == nil {
                 if let leImage = image {
                     currentCell.beaconImage.image = leImage
@@ -104,6 +104,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
             } else {
                 print("problem loading image \(error)")
             }
+          self.locationManager!.startRangingBeaconsInRegion(self.region!)
         }
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -119,23 +120,7 @@ class BeaconsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     //MARK: Beacons
-    
-    func loadDataForBeacons(major: String) {
 
-        let query = Beacon.query()
-        query!.whereKey("major", equalTo: major)
-        // TODO - need to specify a minor value?
-        do {
-            let objects = try query!.findObjects() as! [Beacon]
-            self.beacons4School.removeAll()
-            self.beacons4School.appendContentsOf(objects)
-        } catch {
-            print(error)
-        }
-    }
-    
-    
-    
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
       timer++
       if timer % 3 == 0 {

@@ -104,9 +104,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate {
             let distanceToSchool = currentLocation.distanceFromLocation(castedLocationOfSchool)
             if distanceToSchool < distanceInMetersToActivateBeacons {
                 beaconButton.enabled = true
-                // startRangingBeaconsInRegion
-                // range should be tour unique id
-                // or can i make the popup the cl delegate using this class locationManager reference?
             }
         }
     }
