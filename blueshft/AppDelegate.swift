@@ -24,9 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         splitViewController.delegate = self
 
         let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
+      
         let controller = masterNavigationController.topViewController as! MasterViewController
-        
-        Parse.setApplicationId("jIvWXnpUWC5bwI55jUgRFDgCe7tPMSK18hGFjnop", clientKey: "x2c8ctUDihX4PL6imFUTM5oXdha4P6qAD0TjcDuP")
+        let configuration = ParseClientConfiguration {
+          $0.applicationId = "jIvWXnpUWC5bwI55jUgRFDgCe7tPMSK18hGFjnop"
+          $0.clientKey = "x2c8ctUDihX4PL6imFUTM5oXdha4P6qAD0TjcDuP"
+//          $0.server = "http://localhost:1337/parse"
+          $0.server = "https://serene-hollows-35658.herokuapp.com/parse"
+        }
+      
+        Parse.initializeWithConfiguration(configuration)
+      
         // set table view stuff here sure
         UINavigationBar.appearance().barStyle = .BlackTranslucent
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
