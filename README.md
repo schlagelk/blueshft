@@ -1,4 +1,5 @@
 # blueshft
+** This isn't functional any longer due to the Parse shut down, but I thought I'd publish it in any case**
 
 iOS app in Swift 2.0 and iOS 9.0
 
